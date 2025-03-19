@@ -1,4 +1,4 @@
-## Hi there 👋
+## Hi 👋, I'm Mr. Duy
 
 <!--
 **voanhduy1710/voanhduy1710** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
