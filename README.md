@@ -5,7 +5,8 @@
 [My CV in PDF](TITS)
 
 ## About
-My full name is Vo Anh Duy. I have a technical background and hold a Master of Science (M.Sc.) degree in Technical Economics from Moscows MGSU, with a major in Project Lifecycle Management. I have 5 years of experience in the field of Engineering, where I held roles such as Data Processing Engineer, Engineer in City Infrastructure. Currently, I'm in the process of transitioning from engineer to Data Analysis, I am currently a Data Analyst at a Fintech company. Here is my Data Analyst's career path:
+My full name is Vo Anh Duy. I have a technical background and hold a Master of Science (M.Sc.) degree in Technical Economics from Moscows MGSU, with a major in Project Lifecycle Management. I have 5 years of experience in the field of Engineering, where I held roles such as Data Processing Engineer, Engineer in City Infrastructure. 
+This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
 
 
 <h2 align="left">Languages and Tools:</h3>
