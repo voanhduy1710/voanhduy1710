@@ -10,12 +10,14 @@ My CV in pdf
 
 
 
-## 🖥️ Specific skills used
+## 🖥️ Specific skills
+
 **Excel:**
-Cleaning: find & replace values, filter, clean NULL values
-Data validation and conditional formatting
-Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, contentate, aggregate functions
-Pivot table: pivot charts, Matrix.
++ Cleaning: find & replace values, filter, clean NULL values
++ Data validation and conditional formatting
++ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, contentate, aggregate function
++ Pivot table: pivot charts, Matrix.
+
 **SQL**
 + PostgreSQL: Faster and cleaner than MySQL, SSMS, better UI, other leading global platforms are using (Gitlab, Datacamp, Reddit, TripAdvisor, etc)
 + Basics and Aggregating Data (COUNT, SUM, AVG, MIN, MAX, etc.)
@@ -46,3 +48,4 @@ Pivot table: pivot charts, Matrix.
 
 - **Work phone:** +84 559982489
 - **Email:** voanhduy1710@gmail.com
+
