@@ -4,7 +4,11 @@
 
 [My CV in PDF](TITS)
 
-<h3 align="left">Languages and Tools:</h3>
+## About
+My full name is Vo Anh Duy. I have a technical background and hold a Master of Science (M.Sc.) degree in Technical Economics from Moscows MGSU, with a major in Project Lifecycle Management. I have 5 years of experience in the field of Engineering, where I held roles such as Data Processing Engineer, Engineer in City Infrastructure. Currently, I'm in the process of transitioning from engineer to Data Analysis, I am currently a Data Analyst at a Fintech company. Here is my Data Analyst's career path:
+
+
+<h2 align="left">Languages and Tools:</h3>
 <p align="left">
   <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noreferrer">
     <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019.png" alt="Excel" title="Excel" width="40" height="40"/>
