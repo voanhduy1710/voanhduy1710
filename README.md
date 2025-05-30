@@ -47,6 +47,7 @@
 ## 🏫 Education
 
 Moscow State University of Civil Engineering, B.Sc. Engineering Technician, 2014-2018.
+
 Moscow State University of Civil Engineering, M.Sc. Technical Economics, 2018-2020.
 
 ## 📞 Contact
