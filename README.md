@@ -52,7 +52,7 @@
 + Slicers, Buttons, Bookmarks, Navigator
 + Field Parameters, Group and Binning
 
-**PowerBI:**(In progress)
+**Python:**(In progress)
 + Consolidate and analyze multiple large csv files
 + API and Webscraping
 + Machine learning
