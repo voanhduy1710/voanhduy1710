@@ -2,7 +2,7 @@
 <h3 align="center">Data Analyst in Vietnam</h3>
 
 
-My CV in pdf
+[My CV in PDF](TITS)
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> </p>
@@ -43,6 +43,11 @@ My CV in pdf
 + Machine learning
 + Advanced statistics analysis
 + AI machine learning and avoiding AI hallucinations
+
+## 🏫 Education
+
+Moscow State University of Civil Engineering, B.Sc. Engineering Technician, 2014-2018.
+Moscow State University of Civil Engineering, M.Sc. Technical Economics, 2018-2020.
 
 ## 📞 Contact
 
