@@ -6,17 +6,17 @@
 
 <h3 align="left">Languages and Tools:</h3>
 <p align="left">
-  <a href="https://www.postgresql.org/" target="_blank" rel="noreferrer">
-    <img src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" alt="PostgreSQL" width="40" height="40" />
+  <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL" width="40" height="40"/>
   </a>
-  <a href="https://www.python.org/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40" />
+  <a href="https://www.python.org" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="40" height="40"/>
   </a>
   <a href="https://powerbi.microsoft.com/" target="_blank" rel="noreferrer">
-    <img src="https://github.com/microsoft/PowerBI-Icons/raw/main/SVG/Power-BI.svg" alt="Power BI" width="40" height="40" />
+    <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" width="40" height="40"/>
   </a>
   <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noreferrer">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/excel/excel-original.svg" alt="Excel" width="40" height="40"/>
+    <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019.png" alt="Excel" width="40" height="40"/>
   </a>
 </p>
 
