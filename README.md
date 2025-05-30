@@ -55,6 +55,7 @@
 
 **Python:**(In progress)
 + Consolidate and analyze multiple large csv files
++ Automation
 + API and Webscraping
 + Machine learning
 + Advanced statistics analysis
