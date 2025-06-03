@@ -39,7 +39,7 @@ This is a repository to showcase skills, share projects and track my progress in
 | 7 | Data Analyst In Python                           | In progress       |
 | 8 | IBM Professional Data Engineer                   | In progress       |
 [
-## 📊 Portfolio Projects](https://github.com/voanhduy1710/Portfolio_projects)
+## [📊 Portfolio Projects](https://github.com/voanhduy1710/Portfolio_projects)
 
 ## 🖥️ Specific skills
 
