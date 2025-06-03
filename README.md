@@ -26,7 +26,7 @@ This is a repository to showcase skills, share projects and track my progress in
   </a>
 </p>
 
-## 🧾 [My Certificate](https://github.com/voanhduy1710/Certifications)
+## 🧾 [Certifications](https://github.com/voanhduy1710/Certifications)
 
 | № | Certificate                                       | Status        |
 |---|--------------------------------------------------|--------------------------|
@@ -38,8 +38,8 @@ This is a repository to showcase skills, share projects and track my progress in
 | 6 | [Data Analyst Associate Certificate](https://www.datacamp.com/certificate/DAA0013101408680)               | Completed      |
 | 7 | Data Analyst In Python                           | In progress       |
 | 8 | IBM Professional Data Engineer                   | In progress       |
-
-
+[
+## 📊 Portfolio Projects](https://github.com/voanhduy1710/Portfolio_projects)
 
 ## 🖥️ Specific skills
 
