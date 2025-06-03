@@ -75,6 +75,6 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## 📞 Contact
 
-- **Work phone:** +84 559982489
+- **Phone number:** +84 978 987 889
 - **Email:** voanhduy1710@gmail.com
 
