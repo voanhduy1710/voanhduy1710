@@ -48,6 +48,10 @@ This is a repository to showcase skills, share projects and track my progress in
 
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
+## 💼 Professional Experience
++ Mosvodokanal - Russia (2019-2020)
++ VIWASE Joint Stock Company - Vietnam (2020-2025)
+
 ## 🖥️ Specific skills
 
 **Excel:**
