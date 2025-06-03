@@ -40,13 +40,13 @@ This is a repository to showcase skills, share projects and track my progress in
 | 8 | IBM Professional Data Engineer                   | In progress       |
 [
 ## 📊 Portfolio Projects - [Details](https://github.com/voanhduy1710/Portfolio_projects)
-[** 1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/1.%20Excel%20-%20Addidas%20Sales/1.%20Excel%20-%20Addidas%20Sales%20Dashboard.png?raw=true)
+[**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/1.%20Excel%20-%20Addidas%20Sales/1.%20Excel%20-%20Addidas%20Sales%20Dashboard.png?raw=true)
 
-[** 2. Uber Trips**](https://app.powerbi.com/view?r=eyJrIjoiMWU5YWNjOGMtNzY2NC00MTk3LWIxZDEtMmNhYjIxM2Q2YjA5IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D&pageName=e26fe47c30d523a8e80b)
+[**2. Uber Trips**](https://app.powerbi.com/view?r=eyJrIjoiMWU5YWNjOGMtNzY2NC00MTk3LWIxZDEtMmNhYjIxM2Q2YjA5IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D&pageName=e26fe47c30d523a8e80b)
 
-[** 3. Supply Chain & Sales**](https://app.powerbi.com/view?r=eyJrIjoiMTg5YmZkZGUtMDVkOC00MDg4LTg4NmItOGMwZGM5YTRmZjZiIiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D&pageName=62a7d95ec01d5533424c)
+[**3. Supply Chain & Sales**](https://app.powerbi.com/view?r=eyJrIjoiMTg5YmZkZGUtMDVkOC00MDg4LTg4NmItOGMwZGM5YTRmZjZiIiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D&pageName=62a7d95ec01d5533424c)
 
-[** 4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
+[**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
 ## 🖥️ Specific skills
 
