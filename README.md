@@ -44,8 +44,8 @@ This is a repository to showcase skills, share projects and track my progress in
 + PostgreSQL: Faster and cleaner than MySQL, SSMS, better UI, other leading global platforms are using (Gitlab, Datacamp, Reddit, TripAdvisor, etc)
 + Basics and Aggregating Data (COUNT, SUM, AVG, MIN, MAX, etc.)
 + CTEs: Common table expressions 
-+ Subqueries: Ranking, numbering, PARTITION BY (), moving average (ROWS BETWEEN..)
-+ Windows functions:  
++ Subqueries
++ Windows functions: Ranking, numbering, PARTITION BY (), moving average (ROWS BETWEEN..)
 + Joining tables: Left, Right, Outer Joins
 + Coalesce for NULL values
 + String Manipulation: CONCAT, LOWER, UPPER, DATEDIFF, DATEADD, EXTRACT, YEAR, MONTH, ROUND, FLOOR, CEIL
