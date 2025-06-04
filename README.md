@@ -74,7 +74,7 @@ This is a repository to showcase skills, share projects and track my progress in
 **Excel:**  
 \+ Cleaning: find & replace values, filter, clean NULL values  
 \+ Data validation and conditional formatting  
-\+ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, contentate, aggregate function  
+\+ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, CONCATENTATE, AGGREGATE Functions  
 \+ Pivot table: pivot charts, Matrix.
 
 **SQL:**  
