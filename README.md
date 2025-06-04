@@ -2,10 +2,12 @@
 <h3 align="center">Data Analyst in Vietnam</h3>
 
 
-[My CV in PDF](TITS)
 
 ## About
 My name is Vo Anh Duy. I have a technical background and hold Master of Science (M.Sc.) degree in Technical Economics from Moscows State University MGSU, with a major in Project Management. I have 5 years of experience in the field of Technical Engineering, where I conducted Data Processing & Technical Engineering.
+
+
+[My CV in PDF](TITS)
 
 This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
 
