@@ -30,11 +30,11 @@ This is a repository to showcase skills, share projects and track my progress in
 
 
 ## 📊 Portfolio Projects - [Details](https://github.com/voanhduy1710/Portfolio_projects)
-[**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/1.%20Excel%20-%20Addidas%20Sales/1.%20Excel%20-%20Addidas%20Sales%20Dashboard.png?raw=true)
+[**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/1.%20Excel%20-%20Addidas%20Sales)
 
-[**2. Uber Trips**](https://app.powerbi.com/view?r=eyJrIjoiMWU5YWNjOGMtNzY2NC00MTk3LWIxZDEtMmNhYjIxM2Q2YjA5IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D&pageName=e26fe47c30d523a8e80b)
+[**2. Uber Trips**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/2.%20Uber%20Trips)
 
-[**3. Supply Chain & Sales**](https://app.powerbi.com/view?r=eyJrIjoiMTg5YmZkZGUtMDVkOC00MDg4LTg4NmItOGMwZGM5YTRmZjZiIiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D&pageName=62a7d95ec01d5533424c)
+[**3. Supply Chain & Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/3.%20Supply%20chain%20%26%20Sales)
 
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
