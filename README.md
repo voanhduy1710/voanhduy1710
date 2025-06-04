@@ -56,8 +56,7 @@ This is a repository to showcase skills, share projects and track my progress in
 | 8 | IBM Professional Data Engineer                   | In progress       |
 
 
-## 🖥️ Specific skills
-
+## 🖥️ Skills
 **Excel:**
 + Cleaning: find & replace values, filter, clean NULL values
 + Data validation and conditional formatting
