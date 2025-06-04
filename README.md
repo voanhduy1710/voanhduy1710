@@ -106,7 +106,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## 🏫 Education
 
-\+ Moscow State University of Civil Engineering, B.Sc. Techincal Engineering, 2014-2018 — *Graduated with honors*.
+\+ Moscow State University of Civil Engineering, B.Sc. Techincal Engineering, 2014-2018 — *Graduated with honors*.  
 \+ Moscow State University of Civil Engineering, M.Sc. Technical Economics, 2018-2020 — *Graduated with honors*.
 
 ## 📞 Contact
