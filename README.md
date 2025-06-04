@@ -39,19 +39,18 @@ This is a repository to showcase skills, share projects and track my progress in
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
 ## 💼 Professional Experience
-+ Mosvodokanal - Russia (2018-2020): Planning and Analytics Department
-  
-  ➢ Collected and aggregated data on water production and consumption segmented by region, time period, and customer group.  
++ Mosvodokanal - Russia (2018-2020): Planning and Analytics Department    
+  ➢ Collected and aggregated data on water production and consumption from over 15 distribution zones, segmented by region, time period, and customer group.  
   ➢ Analyzed seasonal and geographic consumption trends to support demand forecasting and strategic planning.  
   ➢ Presented analytical reports to management with actionable insights and recommendations to optimize water distribution and reduce operational inefficiencies.  
-  ➢ Produced daily and weekly performance dashboards using Excel; designed standardized reporting procedures and streamlined data workflows, reducing manual reporting time by 40%  
-  ➢ Extracted and cleaned data from a GIS system to send out to consultants and produce a general report  
+  ➢ Extracted and cleaned geospatial data from the GIS system covering 800+ km of pipeline to support consultants and generate a comprehensive technical report.  
+  ➢ Produced daily and weekly performance dashboards using Excel; designed standardized reporting procedures and streamlined data workflows, reducing manual reporting time by 40%.
   
-+ VIWASE Joint Stock Company - Vietnam (2020-2025)
-  ➢
-  ➢
-  ➢
-  ➢
++ VIWASE Joint Stock Company - Vietnam (2020-2025)  
+  ➢  
+  ➢  
+  ➢  
+  ➢  
 
 ## 🧾 Certifications - [Details](https://github.com/voanhduy1710/Certifications)
 
