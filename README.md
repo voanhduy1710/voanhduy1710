@@ -39,7 +39,7 @@ This is a repository to showcase skills, share projects and track my progress in
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
 ## 💼 Professional Experience
-+ Mosvodokanal - Russia (2018-2020)  
+\+ Mosvodokanal - Russia (2018-2020)  
 *Operations Analyst, Planning and Analytics Department*    
   ➢ Collected and aggregated data on water production and consumption from over 15 distribution zones, segmented by region, time period, and customer group.  
   ➢ Analyzed seasonal and geographic consumption trends to support demand forecasting and strategic planning.  
@@ -47,7 +47,7 @@ This is a repository to showcase skills, share projects and track my progress in
   ➢ Extracted and cleaned geospatial data from the GIS system covering 800+ km of pipeline to support consultants and generate a comprehensive technical report.  
   ➢ Produced daily and weekly performance dashboards using Excel; designed standardized reporting procedures and streamlined data workflows, reducing manual reporting time by 40%.
   
-+ VIWASE Joint Stock Company - Vietnam (2020-2025)
+\+ VIWASE Joint Stock Company - Vietnam (2020-2025)
 *Technical Specialist, Technology Development Department*    
   ➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple project regions for 15-25 year horizons.  
   ➢ Directly designed and managed water supply technical projects, overseeing layout planning, hydraulic calculations, and documentation.  
@@ -72,37 +72,37 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## 🖥️ Skills
 **Excel:**
-+ Cleaning: find & replace values, filter, clean NULL values
-+ Data validation and conditional formatting
-+ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, contentate, aggregate function
-+ Pivot table: pivot charts, Matrix.
+\+ Cleaning: find & replace values, filter, clean NULL values
+\+ Data validation and conditional formatting
+\+ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, contentate, aggregate function
+\+ Pivot table: pivot charts, Matrix.
 
 **SQL**
-+ PostgreSQL: Faster and cleaner than MySQL, SSMS, better UI, other leading global platforms are using (Gitlab, Datacamp, Reddit, TripAdvisor, etc)
-+ Basics and Aggregating Data (COUNT, SUM, AVG, MIN, MAX, etc.)
-+ CTEs: Common table expressions 
-+ Subqueries
-+ Windows functions: Ranking, numbering, PARTITION BY (), moving average (ROWS BETWEEN..)
-+ Joining tables: Left, Right, Outer Joins
-+ Coalesce for NULL values
-+ String Manipulation: CONCAT, LOWER, UPPER, DATEDIFF, DATEADD, EXTRACT, YEAR, MONTH, ROUND, FLOOR, CEIL
-+ Data Modeling (In progress)
+\+ PostgreSQL: Faster and cleaner than MySQL, SSMS, better UI, other leading global platforms are using (Gitlab, Datacamp, Reddit, TripAdvisor, etc)
+\+ Basics and Aggregating Data (COUNT, SUM, AVG, MIN, MAX, etc.)
+\+ CTEs: Common table expressions 
+\+ Subqueries
+\+ Windows functions: Ranking, numbering, PARTITION BY (), moving average (ROWS BETWEEN..)
+\+ Joining tables: Left, Right, Outer Joins
+\+ Coalesce for NULL values
+\+ String Manipulation: CONCAT, LOWER, UPPER, DATEDIFF, DATEADD, EXTRACT, YEAR, MONTH, ROUND, FLOOR, CEIL
+\+ Data Modeling (In progress)
 
 **PowerBI:**
-+ Connect to Database
-+ Building various charts and Filters, Conditional formatting
-+ DAX: creating calculated measures, MoM, YoY,
-+ DimDate Table
-+ Slicers, Buttons, Bookmarks, Navigator
-+ Field Parameters, Group and Binning
+\+ Connect to Database
+\+ Building various charts and Filters, Conditional formatting
+\+ DAX: creating calculated measures, MoM, YoY,
+\+ DimDate Table
+\+ Slicers, Buttons, Bookmarks, Navigator
+\+ Field Parameters, Group and Binning
 
 **Python:**(In progress)
-+ Consolidate and analyze multiple large csv files
-+ Automation
-+ API and Webscraping
-+ Machine learning
-+ Advanced statistics analysis
-+ AI machine learning and avoiding AI hallucinations
+\+ Consolidate and analyze multiple large csv files
+\+ Automation
+\+ API and Webscraping
+\+ Machine learning
+\+ Advanced statistics analysis
+\+ AI machine learning and avoiding AI hallucinations
 
 ## 🏫 Education
 
