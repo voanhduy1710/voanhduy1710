@@ -39,7 +39,8 @@ This is a repository to showcase skills, share projects and track my progress in
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
 ## 💼 Professional Experience
-+ Mosvodokanal - Russia (2018-2020): Planning and Analytics Department    
++ Mosvodokanal - Russia (2018-2020)
+*Operations Analyst, Planning and Analytics Department*    
   ➢ Collected and aggregated data on water production and consumption from over 15 distribution zones, segmented by region, time period, and customer group.  
   ➢ Analyzed seasonal and geographic consumption trends to support demand forecasting and strategic planning.  
   ➢ Presented analytical reports to management with actionable insights and recommendations to optimize water distribution and reduce operational inefficiencies.  
@@ -102,7 +103,7 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## 🏫 Education
 
-+ Moscow State University of Civil Engineering, B.Sc. Engineering Technician, 2014-2018.
++ Moscow State University of Civil Engineering, B.Sc. Techincal Engineering, 2014-2018.
 
 + Moscow State University of Civil Engineering, M.Sc. Technical Economics, 2018-2020.
 
