@@ -77,7 +77,7 @@ This is a repository to showcase skills, share projects and track my progress in
 \+ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, contentate, aggregate function  
 \+ Pivot table: pivot charts, Matrix.
 
-**SQL**
+**SQL**  
 \+ PostgreSQL: Faster and cleaner than MySQL, SSMS, better UI, other leading global platforms are using (Gitlab, Datacamp, Reddit, TripAdvisor, etc.).  
 \+ Basics and Aggregating Data (COUNT, SUM, AVG, MIN, MAX, etc.).  
 \+ CTEs: Common table expressions.  
@@ -88,7 +88,7 @@ This is a repository to showcase skills, share projects and track my progress in
 \+ String Manipulation: CONCAT, LOWER, UPPER, DATEDIFF, DATEADD, EXTRACT, YEAR, MONTH, ROUND, FLOOR, CEIL.  
 \+ Data Modeling (In progress).  
 
-**PowerBI:**
+**PowerBI:**  
 \+ Connect to Database.  
 \+ Building various charts and Filters, Conditional formatting.  
 \+ DAX: creating calculated measures, MoM, YoY, other complex KPI metrics.  
