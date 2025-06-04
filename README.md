@@ -4,7 +4,7 @@
 
 
 ## About
-My name is Vo Anh Duy. I have a technical background and hold Master of Science (M.Sc.) degree in Technical Economics from Moscows State University MGSU, with a major in Project Management. I have 5 years of experience in the field of Technical Engineering, where I conducted Data Processing & Technical Engineering.
+My name is Vo Anh Duy. I have a technical background and hold Master of Science (M.Sc.) degree in Technical Economics from Moscows State University MGSU, with a major in Project Management. I have 7 years of experience in Data Analysis and Technical Engineering, having held roles such as *Operations Analyst and Technical Specialist*.
 
 
 [My CV in PDF](TITS)
