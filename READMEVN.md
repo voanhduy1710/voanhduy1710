@@ -86,23 +86,25 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 \+ Joining tables: Left, Right, Outer Joins.  
 \+ Coalesce for NULL values.  
 \+ String Manipulation: CONCAT, LOWER, UPPER, DATEDIFF, DATEADD, EXTRACT, YEAR, MONTH, ROUND, FLOOR, CEIL.  
-\+ Data Modeling (In progress).  
+\+ Data Modeling (Đang hoàn thiện).  
 
 **PowerBI:**  
-\+ Connect to Database.  
-\+ Building various charts and Filters, Conditional formatting.  
-\+ DAX: creating calculated measures, MoM, YoY, other complex KPI metrics.  
-\+ DimDate Table.  
-\+ Slicers, Buttons, Bookmarks, Navigator.  
-\+ Field Parameters, Group and Binning.  
+\+ Kết nối với cơ sở dữ liệu (Database).  
+\+ Xây dựng nhiều loại biểu đồ và bộ lọc; định dạng có điều kiện (Conditional formatting).  
+\+ DAX: Tạo các chỉ số tính toán (calculated measures), so sánh theo tháng (MoM), theo năm (YoY), và các chỉ số KPI phức tạp khác.  
+\+ Sử dụng bảng DimDate để xử lý dữ liệu thời gian.  
+\+ Sử dụng Slicers, Buttons, Bookmarks và Navigator để tăng tính tương tác.  
+\+ Ứng dụng Field Parameters, Group và Binning để tổ chức và phân loại dữ liệu.
 
 **Python:**(In progress)
-\+ Consolidate and analyze multiple large csv files.  
-\+ Automation.  
-\+ API and Webscraping.  
-\+ Machine learning.  
-\+ Advanced statistics analysis.  
-\+ AI machine learning and avoiding AI hallucinations.  
+
+\+ Tổng hợp và phân tích nhiều tệp CSV dung lượng lớn.  
+\+ Tự động hóa quy trình xử lý dữ liệu.  
+\+ Sử dụng API và Web Scraping để thu thập dữ liệu.  
+\+ Ứng dụng Machine Learning.  
+\+ Phân tích thống kê nâng cao.  
+\+ Ứng dụng AI, giảm thiểu AI hallucinations.
+
 
 ## 🗨️ Languages
 
@@ -113,8 +115,8 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 
 ## 🏫 Học vấn
 
-\+ Đại học Quốc gia Moscow (MGSU), Cử nhân Kỹ thuật, 2014–2018 — *Tốt nghiệp loại xuất sắc*.  
-\+ Đại học Quốc gia Moscow (MGSU), Thạc sĩ Kinh tế Kỹ thuật, 2018–2020 — *Tốt nghiệp loại xuất sắc*.
+\+ Đại học Quốc gia Moscow (MGSU), Cử nhân Kỹ thuật, 2018 — *Tốt nghiệp loại xuất sắc*.  
+\+ Đại học Quốc gia Moscow (MGSU), Thạc sĩ Kinh tế Kỹ thuật, 2020 — *Tốt nghiệp loại xuất sắc*.
 
 
 ## 📞 Liên lạc
