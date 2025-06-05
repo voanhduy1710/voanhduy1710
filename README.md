@@ -1,4 +1,10 @@
-<h1 align="center">Hi 👋, I'm Mr. Anh Duy</h1>
+<table width="100%">
+  <tr>
+    <td align="center"><h1>Hi 👋, I'm Mr. Anh Duy</h1></td>
+    <td align="right" width="100px">EN | VN</td>
+  </tr>
+</table>
+
 <h3 align="center">Data Analyst in Vietnam</h3>
 
 [Vietnam](https://github.com/voanhduy1710/voanhduy1710/blob/main/READMEVN.md)
