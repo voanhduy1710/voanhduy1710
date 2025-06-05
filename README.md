@@ -113,8 +113,8 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## 🏫 Education
 
-\+ Moscows State University (MGSU), B.Sc. Techincal Engineering, 2014-2018 — *Graduated with honors*.  
-\+ Moscows State University (MGSU), M.Sc. Technical Economics, 2018-2020 — *Graduated with honors*.
+\+ Moscows State University (MGSU), B.Sc. Techincal Engineering, 2018 — *Graduated with honors*.  
+\+ Moscows State University (MGSU), M.Sc. Technical Economics, 2020 — *Graduated with honors*.
 
 
 ## 📞 Contact
