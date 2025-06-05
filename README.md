@@ -1,13 +1,7 @@
-<table width="100%">
-  <tr>
-    <td align="center"><h1>Hi 👋, I'm Mr. Anh Duy</h1></td>
-    <td align="right" width="100px">EN | VN</td>
-  </tr>
-</table>
-
+<h1 align="center">Hi 👋, I'm Mr. Anh Duy</h1>
 <h3 align="center">Data Analyst in Vietnam</h3>
 
-[Vietnam](https://github.com/voanhduy1710/voanhduy1710/blob/main/READMEVN.md)
+
 
 ## About
 My name is Vo Anh Duy. I have a technical background and hold Master of Science (M.Sc.) degree in Technical Economics from Moscows State University MGSU, with a major in Project Management. I have 7 years of experience in Data Analysis and Technical Engineering, having held roles such as *Operations Analyst and Technical Specialist*.
