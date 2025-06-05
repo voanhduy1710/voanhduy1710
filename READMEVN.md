@@ -104,6 +104,13 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 \+ Advanced statistics analysis.  
 \+ AI machine learning and avoiding AI hallucinations.  
 
+## 🗨️ Languages
+
+\+ Tiếng Anh – Thành thạo
+\+ Tiếng Việt – Bản ngũ 
+\+ Tiếng Nga – Thành thạo 
+\+ Đang học: Tiếng Hàn
+
 ## 🏫 Học vấn
 
 \+ Đại học Quốc gia Moscow (MGSU), Cử nhân Kỹ thuật, 2014–2018 — *Tốt nghiệp loại xuất sắc*.  
