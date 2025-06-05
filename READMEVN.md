@@ -1,17 +1,17 @@
-<h1 align="center">Hi 👋, I'm Mr. Anh Duy</h1>
-<h3 align="center">Data Analyst in Vietnam</h3>  
+<h1 align="center">Xin chào 👋, Mình là Mr. Duy</h1>
+<h3 align="center">Data Analyst ở Vietnam</h3>  
 
 [EN](https://github.com/voanhduy1710/voanhduy1710/blob/main/README.md) | [VN](https://github.com/voanhduy1710/voanhduy1710/blob/main/READMEVN.md)
 
 ## About
-Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Thạc sĩ Khoa học (M.Sc. – tốt nghiệp loại xuất sắc) chuyên ngành Kinh tế Kỹ thuật tại Đại học Quốc gia Moscow (MGSU), với chuyên ngành là Quản lý Dự án. Tôi có 7 năm kinh nghiệm trong lĩnh vực Phân tích Dữ liệu và Thiết kế Kỹ thuật, từng đảm nhiệm các vai trò như _**Chuyên viên Phân tích Vận hành**_ và **_Chuyên gia Kỹ thuật_**.
+Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Thạc sĩ Khoa học (M.Sc. – tốt nghiệp loại xuất sắc) chuyên ngành Kinh tế Kỹ thuật tại Đại học Quốc gia Moscow (MGSU), với chuyên ngành là Quản lý Dự án. Mình có 7 năm kinh nghiệm trong lĩnh vực Phân tích Dữ liệu và Thiết kế Kỹ thuật, từng đảm nhiệm các vai trò như _**Chuyên viên Phân tích Vận hành**_ và **_Chuyên gia Kỹ thuật_**.
 
 [CV của mình định dạng PDF](TITS)
 
-This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
+Đây là kho trang nhằm thể hiện kỹ năng, chia sẻ các dự án và theo dõi quá trình phát triển của mình trong các chủ đề liên quan đến Phân tích Dữ liệu / Khoa học Dữ liệu.
 
 
-<h2 align="left">Languages and Tools:</h3>
+<h2 align="left">Ngôn ngữ và Tools:</h3>
 <p align="left">
   <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noreferrer">
     <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019.png" alt="Excel" title="Excel" width="40" height="40"/>
@@ -28,7 +28,7 @@ This is a repository to showcase skills, share projects and track my progress in
 </p>
 
 
-## 📊 Portfolio Projects - [Details](https://github.com/voanhduy1710/Portfolio_projects)
+## 📊 Dự án portfolio - [Details](https://github.com/voanhduy1710/Portfolio_projects)
 [**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/1.%20Excel%20-%20Addidas%20Sales)
 
 [**2. Uber Trips**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/2.%20Uber%20Trips)
@@ -38,38 +38,39 @@ This is a repository to showcase skills, share projects and track my progress in
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
 ## 💼 Professional Experience
-\+ Mosvodokanal - Russia (2018-2020)  
-*Operations Analyst, Planning and Analytics Department*    
-  ➢ Collected and aggregated data on water production and consumption from over 15 distribution zones, segmented by region, time period, and customer group.  
-  ➢ Analyzed seasonal and geographic consumption trends to support demand forecasting and strategic planning.  
-  ➢ Presented analytical reports to management with actionable insights and recommendations to optimize water distribution and reduce operational inefficiencies.  
-  ➢ Extracted and cleaned geospatial data from the GIS system covering 800+ km of pipeline to support consultants and generate a comprehensive technical report.  
-  ➢ Produced daily and weekly performance dashboards using Excel; designed standardized reporting procedures and streamlined data workflows, reducing manual reporting time by 40%.
-  
-\+ VIWASE Joint Stock Company - Vietnam (2020-2025)  
-*Technical Specialist, Technology Development Department*    
-  ➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple project regions for 15-25 year horizons.  
-  ➢ Directly designed and managed water supply technical projects, overseeing layout planning, hydraulic calculations, and documentation.  
-  ➢ Developed preliminary bill of quantities (BOQ) and cost estimates based on system design and material specifications.  
-  ➢ Proposed appropriate technologies and technical solutions tailored to project conditions, helping project owners make informed, cost-effective decisions.  
-  ➢ Prepared 20+ technical reports and planning documents in compliance with regulatory and client requirements.  
-  ➢ Created and implemented 10+ complex AutoLISP scripts to automate repetitive CAD tasks, significantly improving drafting speed and office-wide productivity.  
+\+ Công ty Mosvodokanal – Nga (2018–2020)  
+*Chuyên viên Phân tích Vận hành, Phòng Kế hoạch và Phân tích*    
+  ➢ Thu thập và tổng hợp dữ liệu về sản xuất và tiêu thụ nước từ hơn 15 khu vực phân phối, phân loại theo khu vực địa lý, thời gian và nhóm khách hàng.  
+  ➢ Phân tích xu hướng tiêu thụ theo mùa và theo vùng để hỗ trợ dự báo nhu cầu và lập kế hoạch chiến lược.  
+  ➢ Trình bày các báo cáo phân tích cho ban lãnh đạo kèm theo các khuyến nghị và giải pháp nhằm tối ưu hóa phân phối nước và giảm thiểu lãng phí vận hành.  
+  ➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống để hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng báo cáo kỹ thuật tổng hợp.  
+  ➢ Thiết lập các Dashboard theo dõi hiệu suất hàng ngày và hàng tuần bằng Excel; xây dựng quy trình lập báo cáo và tối ưu hóa quá trình thực hiện công việc, reducing report producing time by 40%.  
 
-## 🧾 Certifications - [Details](https://github.com/voanhduy1710/Certifications)
+\+ Công ty Cổ phần Cấp thoát nước và Môi trường Việt Nam (VIWASE) – Việt Nam (2020–2025)  
+*Chuyên gia Kỹ thuật, Phòng Phát triển Công nghệ*    
+  ➢ Xử lý, kiểm tra và đối chiếu các tập dữ liệu kỹ thuật để đảm bảo độ chính xác; dự báo nhu cầu dùng nước cho các vùng trong phạm vi dự án trong tầm nhìn 15–25 năm.  
+  ➢ Trực tiếp thiết kế và quản lý các dự án cấp nước, phụ trách thiết kế tổng mặt bằng, tính toán thủy lực và lập báo cáo kỹ thuật.  
+  ➢ Lập khối lượng sơ bộ và chi tiết (theo từng giai đoạn) và dự toán chi phí dựa theo Thiết kế và thông số kỹ thuật.  
+  ➢ Đề xuất các công nghệ và giải pháp kỹ thuật phù hợp với điều kiện dự án, hỗ trợ chủ đầu tư/khách hàng đưa ra quyết định hiệu quả và tiết kiệm chi phí.  
+  ➢ Tham gia lập hơn 20 báo cáo kỹ thuật và tài liệu quy hoạch theo đúng yêu cầu của cơ quan quản lý và khách hàng.  
+  ➢ Tạo và triển khai hơn 10 AutoLISP Scripts để tự động hóa các công tác thủ công trong CAD, giúp tăng đáng kể tốc độ thiết kế và năng suất làm việc cho toàn bộ văn phòng.  
 
-| № | Certificate                                       | Status        |
+
+## 🧾 Chứng chỉ - [Chi tiết](https://github.com/voanhduy1710/Certifications)
+
+| № | Chứng chỉ                                       | Tình trạng        |
 |---|--------------------------------------------------|--------------------------|
-| 1 | [Google Data Analytics](https://coursera.org/share/3771af72e4ca6be3cd3a10aedbc024ac)                            | Completed       |
-| 2 | [Google Advanced Data Analytics](https://www.coursera.org/account/accomplishments/professional-cert/3B7JBC6SXM0R)                   | Completed        |
-| 3 | [IBM Professional Data Analyst](https://coursera.org/verify/professional-cert/WO42JQXIXNWP)                    | Completed       |
-| 4 | [Associate Data Analyst in SQL](https://www.datacamp.com/completed/statement-of-accomplishment/track/ba33fb966f3a47b4908cbcddd706216242b73a16)                    | Completed        |
-| 5 | [Microsoft Power BI Data Analyst](https://coursera.org/verify/professional-cert/UYM8N7BTOF65)                  | Completed   |
-| 6 | [Data Analyst Associate Certificate](https://www.datacamp.com/certificate/DAA0013101408680)               | Completed      |
-| 7 | Data Analyst In Python                           | In progress       |
-| 8 | IBM Professional Data Engineer                   | In progress       |
+| 1 | [Google Data Analytics](https://coursera.org/share/3771af72e4ca6be3cd3a10aedbc024ac)                            | Hoàn thành       |
+| 2 | [Google Advanced Data Analytics](https://www.coursera.org/account/accomplishments/professional-cert/3B7JBC6SXM0R)                   | Hoàn thành         |
+| 3 | [IBM Professional Data Analyst](https://coursera.org/verify/professional-cert/WO42JQXIXNWP)                    | Hoàn thành        |
+| 4 | [Associate Data Analyst in SQL](https://www.datacamp.com/completed/statement-of-accomplishment/track/ba33fb966f3a47b4908cbcddd706216242b73a16)                    | Hoàn thành        |
+| 5 | [Microsoft Power BI Data Analyst](https://coursera.org/verify/professional-cert/UYM8N7BTOF65)                  | Hoàn thành    |
+| 6 | [Data Analyst Associate Certificate](https://www.datacamp.com/certificate/DAA0013101408680)               | Hoàn thành       |
+| 7 | Data Analyst In Python                           | Đang hoàn thiện       |
+| 8 | IBM Professional Data Engineer                   | Đang hoàn thiện       |
 
 
-## 🖥️ Skills
+## 🖥️ Kỹ năng
 **Excel:**  
 \+ Cleaning: find & replace values, filter, clean NULL values  
 \+ Data validation and conditional formatting  
@@ -103,12 +104,13 @@ This is a repository to showcase skills, share projects and track my progress in
 \+ Advanced statistics analysis.  
 \+ AI machine learning and avoiding AI hallucinations.  
 
-## 🏫 Education
+## 🏫 Học vấn
 
-\+ Moscow State University of Civil Engineering, B.Sc. Techincal Engineering, 2014-2018 — *Graduated with honors*.  
-\+ Moscow State University of Civil Engineering, M.Sc. Technical Economics, 2018-2020 — *Graduated with honors*.
+\+ Đại học Quốc gia Moscow (MGSU), Cử nhân Kỹ thuật, 2014–2018 — *Tốt nghiệp loại xuất sắc*.  
+\+ Đại học Quốc gia Moscow (MGSU), Thạc sĩ Kinh tế Kỹ thuật, 2018–2020 — *Tốt nghiệp loại xuất sắc*.
 
-## 📞 Contact
+
+## 📞 Liên lạc
 
 - **Phone number:** +84 978 987 889
 - **Email:** voanhduy1710@gmail.com
