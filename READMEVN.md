@@ -106,9 +106,9 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 
 ## 🗨️ Languages
 
-\+ Tiếng Anh – Thành thạo
-\+ Tiếng Việt – Bản ngũ 
-\+ Tiếng Nga – Thành thạo 
+\+ Tiếng Anh – Thành thạo  
+\+ Tiếng Việt – Bản ngũ  
+\+ Tiếng Nga – Thành thạo  
 \+ Đang học: Tiếng Hàn
 
 ## 🏫 Học vấn
