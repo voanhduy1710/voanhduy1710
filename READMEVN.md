@@ -4,7 +4,7 @@
 [EN](https://github.com/voanhduy1710/voanhduy1710/blob/main/README.md) | [VN](https://github.com/voanhduy1710/voanhduy1710/blob/main/READMEVN.md)
 
 ## Giới thiệu
-Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Thạc sĩ Khoa học (M.Sc. – tốt nghiệp loại xuất sắc) chuyên ngành Kinh tế Kỹ thuật tại Đại học Quốc gia Moscow (MGSU), với chuyên ngành là Quản lý Dự án. Mình có 7 năm kinh nghiệm trong lĩnh vực Phân tích Dữ liệu và Thiết kế Kỹ thuật, từng đảm nhiệm các vai trò như _**Chuyên viên Phân tích Vận hành**_ và **_Chuyên gia Kỹ thuật_**.
+Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Thạc sĩ Khoa học (M.Sc. – _Tốt nghiệp loại xuất sắc_) chuyên ngành Kinh tế Kỹ thuật tại Đại học Quốc gia Moscow (MGSU), với chuyên ngành là Quản lý Dự án. Mình có 7 năm kinh nghiệm trong lĩnh vực Phân tích Dữ liệu và Thiết kế Kỹ thuật, từng đảm nhiệm các vai trò như _**Chuyên viên Phân tích Vận hành**_ và **_Chuyên gia Kỹ thuật_**.
 
 [CV của mình định dạng PDF](TITS)
 
