@@ -50,7 +50,7 @@ This is a repository to showcase skills, share projects and track my progress in
 \+ VIWASE Joint Stock Company - Vietnam (2020-2025)  
 *Technical Specialist, Technology Development Department*    
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple project regions for 15-25 year horizons.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Directly designed and managed water supply technical projects, overseeing layout planning, hydraulic calculations, and documentation.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Directly designed and managed water supply technical projects, overseeing General layout design, hydraulic calculations, and documentation.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Developed preliminary bill of quantities (BOQ) and cost estimates based on system design and material specifications.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Proposed appropriate technologies and technical solutions tailored to project conditions, helping project owners make informed, cost-effective decisions.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Prepared 20+ technical reports and planning documents in compliance with regulatory and client requirements.  
@@ -108,6 +108,13 @@ This is a repository to showcase skills, share projects and track my progress in
 
 \+ Moscow State University of Civil Engineering, B.Sc. Techincal Engineering, 2014-2018 — *Graduated with honors*.  
 \+ Moscow State University of Civil Engineering, M.Sc. Technical Economics, 2018-2020 — *Graduated with honors*.
+
+## 🗨️ Languages
+
+\+ English - Professional working proficiency
+\+ Vietnamese - Native
+\+ Russian - Professional working proficiency
+\+ In progress: Korean
 
 ## 📞 Contact
 
