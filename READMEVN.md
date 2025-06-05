@@ -28,7 +28,7 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 </p>
 
 
-## 📊 Dự án portfolio - [Details](https://github.com/voanhduy1710/Portfolio_projects)
+## 📊 Dự án portfolio - [Chi tiết](https://github.com/voanhduy1710/Portfolio_projects)
 [**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/1.%20Excel%20-%20Addidas%20Sales)
 
 [**2. Uber Trips**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/2.%20Uber%20Trips)
@@ -37,23 +37,23 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 
 [**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
 
-## 💼 Professional Experience
+## 💼 Kinh nghiệm làm việc
 \+ Công ty Mosvodokanal – Nga (2018–2020)  
 *Chuyên viên Phân tích Vận hành, Phòng Kế hoạch và Phân tích*    
-  ➢ Thu thập và tổng hợp dữ liệu về sản xuất và tiêu thụ nước từ hơn 15 khu vực phân phối, phân loại theo khu vực địa lý, thời gian và nhóm khách hàng.  
-  ➢ Phân tích xu hướng tiêu thụ theo mùa và theo vùng để hỗ trợ dự báo nhu cầu và lập kế hoạch chiến lược.  
-  ➢ Trình bày các báo cáo phân tích cho ban lãnh đạo kèm theo các khuyến nghị và giải pháp nhằm tối ưu hóa phân phối nước và giảm thiểu lãng phí vận hành.  
-  ➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống để hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng báo cáo kỹ thuật tổng hợp.  
-  ➢ Thiết lập các Dashboard theo dõi hiệu suất hàng ngày và hàng tuần bằng Excel; xây dựng quy trình lập báo cáo và tối ưu hóa quá trình thực hiện công việc, reducing report producing time by 40%.  
+  &nbsp;&nbsp;&nbsp;&nbsp;➢ Thu thập và tổng hợp dữ liệu về sản xuất và tiêu thụ nước từ hơn 15 khu vực phân phối, phân loại theo khu vực địa lý, thời gian và nhóm khách hàng.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Phân tích xu hướng tiêu thụ theo mùa và theo vùng để hỗ trợ dự báo nhu cầu và lập kế hoạch chiến lược.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trình bày các báo cáo phân tích cho ban lãnh đạo kèm theo các khuyến nghị và giải pháp nhằm tối ưu hóa phân phối nước và giảm thiểu lãng phí vận hành.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống để hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng báo cáo kỹ thuật tổng hợp.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Thiết lập các Dashboard theo dõi hiệu suất hàng ngày và hàng tuần bằng Excel; xây dựng quy trình lập báo cáo và tối ưu hóa quá trình thực hiện công việc, reducing report producing time by 40%.  
 
 \+ Công ty Cổ phần Cấp thoát nước và Môi trường Việt Nam (VIWASE) – Việt Nam (2020–2025)  
 *Chuyên gia Kỹ thuật, Phòng Phát triển Công nghệ*    
-  ➢ Xử lý, kiểm tra và đối chiếu các tập dữ liệu kỹ thuật để đảm bảo độ chính xác; dự báo nhu cầu dùng nước cho các vùng trong phạm vi dự án trong tầm nhìn 15–25 năm.  
-  ➢ Trực tiếp thiết kế và quản lý các dự án cấp nước, phụ trách thiết kế tổng mặt bằng, tính toán thủy lực và lập báo cáo kỹ thuật.  
-  ➢ Lập khối lượng sơ bộ và chi tiết (theo từng giai đoạn) và dự toán chi phí dựa theo Thiết kế và thông số kỹ thuật.  
-  ➢ Đề xuất các công nghệ và giải pháp kỹ thuật phù hợp với điều kiện dự án, hỗ trợ chủ đầu tư/khách hàng đưa ra quyết định hiệu quả và tiết kiệm chi phí.  
-  ➢ Tham gia lập hơn 20 báo cáo kỹ thuật và tài liệu quy hoạch theo đúng yêu cầu của cơ quan quản lý và khách hàng.  
-  ➢ Tạo và triển khai hơn 10 AutoLISP Scripts để tự động hóa các công tác thủ công trong CAD, giúp tăng đáng kể tốc độ thiết kế và năng suất làm việc cho toàn bộ văn phòng.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Xử lý, kiểm tra và đối chiếu các tập dữ liệu kỹ thuật để đảm bảo độ chính xác; dự báo nhu cầu dùng nước cho các vùng trong phạm vi dự án trong tầm nhìn 15–25 năm.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trực tiếp thiết kế và quản lý các dự án cấp nước, phụ trách thiết kế tổng mặt bằng, tính toán thủy lực và lập báo cáo kỹ thuật.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Lập khối lượng sơ bộ và chi tiết (theo từng giai đoạn) và dự toán chi phí dựa theo Thiết kế và thông số kỹ thuật.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Đề xuất các công nghệ và giải pháp kỹ thuật phù hợp với điều kiện dự án, hỗ trợ chủ đầu tư/khách hàng đưa ra quyết định hiệu quả và tiết kiệm chi phí.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Tham gia lập hơn 20 báo cáo kỹ thuật và tài liệu quy hoạch theo đúng yêu cầu của cơ quan quản lý và khách hàng.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Tạo và triển khai hơn 10 AutoLISP Scripts để tự động hóa các công tác thủ công trong CAD, giúp tăng đáng kể tốc độ thiết kế và năng suất làm việc cho toàn bộ văn phòng.  
 
 
 ## 🧾 Chứng chỉ - [Chi tiết](https://github.com/voanhduy1710/Certifications)
