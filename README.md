@@ -106,10 +106,10 @@ This is a repository to showcase skills, share projects and track my progress in
 
 ## 🗨️ Languages
 
-\+ English - Professional working proficiency
-\+ Vietnamese - Native
-\+ Russian - Professional working proficiency
-\+ In progress: Korean
+\+ English - Professional working proficiency  
+\+ Vietnamese - Native  
+\+ Russian - Professional working proficiency  
+\+ In progress: Korean  
 
 ## 🏫 Education
 
