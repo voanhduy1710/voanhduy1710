@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Mr. Anh Duy</h1>
-<h3 align="center">Data Analyst in Vietnam</h3>
+<h3 align="center">Data Analyst in Vietnam</h3> EN | VN
 
 
 
