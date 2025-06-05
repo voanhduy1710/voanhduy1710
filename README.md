@@ -49,12 +49,12 @@ This is a repository to showcase skills, share projects and track my progress in
   
 \+ VIWASE Joint Stock Company - Vietnam (2020-2025)  
 *Technical Specialist, Technology Development Department*    
-  ➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple project regions for 15-25 year horizons.  
-  ➢ Directly designed and managed water supply technical projects, overseeing layout planning, hydraulic calculations, and documentation.  
-  ➢ Developed preliminary bill of quantities (BOQ) and cost estimates based on system design and material specifications.  
-  ➢ Proposed appropriate technologies and technical solutions tailored to project conditions, helping project owners make informed, cost-effective decisions.  
-  ➢ Prepared 20+ technical reports and planning documents in compliance with regulatory and client requirements.  
-  ➢ Created and implemented 10+ complex AutoLISP scripts to automate repetitive CAD tasks, significantly improving drafting speed and office-wide productivity.  
+    ➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple project regions for 15-25 year horizons.  
+    ➢ Directly designed and managed water supply technical projects, overseeing layout planning, hydraulic calculations, and documentation.  
+    ➢ Developed preliminary bill of quantities (BOQ) and cost estimates based on system design and material specifications.  
+    ➢ Proposed appropriate technologies and technical solutions tailored to project conditions, helping project owners make informed, cost-effective decisions.  
+    ➢ Prepared 20+ technical reports and planning documents in compliance with regulatory and client requirements.  
+    ➢ Created and implemented 10+ complex AutoLISP scripts to automate repetitive CAD tasks, significantly improving drafting speed and office-wide productivity.  
 
 ## 🧾 Certifications - [Details](https://github.com/voanhduy1710/Certifications)
 
