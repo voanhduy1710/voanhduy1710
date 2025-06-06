@@ -46,7 +46,7 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng và lập báo cáo kỹ thuật.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Thiết lập Dashboard theo dõi KPI hàng tuần và hàng tháng bằng Excel; xây dựng quy trình chuẩn hóa báo cáo, giúp tinh giản và rút ngắn 40% thời gian thực hiện lập báo cáo.
 
-\+ Công ty Cổ phần Cấp thoát nước và Môi trường Việt Nam (VIWASE) – Việt Nam (2020–2025)  
+\+ Công ty Cổ phần VIWASE – Việt Nam (2020–2025)  
 *Chuyên gia Kỹ thuật, Phòng Phát triển Công nghệ*    
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Xử lý, kiểm tra và đối chiếu các tập dữ liệu kỹ thuật để đảm bảo độ chính xác; dự báo nhu cầu dùng nước cho các vùng trong phạm vi dự án trong tầm nhìn 15–25 năm.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Trực tiếp thiết kế và quản lý các dự án cấp nước, phụ trách thiết kế tổng mặt bằng, tính toán thủy lực và lập báo cáo kỹ thuật.  
