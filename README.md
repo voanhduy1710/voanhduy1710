@@ -101,7 +101,7 @@ This is a repository to showcase skills, share projects and track my progress in
 \+ Automation.  
 \+ API and Webscraping.  
 \+ Machine learning.  
-\+ Advanced statistics analysis.  
+\+ PySpark
 \+ AI machine learning and avoiding AI hallucinations.  
 
 ## 🗨️ Languages
