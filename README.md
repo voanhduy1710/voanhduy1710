@@ -41,9 +41,9 @@ This is a repository to showcase skills, share projects and track my progress in
 ## 💼 Professional Experience
 \+ Mosvodokanal - Russia (2018-2020)  
 *Operations Analyst, Planning and Analytics Department*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Collected and aggregated data on water production and consumption from over 15 distribution zones, segmented by region, time period, and customer group.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Analyzed seasonal and geographic consumption trends to support demand forecasting and strategic planning.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Presented analytical reports to management with actionable insights and recommendations to optimize water distribution and reduce operational inefficiencies.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Collected and aggregated water production and consumption data from 15+ distribution zones using MySQL, segmented by region, time, and customer group.   
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Extracted data to CSV files using SQL SELECT queries for analysis of seasonal and geographic trends, supporting demand forecasting.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Presented reports to management with insights from MySQL and CSV data, recommending ways to optimize distribution and reduce inefficiencies.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Extracted and cleaned geospatial data from the GIS system covering 800+ km of pipeline to support consultants and generate a comprehensive technical report.  
 &nbsp;&nbsp;&nbsp;&nbsp;➢ Produced daily and weekly performance dashboards using Excel; designed standardized reporting procedures and streamlined data workflows, reducing report producing time by 40%.
   
