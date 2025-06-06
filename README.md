@@ -41,7 +41,6 @@ This is a repository to showcase skills, share projects and track my progress in
 ## 💼 Professional Experience
 \+ Mosvodokanal - Russia (2018-2020)  
 *Operations Analyst, Planning and Analytics Department*    
-
  &nbsp;&nbsp;&nbsp;&nbsp;➢ Collected and aggregated water production and consumption data from 15+ zones using MySQL, segmented by region, time, and customer group.  
  &nbsp;&nbsp;&nbsp;&nbsp;➢ Extracted data to CSV files using MySQL to analyze seasonal and geographic trends for demand forecasting.  
  &nbsp;&nbsp;&nbsp;&nbsp;➢ Presented actionable reports using MySQL and Excel data, recommending ways to optimize distribution and reduce inefficiencies.  
@@ -50,7 +49,6 @@ This is a repository to showcase skills, share projects and track my progress in
   
 \+ VIWASE Joint Stock Company - Vietnam (2020-2025)  
 *Technical Specialist, Technology Development Department*    
-
  &nbsp;&nbsp;&nbsp;&nbsp;➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple regions over 15–25 year horizons.  
  &nbsp;&nbsp;&nbsp;&nbsp;➢ Designed and managed water supply technical  projects, overseeing layout design, hydraulic calculations, and technical documentation.  
  &nbsp;&nbsp;&nbsp;&nbsp;➢ Developed Bill of Quantities (BOQs) and cost estimates based on system design and material specifications.  
