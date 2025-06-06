@@ -106,7 +106,7 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 \+ Ứng dụng AI, giảm thiểu AI hallucinations.
 
 
-## 🗨️ Languages
+## 🗨️ Ngôn ngữ
 
 \+ Tiếng Anh – Thành thạo  
 \+ Tiếng Việt – Bản ngũ  
