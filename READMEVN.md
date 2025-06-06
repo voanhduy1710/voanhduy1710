@@ -40,11 +40,11 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 ## 💼 Kinh nghiệm làm việc
 \+ Công ty Mosvodokanal – Nga (2018–2020)  
 *Chuyên viên Phân tích Vận hành, Phòng Kế hoạch và Phân tích*    
-  &nbsp;&nbsp;&nbsp;&nbsp;➢ Thu thập và tổng hợp dữ liệu về sản xuất và tiêu thụ nước từ hơn 15 khu vực phân phối, phân loại theo khu vực địa lý, thời gian và nhóm khách hàng.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Phân tích xu hướng tiêu thụ theo mùa và theo vùng để hỗ trợ dự báo nhu cầu và lập kế hoạch chiến lược.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Trình bày các báo cáo phân tích cho ban lãnh đạo kèm theo các khuyến nghị và giải pháp nhằm tối ưu hóa phân phối nước và giảm thiểu lãng phí vận hành.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống để hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng báo cáo kỹ thuật tổng hợp.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Thiết lập các Dashboard theo dõi hiệu suất hàng ngày và hàng tuần bằng Excel; xây dựng quy trình lập báo cáo và tối ưu hóa quá trình thực hiện công việc, reducing report producing time by 40%.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Thu thập và tổng hợp dữ liệu sản xuất và tiêu thụ nước từ hơn 15 khu vực phân phối bằng MySQL, phân loại theo khu vực địa lý, thời gian và nhóm khách hàng.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất dữ liệu sang CSV từ MySQL để phân tích xu hướng tiêu thụ theo mùa và khu vực, phục vụ công tác dự báo nhu cầu.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trình bày các báo cáo phân tích cho ban lãnh đạo dựa trên dữ liệu từ MySQL và Excel kèm theo các đề xuất giải pháp nhằm tối ưu hóa phân phối và giảm thiểu lãng phí vận hành  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng và lập báo cáo kỹ thuật.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Thiết lập Dashboard theo dõi KPI hàng tuần và hàng tháng bằng Excel; xây dựng quy trình chuẩn hóa báo cáo, giúp tinh giản và rút ngắn 40% thời gian thực hiện lập báo cáo.
 
 \+ Công ty Cổ phần Cấp thoát nước và Môi trường Việt Nam (VIWASE) – Việt Nam (2020–2025)  
 *Chuyên gia Kỹ thuật, Phòng Phát triển Công nghệ*    
