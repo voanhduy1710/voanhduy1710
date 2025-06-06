@@ -41,20 +41,22 @@ This is a repository to showcase skills, share projects and track my progress in
 ## 💼 Professional Experience
 \+ Mosvodokanal - Russia (2018-2020)  
 *Operations Analyst, Planning and Analytics Department*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Collected and aggregated water production and consumption data from 15+ distribution zones using MySQL, segmented by region, time, and customer group.   
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Extracted data to CSV files using MySQL for analysis of seasonal and geographic trends, supporting demand forecasting.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Presented reports to management with insights from MySQL and CSV data, recommending ways to optimize distribution and reduce inefficiencies.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Extracted and cleaned geospatial data from the GIS system covering 800+ km of pipeline to support consultants and generate a comprehensive technical report.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Produced daily and weekly performance dashboards using Excel; designed standardized reporting procedures and streamlined data workflows, reducing report producing time by 40%.
+
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Collected and aggregated water production and consumption data from 15+ zones using MySQL, segmented by region, time, and customer group.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Extracted data to CSV files using MySQL to analyze seasonal and geographic trends for demand forecasting.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Presented actionable reports using MySQL and Excel data, recommending ways to optimize distribution and reduce inefficiencies.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Cleaned and processed geospatial data from GIS covering 800+ km of pipeline to support consultants and technical reporting.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Built weekly/monthly KPI dashboards in Excel; designed standardized reporting procedures streamlining and cutting report preparation time by 40%.
   
 \+ VIWASE Joint Stock Company - Vietnam (2020-2025)  
 *Technical Specialist, Technology Development Department*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple project regions for 15-25 year horizons.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Directly designed and managed water supply technical projects, overseeing General layout design, hydraulic calculations, and documentation.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Developed preliminary bill of quantities (BOQ) and cost estimates based on system design and material specifications.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Proposed appropriate technologies and technical solutions tailored to project conditions, helping project owners make informed, cost-effective decisions.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Prepared 20+ technical reports and planning documents in compliance with regulatory and client requirements.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Created and implemented 10+ complex AutoLISP scripts to automate repetitive CAD tasks, significantly improving drafting speed and office-wide productivity.  
+
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Processed, verified, and compared technical datasets to ensure accuracy; projected water demand for multiple regions over 15–25 year horizons.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Designed and managed water supply technical  projects, overseeing layout design, hydraulic calculations, and technical documentation.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Developed Bill of Quantities (BOQs) and cost estimates based on system design and material specifications.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Proposed tailored technologies and technical solutions, supporting project owners in cost-effective decision-making.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Prepared 20+ technical reports compliant with client and regulatory standards.  
+ &nbsp;&nbsp;&nbsp;&nbsp;➢ Created and implemented 10+ AutoLISP scripts to automate CAD tasks, boosting design efficiency and team productivity.  
 
 ## 🧾 Certifications - [Details](https://github.com/voanhduy1710/Certifications)
 
