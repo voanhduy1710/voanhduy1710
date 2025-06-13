@@ -7,7 +7,7 @@
 My name is Vo Anh Duy. I have a technical background and hold Master of Science (M.Sc. − _Graduated with honors_) degree in Technical Economics from Moscows State University MGSU, with a major in Project Management. I have 7 years of experience in Data Analysis and Technical Engineering, having held roles such as **_Operations Analyst_** and **_Technical Specialist_**.
 
 
-[My CV in PDF](https://github.com/voanhduy1710/voanhduy1710/blob/main/CV_EN.pdf?raw=true)
+[My CV in PDF](https://github.com/voanhduy1710/voanhduy1710/blob/main/CV_EN.pdf)
 
 This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
 
