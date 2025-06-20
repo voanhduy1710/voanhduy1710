@@ -42,9 +42,10 @@ This is a repository to showcase skills, share projects and track my progress in
     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg" alt="Google Apps Script" title="Google Apps Script" width="40" height="40"/>
   </a>
   <a href="https://cloud.google.com/bigquery" target="_blank" rel="noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Google_BigQuery_Logo.svg" alt="Google BigQuery" title="Google BigQuery" width="40" height="40"/>
+    <img src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/external-google-bigquery-a-fully-managed-and-serverless-data-warehouse-logo-color-tal-revivo.png" alt="Google BigQuery" title="Google BigQuery" width="40" height="40"/>
   </a>
 </p>
+
 
 
 
