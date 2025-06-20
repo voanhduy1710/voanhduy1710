@@ -43,7 +43,6 @@ This is a repository to showcase skills, share projects and track my progress in
   </a>
 <a href="https://cloud.google.com/bigquery" target="_blank" rel="noreferrer">
   <img src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg" alt="Google BigQuery" title="Google BigQuery" width="40" height="40"/>
-</a>
   </a>
 </p>
 
