@@ -38,7 +38,14 @@ This is a repository to showcase skills, share projects and track my progress in
   <a href="https://azure.microsoft.com/" target="_blank" rel="noreferrer">
     <img src="https://img.icons8.com/color/48/000000/azure-1.png" alt="Microsoft Azure" title="Microsoft Azure" width="40" height="40"/>
   </a>
+  <a href="https://developers.google.com/apps-script" target="_blank" rel="noreferrer">
+    <img src="https://img.icons8.com/color/48/000000/google-apps-script.png" alt="Google Apps Script" title="Google Apps Script" width="40" height="40"/>
+  </a>
+  <a href="https://cloud.google.com/bigquery" target="_blank" rel="noreferrer">
+    <img src="https://img.icons8.com/color/48/000000/bigquery.png" alt="Google BigQuery" title="Google BigQuery" width="40" height="40"/>
+  </a>
 </p>
+
 
 
 ## 📊 Portfolio Projects - [Details](https://github.com/voanhduy1710/Portfolio_projects)
