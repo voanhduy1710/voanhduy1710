@@ -39,21 +39,20 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 
 ## 💼 Kinh nghiệm làm việc
 \+ Công ty Mosvodokanal – Nga (2018–2020)  
-*Chuyên viên Phân tích Vận hành, Phòng Kế hoạch và Phân tích*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Thu thập và tổng hợp dữ liệu sản xuất và tiêu thụ nước từ hơn 15 khu vực phân phối bằng MySQL, phân loại theo khu vực địa lý, thời gian và nhóm khách hàng.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất dữ liệu sang CSV từ MySQL để phân tích xu hướng tiêu thụ theo mùa và khu vực, phục vụ công tác dự báo nhu cầu.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Trình bày các báo cáo phân tích cho ban lãnh đạo dựa trên dữ liệu từ MySQL và Excel kèm theo các đề xuất giải pháp nhằm tối ưu hóa phân phối và giảm thiểu lãng phí vận hành  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Trích xuất và xử lý dữ liệu không gian từ hệ thống GIS với phạm vi hơn 800 km đường ống hỗ trợ đội ngũ Tư vấn Thiết kế và xây dựng và lập báo cáo kỹ thuật.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Thiết lập Dashboard theo dõi KPI hàng tuần và hàng tháng bằng Excel; xây dựng quy trình chuẩn hóa báo cáo, giúp tinh giản và rút ngắn 40% thời gian thực hiện lập báo cáo.
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Tổng hợp hơn **500k records** từ trên 15+ khu vực DMZs qua **SQL** tối ưu, xuất dữ liệu ra CSV, rút ngắn **10%** thời gian xử lý.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Trình bày báo cáo phân tích trên cơ sở dữ liệu **SQL** và **Excel**, đồng thời đề xuất phương án tối ưu hóa phân phối.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Xây dựng quy trình xử lý dữ liệu GIS nhằm giảm tỷ lệ sai sót và những điểm bất cấp **từ 30% xuống còn 10%**.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Lập báo cáo **Dashboard Key Metrics** tuần/tháng trên Excel; chuẩn hóa quy trình, rút ngắn ****40% thời gian lập báo cáo.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Cung cấp số liệu và chủ động đưa ra các đề xuất trong quá trình làm việc với các phòng ban và nâng cao năng suất **25%**.
 
 \+ Công ty Cổ phần VIWASE – Việt Nam (2020–2025)  
-*Chuyên gia Kỹ thuật, Phòng Phát triển Công nghệ*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Xử lý, kiểm tra và đối chiếu các tập dữ liệu kỹ thuật để đảm bảo độ chính xác; dự báo nhu cầu dùng nước cho các vùng trong phạm vi dự án trong tầm nhìn 15–25 năm.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Trực tiếp thiết kế và quản lý các dự án cấp nước, phụ trách thiết kế tổng mặt bằng, tính toán thủy lực và lập báo cáo kỹ thuật.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Lập khối lượng sơ bộ và chi tiết (theo từng giai đoạn) và dự toán chi phí dựa theo Thiết kế và thông số kỹ thuật.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Đề xuất các công nghệ và giải pháp kỹ thuật phù hợp với điều kiện dự án, hỗ trợ chủ đầu tư/khách hàng đưa ra quyết định hiệu quả và tiết kiệm chi phí.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Tham gia lập hơn 20 báo cáo kỹ thuật và tài liệu quy hoạch theo đúng yêu cầu của cơ quan quản lý và khách hàng.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Tạo và triển khai hơn 10 AutoLISP Scripts để tự động hóa các công tác thủ công trong CAD, giúp tăng đáng kể tốc độ thiết kế và năng suất làm việc cho toàn bộ văn phòng.  
+*Chuyên gia Kỹ thuật* **|** *Phòng Phát triển Công nghệ*    
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Xử lý, kiểm tra và đối chiếu hơn **100k** records để đảm bảo độ chính xác và toàn vẹn dữ liệu.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Lập các script VBA, Macro, AutoHotkey và Google Script, nâng tỷ lệ chính xác của dữ liệu **từ 80% lên 95%**.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Lập hơn **20 báo cáo kỹ thuật**, thiết kế và **quản lý dự án** tuân thủ đúng tiêu chuẩn khách hàng và quy định pháp luật.  
+&nbsp;&nbsp;&nbsp;&nbsp;➢ Xây dựng **hơn 10 AutoLISP script** tự động hóa công tác thiết kế, **nâng cao hiệu suất** và năng suất của đội ngũ **thêm 35%**.
+
+
 
 
 ## 🧾 Chứng chỉ - [Chi tiết](https://github.com/voanhduy1710/Certifications)
