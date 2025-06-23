@@ -14,19 +14,36 @@ Mình tên là Võ Anh Duy. Mình có nền tảng kỹ thuật với bằng Th�
 <h2 align="left">Ngôn ngữ và Tools:</h3>
 <p align="left">
   <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noreferrer">
-    <img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019.png" alt="Excel" title="Excel" width="40" height="40"/>
+    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel" title="Excel" width="40" height="40"/>
+  </a>
+  <a href="https://www.google.com/sheets/about/" target="_blank" rel="noreferrer">
+    <img src="https://img.icons8.com/color/48/google-sheets.png" alt="Google Sheets" title="Google Sheets" width="40" height="40"/>
   </a>
   <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL" title="PostgreSQL" width="40" height="40"/>
   </a>
+  <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" title="MySQL" width="40" height="40"/>
+  </a>
   <a href="https://powerbi.microsoft.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.icons8.com/color/48/000000/power-bi.png" alt="Power BI" title="Power BI" width="40" height="40"/>
+    <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI" title="Power BI" width="40" height="40"/>
   </a>
   <a href="https://www.python.org" target="_blank" rel="noreferrer">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" title="Python" width="40" height="40"/>
   </a>
+  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" title="MongoDB" width="40" height="40"/>
+  </a>
+  <a href="https://azure.microsoft.com/" target="_blank" rel="noreferrer">
+    <img src="https://img.icons8.com/color/48/azure-1.png" alt="Microsoft Azure" title="Microsoft Azure" width="40" height="40"/>
+  </a>
+  <a href="https://developers.google.com/apps-script" target="_blank" rel="noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg" alt="Google Apps Script" title="Google Apps Script" width="40" height="40"/>
+  </a>
+<a href="https://cloud.google.com/bigquery" target="_blank" rel="noreferrer">
+  <img src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg" alt="Google BigQuery" title="Google BigQuery" width="40" height="40"/>
+  </a>
 </p>
-
 
 ## 📊 Dự án portfolio - [Chi tiết](https://github.com/voanhduy1710/Portfolio_projects)
 [**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/1.%20Excel%20-%20Addidas%20Sales)
