@@ -115,13 +115,13 @@ This is a repository to showcase skills, share projects and track my progress in
 \+ Slicers, Buttons, Bookmarks, Navigator.  
 \+ Field Parameters, Group and Binning.  
 
-**Python:**(In progress)
+**Python:**
 \+ Consolidate and analyze multiple large csv files.  
 \+ Automation.  
 \+ API and Webscraping.  
-\+ Machine learning.  
+\+ Apache Airflow
 \+ PySpark
-\+ AI machine learning and avoiding AI hallucinations.  
+\+ Resolve AI hallucinations.  
 
 ## 🗨️ Languages
 
