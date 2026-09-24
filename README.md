@@ -1,81 +1,156 @@
-<h1 align="center">Hi 👋, I'm Mr. Anh Duy</h1>
-<h3 align="center">Data Analyst in Vietnam</h3>  
+<h1 align="center">Vo Anh Duy</h1>
+<h3 align="center">Data Specialist & Technical Developer</h3>  
 
-[EN](https://github.com/voanhduy1710) | [VN](https://github.com/voanhduy1710/voanhduy1710/blob/main/READMEVN.md)
+[Website](https://voanhduy1710.dev) | [GitHub](https://github.com/voanhduy1710) | [LinkedIn](https://www.linkedin.com/in/voanhduy1710) | [Email](mailto:voanhduy1710@gmail.com) | [CV_EN (PDF)](CV_DA_Vo%20Anh%20Duy_EN.pdf) | [CV_VN (PDF)](CV_DA_Vo%20Anh%20Duy_VN.pdf)
 
-## About
-My name is Vo Anh Duy. I have a technical background and hold Master of Science (M.Sc. − _Graduated with honors_) degree in Technical Economics from Moscows State University MGSU, with a major in Project Management. I have 7 years of experience in Data Analysis and Technical Engineering, having held roles such as **_Operations Analyst_** and **_Technical Specialist_**.
+## Summary
+Experienced Data Analyst and Technical Developer with over 5 years of combined experience spanning data analysis, business intelligence, full-stack web applications, and automated ETL data pipelines.
 
+Proven background in architecting end-to-end data systems: from aggregating large-scale operational records and building executive star-schema BI models to engineering full-stack production platforms and automation workflows.
 
-[My CV in PDF](https://github.com/voanhduy1710/voanhduy1710/blob/main/CV_DA_Vo%20Anh%20Duy_EN.pdf?raw=true)
-
-This is a repository to showcase skills, share projects and track my progress in Data Analytics / Data Science related topics.
-
-
-<h2 align="left">Languages and Tools:</h2>
+<h2 align="left">Tech Stack:</h2>
 <p align="left">
-  <a href="https://www.microsoft.com/en-us/microsoft-365/excel" target="_blank" rel="noreferrer">
-    <img src="https://img.icons8.com/color/48/microsoft-excel-2019.png" alt="Excel" title="Excel" width="40" height="40"/>
-  </a>
-  <a href="https://www.google.com/sheets/about/" target="_blank" rel="noreferrer">
-    <img src="https://img.icons8.com/color/48/google-sheets.png" alt="Google Sheets" title="Google Sheets" width="40" height="40"/>
-  </a>
-  <a href="https://www.postgresql.org" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="PostgreSQL" title="PostgreSQL" width="40" height="40"/>
-  </a>
-  <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="MySQL" title="MySQL" width="40" height="40"/>
-  </a>
-  <a href="https://powerbi.microsoft.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI" title="Power BI" width="40" height="40"/>
-  </a>
-  <a href="https://www.python.org" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" title="Python" width="40" height="40"/>
-  </a>
-  <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer">
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="MongoDB" title="MongoDB" width="40" height="40"/>
-  </a>
-  <a href="https://azure.microsoft.com/" target="_blank" rel="noreferrer">
-    <img src="https://img.icons8.com/color/48/azure-1.png" alt="Microsoft Azure" title="Microsoft Azure" width="40" height="40"/>
-  </a>
-  <a href="https://developers.google.com/apps-script" target="_blank" rel="noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_Apps_Script.svg" alt="Google Apps Script" title="Google Apps Script" width="40" height="40"/>
-  </a>
-<a href="https://cloud.google.com/bigquery" target="_blank" rel="noreferrer">
-  <img src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg" alt="Google BigQuery" title="Google BigQuery" width="40" height="40"/>
-  </a>
+  <img src="logos/Docker.png" alt="Docker" title="Docker" height="40"/>
+  <img src="logos/Google Cloud Run.png" alt="Google Cloud Run" title="Google Cloud Run" height="40"/>
+  <img src="logos/Microsoft Azure.png" alt="Microsoft Azure" title="Microsoft Azure" height="40"/>
+  <img src="logos/Render.png" alt="Render" title="Render" height="40"/>
+  <img src="logos/Github Actions.png" alt="GitHub Actions" title="GitHub Actions" height="40"/>
+  <img src="logos/Dagster.png" alt="Dagster" title="Dagster" height="40"/>
+  <img src="logos/Python.png" alt="Python" title="Python" height="40"/>
+  <img src="logos/Typescript.png" alt="TypeScript" title="TypeScript" height="40"/>
+  <img src="logos/React.png" alt="React" title="React" height="40"/>
+  <img src="logos/FastAPI.png" alt="FastAPI" title="FastAPI" height="40"/>
+  <img src="logos/Google BigQuery.png" alt="Google BigQuery" title="Google BigQuery" height="40"/>
+  <img src="logos/Supabase.png" alt="Supabase" title="Supabase" height="40"/>
+  <img src="logos/Postgresql.png" alt="PostgreSQL" title="PostgreSQL" height="40"/>
+  <img src="logos/DuckDB.png" alt="DuckDB" title="DuckDB" height="40"/>
+  <img src="logos/Mysql.png" alt="MySQL" title="MySQL" height="40"/>
+  <img src="logos/MongoDB.png" alt="MongoDB" title="MongoDB" height="40"/>
+  <img src="logos/Selenium.png" alt="Selenium" title="Selenium" height="40"/>
+  <img src="logos/PowerBI.png" alt="Power BI" title="Power BI" height="40"/>
+  <img src="logos/Larksuite.png" alt="Lark Suite" title="Lark Suite" height="40"/>
+  <img src="logos/Google Apps Script.png" alt="Google Apps Script" title="Google Apps Script" height="40"/>
 </p>
 
+## Skills
+
+| № | Category | Tech & Tools |
+|---|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| 1 | **Full-Stack Development** | TypeScript, JavaScript, React, Vite, Next.js, Tailwind CSS, TanStack Query / Table, FastAPI (Python), Node.js, Express, NestJS, REST APIs, Webhooks, Supabase (PostgreSQL, Auth) |
+| 2 | **Data Engineering & Automation** | Python (Pandas, Polars, DuckDB, Dagster, Selenium, PySpark), FastAPI (Event-Driven Ingestion), REST APIs, Google Apps Script, Web Scraping, Headless Automation |
+| 3 | **Cloud & DevOps** | Google Cloud Run, Google Cloud Storage (GCS), Docker, Git, GitHub Actions, Vercel |
+| 4 | **Data Analytics & BI** | SQL (OLTP: PostgreSQL, MySQL; OLAP: DuckDB, Google BigQuery), Power BI (DAX, Star Schema Modeling, Power Query), Microsoft Excel (Advanced Formulas, Pivot Tables, Power Pivot), Google Sheets |
+
+---
+
+## Featured Repositories & Working Projects
+
+### Full-Stack Applications & Production Systems
+
+#### [Atino Booking Web App](https://github.com/voanhduy1710/Atino-booking-webapp)
+*Live Platform:* [giacong.atino.vn](https://giacong.atino.vn/)  
+
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18-blue.svg)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC.svg)](https://tailwindcss.com/)
+[![Express](https://img.shields.io/badge/Express-5-black.svg)](https://expressjs.com/)
+[![Supabase](https://img.shields.io/badge/Database-Supabase%20Postgres-3ECF8E.svg)](https://supabase.com/)
+[![Google Cloud](https://img.shields.io/badge/Storage-Google%20Cloud%20Storage-4285F4.svg)](https://cloud.google.com/storage)
+[![Tests](https://img.shields.io/badge/Tests-Vitest%20Passed-brightgreen.svg)](https://vitest.dev/)
+
+- Enterprise delivery reservation and warehouse intake logistics platform coordinating external suppliers, warehouse reviewers, and on-site gate receivers in real time.
+- Implements dynamic PO scheduling, automated 20,000 item/day capacity threshold logic, gate camera QR intake scanning, and VAT/delivery slip archival to Google Cloud Storage.
+- Features role-based access control (RBAC), Nhanh.vn ERP synchronization, and automated operational reporting exports.
+
+---
+
+#### [Caro Web App](https://github.com/voanhduy1710/Caro-app)
+*Live Application:* [league-of-caro.vercel.app](https://league-of-caro.vercel.app/)  
+
+[![Node.js](https://img.shields.io/badge/Node.js-18%2B-green.svg)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-19-blue.svg)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC.svg)](https://tailwindcss.com/)
+[![Supabase](https://img.shields.io/badge/Database-Supabase%20Postgres-3ECF8E.svg)](https://supabase.com/)
+[![WebRTC](https://img.shields.io/badge/Networking-WebRTC%20%2F%20PeerJS-orange.svg)](https://peerjs.com/)
+[![Tests](https://img.shields.io/badge/Tests-Vitest%20Passed-brightgreen.svg)](https://vitest.dev/)
+
+- Real-time multiplayer Caro web application featuring peer-to-peer matchmaking through WebRTC data channels.
+- Integrates room lifecycle state machines, custom board dimensions, Supabase authenticated profiles, ELO ranking leaderboards, and turn-deciding minigames.
+
+---
 
 
+#### [Private Production Repositories - Architectural Showcase](https://github.com/voanhduy1710/Other-private-repo-previews)
+Public documentation, system diagrams, and UI previews for enterprise systems developed under NDAs:
 
-## 📊 Portfolio Projects - [Details](https://github.com/voanhduy1710/Portfolio_projects)
-[**1. Excel – Addidas Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/1.%20Excel%20-%20Addidas%20Sales)
+- **QandaStudy Booking Platform:** Full-stack resource and studio scheduling system.  
+  [![React](https://img.shields.io/badge/React-19-blue.svg)](https://react.dev/)
+  [![NestJS](https://img.shields.io/badge/NestJS-11-E0234E.svg)](https://nestjs.com/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-6.x-blue.svg)](https://www.typescriptlang.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC.svg)](https://tailwindcss.com/)
+  [![Supabase](https://img.shields.io/badge/Supabase-Postgres-3ECF8E.svg)](https://supabase.com/)
+- **Atino Financial & Approval Platform:** Enterprise retail accounting and multi-tier approval management dashboard.  
+  [![React](https://img.shields.io/badge/React-19-blue.svg)](https://react.dev/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue.svg)](https://www.typescriptlang.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC.svg)](https://tailwindcss.com/)
+  [![Turborepo](https://img.shields.io/badge/Turborepo-Monorepo-EF4444.svg)](https://turbo.build/)
+  [![TanStack Query](https://img.shields.io/badge/TanStack%20Query-v5-FF4154.svg)](https://tanstack.com/query)
+- **Atino Approval FastAPI Backend:** Asynchronous REST API, LarkSuite webhook event processor, and BigQuery analytics synchronization engine.  
+  [![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
+  [![FastAPI](https://img.shields.io/badge/FastAPI-0.135-009688.svg)](https://fastapi.tiangolo.com/)
+  [![Supabase](https://img.shields.io/badge/Supabase-Postgres-3ECF8E.svg)](https://supabase.com/)
+  [![Google BigQuery](https://img.shields.io/badge/Google%20BigQuery-Cloud-4285F4.svg)](https://cloud.google.com/bigquery)
+  [![Docker](https://img.shields.io/badge/Docker-Cloud%20Run-2496ED.svg)](https://www.docker.com/)
+- **Atino Workspace Data Platform:** Automated retail data integration platform running Dagster Cloud pipelines, BigQuery warehousing, and headless Selenium browser extractors.  
+  [![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
+  [![Dagster](https://img.shields.io/badge/Dagster-Cloud%20ETL-4F46E5.svg)](https://dagster.io/)
+  [![BigQuery](https://img.shields.io/badge/BigQuery-Data%20Warehouse-4285F4.svg)](https://cloud.google.com/bigquery)
+  [![Pandas](https://img.shields.io/badge/Data%20Engineering-Pandas%20%2F%20Polars-150458.svg)](https://pandas.pydata.org/)
+  [![Selenium](https://img.shields.io/badge/WebCrawling-Selenium%20%2B%20Xvfb-43B02A.svg)](https://www.selenium.dev/)
+  [![Docker](https://img.shields.io/badge/Docker-Cloud%20Run-2496ED.svg)](https://www.docker.com/)
 
-[**2. Uber Trips**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/2.%20Uber%20Trips)
+---
 
-[**3. Supply Chain & Sales**](https://github.com/voanhduy1710/Portfolio_projects/tree/main/3.%20Supply%20chain%20%26%20Sales)
+### Data Analytics & Business Intelligence
 
-[**4. SQL interview questions**](https://github.com/voanhduy1710/Portfolio_projects/blob/main/4.%20SQL_questions.md)
+#### [Data Analyst Portfolio Projects](https://github.com/voanhduy1710/Portfolio-projects)
 
-## 💼 Professional Experience
-\+ Mosvodokanal - Russia (2018-2020)  
-*Operations Analyst* **|** *Planning and Analytics Department*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Aggregated **500k+ records** from 15+ zones using optimized **SQL** queries and exported to **CSV** cutting time **10%**.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Presented actionable reports using **SQL** and **Excel** data, recommending ways to optimize distribution and reduce inefficiencies.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Developed **GIS data** processing policy to reduce inefficiencies and inaccuracies **from 30% down to 10%.**  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Built weekly/monthly **Key Metrics dashboards** in Excel; developed procedures streamlining report preparation time by **40%**.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Provided data & **actively proposed improvements** to support cross-team decisions, boosting productivity by around **25%**.
+[![Power BI](https://img.shields.io/badge/Power_BI-DAX_%26_Modeling-F2C811.svg)](https://powerbi.microsoft.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-OLTP-336791.svg)](https://www.postgresql.org/)
+[![Python](https://img.shields.io/badge/Python-3.12%2B-blue.svg)](https://www.python.org/)
+[![Excel](https://img.shields.io/badge/Excel-Advanced-217346.svg)](https://www.microsoft.com/excel)
+[![Google Apps Script](https://img.shields.io/badge/Automation-Google_Apps_Script-4285F4.svg)](https://developers.google.com/apps-script)
 
-  
-\+ VIWASE Joint Stock Company - Vietnam (2020-2025)  
-*Technical Specialist* **|** *Technology Development Department*    
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Processed, verified, and compared **100k+** technical records to ensure accuracy and integrity.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Developed VBA scripts, Macros, AutoHotkey scripts, Google Scripts increasing data accuracy **from 80% to 95%**  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Prepared **20+ technical reports**, designed and **managed projects** compliant with client and regulatory standards.  
-&nbsp;&nbsp;&nbsp;&nbsp;➢ Developed **10+ AutoLISP** scripts to automate design tasks, boosting design efficiency and team productivity by **35%**.
+A curated collection of business analytics, modeling, and automation implementations:
+- **Atino Multi-Store Retail Model:** Star-schema retail data warehouse model integrating multi-store POS bills, inventory turnover, foot traffic conversions, and comprehensive DAX measures (% MoM, % YoY, Customer LTV).
+- **Adidas Sales Performance Analysis:** Dynamic financial and sales breakdown across retail channels and product lines with margin driver analysis in Excel.
+- **Uber Trip Analytics:** Temporal and geospatial dispatch analysis using SQL extraction and Power BI hourly demand heatmaps.
+- **Supply Chain & Inventory Management:** Interactive end-to-end supply chain dashboard tracking order fulfillment, inventory turnover, and product margin segmentation.
 
-## 🧾 Certifications - [Details](https://github.com/voanhduy1710/Certifications)
+## Languages
+
+- **Vietnamese:** Native
+- **English:** Professional Working Proficiency
+- **Russian:** Professional Working Proficiency
+- **Korean:** Elementary (In Progress)
+
+## Education
+
+**Moscow State University (MGSU)**  
+- **Master of Science (M.Sc.) in Technical Economics** (Major in Project Management), 2018 – 2020  
+  *Graduated with Honors*  
+- **Bachelor of Science (B.Sc.) in Technical Engineering**, 2014 – 2018  
+  *Graduated with Honors*  
+
+## ✆ Contact
+
+- **Phone number:** +84 978 987 889
+- **Email:** voanhduy1710@gmail.com
+- **Website:** [voanhduy1710.dev](https://voanhduy1710.dev)
+
+## Certifications
 
 | № | Certificate                                       | Status        |
 |---|--------------------------------------------------|--------------------------|
@@ -85,59 +160,43 @@ This is a repository to showcase skills, share projects and track my progress in
 | 4 | [Associate Data Analyst in SQL](https://www.datacamp.com/completed/statement-of-accomplishment/track/ba33fb966f3a47b4908cbcddd706216242b73a16)                    | Completed        |
 | 5 | [Microsoft Power BI Data Analyst](https://coursera.org/verify/professional-cert/UYM8N7BTOF65)                  | Completed   |
 | 6 | [Data Analyst Associate Certificate](https://www.datacamp.com/certificate/DAA0013101408680)               | Completed      |
-| 7 | Data Analyst In Python                           | In progress       |
+| 7 | [Data Analyst In Python](https://www.datacamp.com/completed/statement-of-accomplishment/track/947180b5544a48e6faf21236f128bbcb34b694f4?utm_medium=organic_social&utm_campaign=sharewidget&utm_content=soa)                           | Completed       |
 | 8 | IBM Professional Data Engineer                   | In progress       |
 
+---
 
-## 🖥️ Skills
-**Excel:**  
-\+ Cleaning: find & replace values, filter, clean NULL values  
-\+ Data validation and conditional formatting  
-\+ Formulas: VLOOKUP, HLOOKUP, XLOOKUP, INDEXMATCH, CONCATENTATE, AGGREGATE Functions  
-\+ Pivot table: pivot charts, Matrix.
+## Project Previews
 
-**SQL:**  
-\+ PostgreSQL: Faster and cleaner than MySQL, SSMS, better UI, other leading global platforms are using (Gitlab, Datacamp, Reddit, TripAdvisor, etc.).  
-\+ Basics and Aggregating Data (COUNT, SUM, AVG, MIN, MAX, etc.).  
-\+ CTEs: Common table expressions.  
-\+ Subqueries.  
-\+ Windows functions: Ranking, numbering, PARTITION BY (), moving average (ROWS BETWEEN...).  
-\+ Joining tables: Left, Right, Outer Joins.  
-\+ Coalesce for NULL values.  
-\+ String Manipulation: CONCAT, LOWER, UPPER, DATEDIFF, DATEADD, EXTRACT, YEAR, MONTH, ROUND, FLOOR, CEIL.  
-\+ Data Modeling (In progress).  
+### [Atino Booking Web App](https://github.com/voanhduy1710/Atino-booking-webapp)
+<p align="center">
+  <img src="previews/Atino-booking-webapp/Preview_1.png" height="260" alt="Atino Booking Preview 1"/>
+  <img src="previews/Atino-booking-webapp/Preview_2.png" height="260" alt="Atino Booking Preview 2"/>
+</p>
 
-**PowerBI:**  
-\+ Connect to Database.  
-\+ Building various charts and Filters, Conditional formatting.  
-\+ DAX: creating calculated measures, MoM, YoY, other complex KPI metrics.  
-\+ DimDate Table.  
-\+ Slicers, Buttons, Bookmarks, Navigator.  
-\+ Field Parameters, Group and Binning.  
+### [Caro Web App](https://github.com/voanhduy1710/Caro-app)
+<p align="center">
+  <img src="previews/Caro-app/Preview_1.png" height="260" alt="Caro App Preview 1"/>
+  <img src="previews/Caro-app/Preview_2.png" height="260" alt="Caro App Preview 2"/>
+</p>
 
-**Python:**
-\+ Consolidate and analyze multiple large csv files.  
-\+ Automation.  
-\+ API and Webscraping.  
-\+ Apache Airflow
-\+ PySpark
-\+ Resolve AI hallucinations.  
+### [QandaStudy Booking Platform](https://github.com/voanhduy1710/Other-private-repo-previews/tree/main/1.%20QandaStudy-booking-webapp)
+<p align="center">
+  <img src="previews/Other-private-repo-previews/1.%20QandaStudy-booking-webapp/Preview_0.png" height="260" alt="QandaStudy Booking Preview 0"/>
+  <img src="previews/Other-private-repo-previews/1.%20QandaStudy-booking-webapp/Preview_2.png" height="260" alt="QandaStudy Booking Preview 1"/>
+</p>
 
-## 🗨️ Languages
+### [Atino Financial & Approval Platform](https://github.com/voanhduy1710/Other-private-repo-previews/tree/main/2.%20Atino-tong-hop-approval-web)
+<p align="center">
+  <img src="previews/Other-private-repo-previews/2.%20Atino-tong-hop-approval-web/Preview_0.png" height="260" alt="Atino Approval Preview 0"/>
+  <img src="previews/Other-private-repo-previews/2.%20Atino-tong-hop-approval-web/Preview_1.png" height="260" alt="Atino Approval Preview 1"/>
+</p>
 
-\+ English - Professional working proficiency  
-\+ Vietnamese - Native  
-\+ Russian - Professional working proficiency  
-\+ In progress: Korean  
+### [Atino Approval FastAPI Backend](https://github.com/voanhduy1710/Other-private-repo-previews/tree/main/3.%20Atino-approval-webapp-FastApi)
+<p align="center">
+  <img src="previews/Other-private-repo-previews/3.%20Atino-approval-webapp-FastApi/Preview_0.png" height="280" alt="Atino FastAPI Backend Preview"/>
+</p>
 
-## 🏫 Education
-
-\+ Moscows State University (MGSU), B.Sc. Techincal Engineering, 2018 — *Graduated with honors*.  
-\+ Moscows State University (MGSU), M.Sc. Technical Economics, 2020 — *Graduated with honors*.
-
-
-## 📞 Contact
-
-- **Phone number:** +84 978 987 889
-- **Email:** voanhduy1710@gmail.com
-
+### [Atino Workspace Data Platform](https://github.com/voanhduy1710/Other-private-repo-previews/tree/main/4.%20Atino-workspace-duy)
+<p align="center">
+  <img src="previews/Other-private-repo-previews/4.%20Atino-workspace-duy/Preview_0.png" height="350" alt="Atino Workspace Preview"/>
+</p>
