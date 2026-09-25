@@ -43,6 +43,31 @@ Proven background in architecting end-to-end data systems: from aggregating larg
 
 ---
 
+## Professional Experience
+
+### Atino Fashion Co., Ltd.
+**Full-Stack & Data Specialist**  
+*2024 – Present | Hanoi, Vietnam*
+- Built a full-stack financial web application (**React**, **TypeScript**, **FastAPI**, **Supabase**) featuring interactive **P&L dashboards**, approval checking, and real-time **Lark webhooks** to detect disbursement discrepancies and duplicate payment requests.
+- Engineered automated cash-flow and P&L reporting pipelines (**Python**, **BigQuery**) delivering daily financial digests directly to **Lark Suite** for Management and the Board of Directors (BOD), cutting manual reporting time by **99%**.
+- Built automated retail ETL pipelines using **Python** (**Polars**/**Pandas**), **Dagster Cloud**, and **BigQuery**, synchronizing **10M+ monthly records** across **Nhanh.vn ERP**, **Shopee**, **TikTok Shop**, **Facebook**, **Palexy**, and **Lark Suite** (**Approval**, **Lark Base**) with **99.8%** reliability.
+- Built daily-refresh **Power BI dashboards** and star-schema models across **50+ stores**, tracking **P&L**, gross margins, and inventory turnover.
+
+### VWS Joint Stock Company
+**Technical Data Analyst | Information Technology Department**  
+*2021 – 2024 | Hanoi, Vietnam*
+- Processed, audited, and enforced data quality across over **100,000,000+ records** using **Jupyter notebooks** (**Deepnote**) and **SQL**, reducing data discrepancy rates from **20% to under 2%** and ensuring high system integrity.
+- Engineered automation workflows and integration scripts using **Python**, **Google Apps Script**, and **VBA**, eliminating manual overhead and improving data accuracy from **80% to 95%**.
+- Built internal **Python** utilities and automated calculation workflows, delivering a **35% improvement** in team productivity.
+
+### Mosvodokanal
+**Operations Analyst | Planning and Analytics Department**  
+*2018 – 2021 | Moscow, Russia*  
+- Aggregated and analyzed over **1 billion operational records** across **15+ service zones** using optimized **SQL** and **MySQL** queries.
+- Built automated executive KPI dashboards and reporting pipelines in **SQL** and **Excel**, reducing turnaround time by **40%** and supporting operational resource allocation.
+
+
+
 ## Featured Repositories & Working Projects
 
 ### Full-Stack Applications & Production Systems
@@ -164,6 +189,7 @@ A curated collection of business analytics, modeling, and automation implementat
 | 8 | IBM Professional Data Engineer                   | In progress       |
 
 ---
+
 
 ## Project Previews
 
