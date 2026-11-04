@@ -1,0 +1,437 @@
+@import "tailwindcss";
+
+/* VS Code Dark Modern palette (dark theme only). */
+:root {
+  --vsc-titlebar: #1f1f1f;
+  --vsc-activitybar: #181818;
+  --vsc-sidebar: #181818;
+  --vsc-editor: #1f1f1f;
+  --vsc-tab-inactive: #181818;
+  --vsc-tab-active: #1f1f1f;
+  --vsc-border: #2b2b2b;
+  --vsc-hover: #2a2d2e;
+  --vsc-selection: #37373d;
+  --vsc-focus: #0078d4;
+  --vsc-statusbar: #181818;
+  --vsc-accent: #0078d4;
+  --vsc-text: #cccccc;
+  --vsc-muted: #9d9d9d;
+  --vsc-heading: #e7e7e7;
+  --vsc-link: #4daafc;
+  --vsc-code: #ce9178;
+  --vsc-active-file: #4daafc;
+  --vsc-indent-guide: #585858;
+
+  --vsc-cyan: #4fc1ff;
+  --vsc-teal: #4ec9b0;
+
+  /*
+   * Shell sizes, from the shell-v2 mockup (judged at 100% browser zoom). Every value is in rem so the whole UI
+   * still follows the root font size; with the 120% root below (1rem = 19.2px) they render at the mockup's px:
+   * UI text 13.5, small 11.5, status 12.5, title 13, row 26, tab strip 38, title bar 36, activity bar 50,
+   * status bar 24, sidebar 290. Page content keeps using the 120% root directly.
+   */
+  --ui-text: 0.703rem;
+  --ui-text-sm: 0.599rem;
+  --ui-text-status: 0.651rem;
+  --ui-text-title: 0.677rem;
+  --ui-icon: 0.833rem;
+  --ui-row: 1.354rem;
+  --ui-row-gap: 0.3125rem;
+  --ui-indent: 0.625rem;
+  --ui-indent-step: 0.9375rem;
+  --ui-guide: 2.03rem;
+  --ui-titlebar: 1.875rem;
+  --ui-tab: 1.979rem;
+  --ui-activity: 2.604rem;
+  --ui-activity-icon: 1.25rem;
+  --ui-statusbar: 1.25rem;
+  --ui-sidebar: 15.104rem;
+  --ui-panel-header: 1.25rem;
+}
+
+html {
+  font-size: 120%;
+}
+
+@theme inline {
+  --color-vsc-titlebar: var(--vsc-titlebar);
+  --color-vsc-activitybar: var(--vsc-activitybar);
+  --color-vsc-sidebar: var(--vsc-sidebar);
+  --color-vsc-editor: var(--vsc-editor);
+  --color-vsc-tab-inactive: var(--vsc-tab-inactive);
+  --color-vsc-tab-active: var(--vsc-tab-active);
+  --color-vsc-border: var(--vsc-border);
+  --color-vsc-hover: var(--vsc-hover);
+  --color-vsc-selection: var(--vsc-selection);
+  --color-vsc-focus: var(--vsc-focus);
+  --color-vsc-statusbar: var(--vsc-statusbar);
+  --color-vsc-accent: var(--vsc-accent);
+  --color-vsc-text: var(--vsc-text);
+  --color-vsc-muted: var(--vsc-muted);
+  --color-vsc-heading: var(--vsc-heading);
+  --color-vsc-link: var(--vsc-link);
+  --color-vsc-code: var(--vsc-code);
+  --color-vsc-active-file: var(--vsc-active-file);
+  --color-vsc-indent-guide: var(--vsc-indent-guide);
+  --color-vsc-cyan: var(--vsc-cyan);
+  --color-vsc-teal: var(--vsc-teal);
+  --font-sans: var(--font-geist-sans);
+  /* Geist Mono first (loaded with the Vietnamese subset), so code-ish labels look the same everywhere. */
+  --font-mono: var(--font-geist-mono), 'Cascadia Code', Consolas, ui-monospace, monospace;
+  /* VS Code's own UI font stack, for the shell chrome. Segoe UI and the system fonts cover Vietnamese. */
+  --font-ui: 'Segoe UI', system-ui, -apple-system, Ubuntu, 'Droid Sans', var(--font-geist-sans), sans-serif;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  background: var(--vsc-editor);
+  color: var(--vsc-text);
+}
+
+:focus-visible {
+  outline: 1px solid var(--vsc-focus);
+  outline-offset: -1px;
+}
+
+/* Thin VS Code-like scrollbars. In the base layer so utilities (e.g. the tab strip's hidden scrollbar) can override. */
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #4e4e4e transparent;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * Tile background (TileBackground.tsx). Only `opacity` animates, on pre-painted pseudo layers.
+ * ------------------------------------------------------------------------------------------- */
+.tile-grid {
+  position: absolute;
+  display: grid;
+  transform-origin: center;
+}
+.tile {
+  position: relative;
+  border-radius: var(--tile-radius, 16px);
+  border: 1px solid rgb(255 255 255 / 0.05);
+}
+.tile::before,
+.tile::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  opacity: 0;
+}
+.tile::before {
+  background: rgb(255 255 255 / 0.07);
+  border: 1px solid rgb(255 255 255 / 0.1);
+  animation: tile-glow var(--tile-dur, 40s) ease-in-out var(--tile-delay, 0s) infinite both;
+}
+.tile.warm::before {
+  background: rgb(0 120 212 / 0.13);
+  border-color: rgb(79 193 255 / 0.14);
+}
+.tile::after {
+  background: rgb(255 255 255 / 0.1);
+  transition: opacity 0.6s ease;
+}
+.tile.is-hover::after {
+  opacity: 1;
+  transition-duration: 0.2s;
+}
+.tile-grid[data-paused] .tile::before {
+  animation-play-state: paused;
+}
+@keyframes tile-glow {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  6%,
+  14% {
+    opacity: 1;
+  }
+  20% {
+    opacity: 0;
+  }
+}
+.tile-vignette {
+  background:
+    radial-gradient(ellipse 42% 38% at 33% 54%, rgb(31 31 31 / 0.88) 0%, rgb(31 31 31 / 0.4) 60%, rgb(31 31 31 / 0) 100%);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile::before {
+    animation: none;
+  }
+  .tile.still::before {
+    opacity: 1;
+  }
+  .tile::after {
+    transition: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * Hero matrix hand (MatrixHand.tsx): soft white glow around the digits, as in the approved mockup.
+ * ------------------------------------------------------------------------------------------- */
+.matrix-hand {
+  filter: drop-shadow(0 0 1.5px rgb(255 255 255 / 0.6)) drop-shadow(0 0 6px rgb(255 255 255 / 0.2));
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * Home section headings: the icon's coloured glow, and a one-time fade-in of the heading row (RevealOnView).
+ * ------------------------------------------------------------------------------------------- */
+.section-glow {
+  filter: blur(18px);
+  opacity: 0.55;
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .section-reveal {
+    transition:
+      opacity 0.5s ease-out,
+      transform 0.5s ease-out;
+  }
+  .section-reveal[data-reveal='hidden'] {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+@media print {
+  .section-glow {
+    display: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * Home hero: typing caret and the bouncing scroll chevron. Both stop under reduced motion.
+ * ------------------------------------------------------------------------------------------- */
+@keyframes caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes chevron-bob {
+  50% {
+    transform: translateY(6px);
+  }
+}
+.hero-caret {
+  animation: caret-blink 1s steps(1) infinite;
+}
+.hero-chevron {
+  animation: chevron-bob 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-caret,
+  .hero-chevron {
+    animation: none;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * Project README panel (ProjectReadme.tsx): GitHub's dark markdown body, in the VS Code Dark Modern palette.
+ * In the components layer so utilities still win.
+ * ------------------------------------------------------------------------------------------- */
+@layer components {
+  .markdown-body {
+    color: var(--vsc-text);
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    overflow-wrap: break-word;
+  }
+  .markdown-body > :first-child {
+    margin-top: 0;
+  }
+  .markdown-body > :last-child {
+    margin-bottom: 0;
+  }
+  .markdown-body :is(p, blockquote, ul, ol, dl, table, pre, details) {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  .markdown-body :is(h1, h2, h3, h4, h5, h6) {
+    margin: 1.5rem 0 1rem;
+    color: var(--vsc-heading);
+    font-weight: 600;
+    line-height: 1.25;
+    scroll-margin-top: 1rem;
+  }
+  .markdown-body :is(h1, h2) {
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid var(--vsc-border);
+  }
+  .markdown-body h1 {
+    font-size: 1.85em;
+  }
+  .markdown-body h2 {
+    font-size: 1.45em;
+  }
+  .markdown-body h3 {
+    font-size: 1.2em;
+  }
+  .markdown-body h4 {
+    font-size: 1em;
+  }
+  .markdown-body :is(h5, h6) {
+    font-size: 0.875em;
+  }
+  .markdown-body h6 {
+    color: var(--vsc-muted);
+  }
+  .markdown-body a {
+    color: var(--vsc-link);
+  }
+  .markdown-body a:hover {
+    text-decoration: underline;
+  }
+  .markdown-body :is(h1, h2, h3, h4, h5, h6) a {
+    color: inherit;
+  }
+  .markdown-body strong {
+    color: var(--vsc-heading);
+    font-weight: 600;
+  }
+  .markdown-body :is(ul, ol) {
+    padding-left: 2em;
+  }
+  .markdown-body ul {
+    list-style: disc;
+  }
+  .markdown-body ol {
+    list-style: decimal;
+  }
+  .markdown-body :is(ul, ol) :is(ul, ol) {
+    margin-top: 0.25rem;
+    margin-bottom: 0;
+  }
+  .markdown-body ul ul {
+    list-style: circle;
+  }
+  .markdown-body li + li {
+    margin-top: 0.25rem;
+  }
+  .markdown-body li::marker {
+    color: var(--vsc-muted);
+  }
+  .markdown-body li.task-list-item {
+    list-style: none;
+  }
+  .markdown-body ul:has(> li.task-list-item) {
+    padding-left: 1em;
+  }
+  .markdown-body li.task-list-item input {
+    margin: 0 0.4em 0.2em -1.4em;
+    vertical-align: middle;
+    accent-color: var(--vsc-accent);
+  }
+  .markdown-body blockquote {
+    padding: 0 1em;
+    border-left: 0.25em solid var(--vsc-indent-guide);
+    color: var(--vsc-muted);
+  }
+  .markdown-body hr {
+    height: 0.25em;
+    margin: 1.5rem 0;
+    border: 0;
+    background: var(--vsc-border);
+  }
+  .markdown-body :is(code, kbd, samp, pre) {
+    font-family: var(--font-mono);
+    font-size: 0.85em;
+  }
+  .markdown-body :not(pre) > code {
+    padding: 0.15em 0.4em;
+    border-radius: 4px;
+    background: rgb(110 118 129 / 0.25);
+    color: var(--vsc-code);
+    white-space: break-spaces;
+  }
+  .markdown-body kbd {
+    padding: 0.1em 0.35em;
+    border: 1px solid var(--vsc-border);
+    border-bottom-width: 2px;
+    border-radius: 4px;
+    background: var(--vsc-sidebar);
+  }
+  .markdown-body pre {
+    padding: 1rem;
+    overflow: auto;
+    border: 1px solid var(--vsc-border);
+    border-radius: 6px;
+    background: #181818;
+    line-height: 1.45;
+  }
+  .markdown-body pre code {
+    font-size: 0.8125rem;
+    color: #d4d4d4;
+    white-space: pre;
+  }
+  .markdown-body table {
+    display: block;
+    width: max-content;
+    max-width: 100%;
+    overflow: auto;
+    border-collapse: collapse;
+  }
+  .markdown-body :is(th, td) {
+    padding: 0.4em 0.8em;
+    border: 1px solid var(--vsc-border);
+  }
+  .markdown-body th {
+    color: var(--vsc-heading);
+    font-weight: 600;
+  }
+  .markdown-body tr:nth-child(2n) {
+    background: rgb(255 255 255 / 0.025);
+  }
+  .markdown-body img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+  }
+  .markdown-body p > img:only-child {
+    border: 1px solid var(--vsc-border);
+  }
+  .markdown-body details {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--vsc-border);
+    border-radius: 6px;
+  }
+  .markdown-body summary {
+    cursor: pointer;
+    color: var(--vsc-heading);
+    font-weight: 600;
+  }
+  .markdown-body details[open] > summary {
+    margin-bottom: 0.5rem;
+  }
+  .markdown-body [align='center'] {
+    text-align: center;
+  }
+  .markdown-body [align='right'] {
+    text-align: right;
+  }
+  .markdown-body img[align='right'] {
+    float: right;
+    margin-left: 1rem;
+  }
+  .markdown-body img[align='left'] {
+    float: left;
+    margin-right: 1rem;
+  }
+}
+
+@media print {
+  html {
+    color-scheme: light;
+  }
+  body {
+    background: #ffffff;
+    color: #000000;
+  }
+}
