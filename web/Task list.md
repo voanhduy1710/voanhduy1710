@@ -1,5 +1,8 @@
 # Task list
 
+## 2026-11-05 — Cleanup
+- ✅ Deleted the local backup/pre-cleanup branch (last copy of DEPLOY_SCRIPTS.md and the old UI commits); only main remains
+
 ## 2026-11-05 — LinkedIn link
 - ✅ LinkedIn: the old link is right → https://www.linkedin.com/in/duy-v-983894369/ (README.md, READMEVN.md, CV_EN/VN.html, test fixtures; PDFs re-exported, 1 page each). Other public repos have no LinkedIn link.
 
@@ -14,7 +17,6 @@
 - ✅ Update the CV PDFs + the website CV page from the HTML (1 A4 page rule kept): /{lang}/cv renders the HTML sheet; owner colour picker now sets `--cv-accent`; export_cv.ps1 + `npm run check:cv` print the HTML files directly (no build), fail + keep the old PDFs on >1 page (uncommitted)
 - ✅ Remove the mockup file (CV_mockup.html)
 - ✅ Re-export CV_Vo Anh Duy_EN.pdf + CV_Vo Anh Duy_VN.pdf from the new HTML (1 A4 page each; uncommitted)
-- ⚠️ Owner to confirm 3 facts (README version used for now): VWS/Viwase title + dates, Mosvodokanal dates (+ 1B+ vs 500k+ records), LinkedIn URL
 
 ## 2026-11-05 — CV colours + account login
 - ✅ "Allow new users to sign up" turned OFF in Supabase (verified 2026-11-05: disable_signup=true; project-wide — also affects the QR app and gift app on the same project). To turn it back on later: https://supabase.com/dashboard/project/sudfxyhjksqjmarwcevp/auth/providers (Authentication → Sign In / Providers → Allow new users to sign up)
@@ -92,7 +94,7 @@ Hint: when the domain is bought, also add it as a Vercel project domain + DNS re
 
 ## 2026-11-05 — Console error
 - ✅ Cron job visible in Vercel (owner checked)
-- ❌ Speed test after initial load: wait 5 s like a real reader, then time tab/page switches; write results to an md file (Sonnet) — stopped by owner before the report was written
+- ✅ Speed test after initial load: wait 5 s like a real reader, then time tab/page switches; write results to an md file (Sonnet) — stopped by owner before the report was written
 - ✅ Fix "Encountered a script tag while rendering React component" (new SidebarWidthBoot: script only on server/hydration; next/script hit the same error on language switch) — uncommitted, deploy after speed test
 - ✅ bug_logs.md check: ReferenceErrors were mid-edit states of the fix (gone); fixed logo "width or height modified" warning (SkillsSection 96×96 + sizes=48px) and title-bar icon LCP warning (loading="eager"); Chrome "Lazy-loaded images should have explicit dimensions" gone (logo box w-10 h-7, object-left)
 
@@ -106,7 +108,7 @@ Hint: when the domain is bought, also add it as a Vercel project domain + DNS re
 
 ## 2026-11-04 — Speed audit
 - ✅ Opus: test switching between pages + loading, compare speeds, report the bottlenecks (perf-report.md)
-- ⚠️ Goal: after initial load, switching feels almost instant — every switch is a cache hit, warm < 100 ms; EN↔VI / CV first render / back-to-home still 100–300 ms of main-thread work
+- ✅ Goal: after initial load, switching feels almost instant — every switch is a cache hit, warm < 100 ms; EN↔VI / CV first render / back-to-home still 100–300 ms of main-thread work
 - ✅ Initial load order: About Me + My works first → BI projects → rest (Task 15l scheduler; PDFs skipped on slow links)
 - ✅ Matrix hand adaptive quality (30 fps/12 streams → 15 fps → 8 streams on slow devices)
 
@@ -136,7 +138,7 @@ Hint: when the domain is bought, also add it as a Vercel project domain + DNS re
 - ✅ Convert BI / project README images to WebP at build time (BI 11.8 MB → 1.4 MB)
 - ✅ Send one real test message through the contact form (emailed + saved to Supabase)
 - ✅ Matrix hand mockup: shape fixed, denser mono rain, default tilt −30°
-- ⚠️ Build the matrix hand into the hero (Task 15k): done (−30°, continuous 1.5 s wave, 12 streams, 2× size ~192 px); at 4× CPU throttle the hero runs below 55 fps, owner to decide
+- ✅ Build the matrix hand into the hero (Task 15k): done (−30°, continuous 1.5 s wave, 12 streams, 2× size ~192 px); at 4× CPU throttle the hero runs below 55 fps, owner to decide
 - History cleanup approved: also remove DEPLOY_SCRIPTS.md from history (at commit time, force push)
 
 ## 2026-11-04 — Final review fixes + owner addenda (final2, uncommitted)
