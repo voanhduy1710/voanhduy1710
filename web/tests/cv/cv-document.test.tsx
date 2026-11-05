@@ -4,67 +4,81 @@ import { join } from 'node:path'
 import { cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it } from 'vitest'
 import { CvDocument } from '@/components/cv/CvDocument'
-import { parseReadme } from '@/lib/content'
+import { CV_FILES, parseCv, type CvModel } from '@/lib/cv'
 
-// jsdom gives `import.meta.url` an http: scheme, so fixtures are found from the package root (vitest's cwd).
-function fixture(name: string): string {
-  return readFileSync(join(process.cwd(), 'tests', 'fixtures', name), 'utf8')
-}
-
-const en = parseReadme(fixture('README.md'), 'en', 'README.md')
-const vi = parseReadme(fixture('READMEVN.md'), 'vi', 'READMEVN.md')
+// jsdom gives `import.meta.url` an http: scheme, so the files are found from the package root (vitest's cwd).
+const load = (lang: 'en' | 'vi') => parseCv(readFileSync(join(process.cwd(), CV_FILES[lang]), 'utf8'), lang, CV_FILES[lang])
+const en = load('en')
+const vi = load('vi')
 
 afterEach(cleanup)
 
 describe('CvDocument', () => {
-  it('renders the name, experience and contact line from the EN README', () => {
-    const { container } = render(<CvDocument content={en} />)
+  it('renders the name, title, experience and contact line from the EN YAML', () => {
+    const { container } = render(<CvDocument cv={en} />)
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe('Vo Anh Duy')
     expect(screen.getByText('Data Specialist & Technical Developer')).toBeTruthy()
     expect(screen.getByText('Atino Fashion Co., Ltd.')).toBeTruthy()
-    expect(container.textContent).toContain('+84 978 987 889')
-    expect(container.textContent).toContain('github.com/voanhduy1710')
+    const contact = container.querySelector('.cv-contact')?.textContent ?? ''
+    expect(contact).toContain('+84 978 987 889')
+    expect(contact).toContain('voanhduy1710@gmail.com')
+    expect(contact).toContain('github.com/voanhduy1710')
+    expect(contact).toContain('linkedin.com/in/voanhduy1710')
+    expect(container.querySelector('a[href="mailto:voanhduy1710@gmail.com"]')).toBeTruthy()
   })
 
-  it('has no images and no link to the website itself', () => {
-    const { container } = render(<CvDocument content={en} />)
-    expect(container.querySelectorAll('img')).toHaveLength(0)
-    expect(container.textContent).not.toContain('voanhduy1710.vercel.app')
+  it('is ATS-friendly: real text, no images, one h1, standard section headings in order', () => {
+    const { container } = render(<CvDocument cv={en} />)
+    expect(container.querySelectorAll('img, svg, canvas')).toHaveLength(0)
+    expect(container.querySelectorAll('h1')).toHaveLength(1)
+    expect([...container.querySelectorAll('h2')].map((h) => h.textContent)).toEqual([
+      'Summary',
+      'Skills',
+      'Experience',
+      'Projects',
+      'Education',
+      'Certifications',
+      'Languages',
+    ])
   })
 
-  it('renders every section: skills, projects with badge labels, education, certifications, languages', () => {
-    const { container } = render(<CvDocument content={en} />)
+  it('renders every section: skills, bold bullets, projects with tech, education, certifications, languages', () => {
+    const { container } = render(<CvDocument cv={en} />)
     const text = container.textContent ?? ''
-    expect(text).toContain('Full-Stack Development')
-    expect(text).toContain('TypeScript, JavaScript, React')
+    expect(text).toContain('Full-Stack Development: TypeScript, JavaScript, React')
+    expect(container.querySelector('.cv-bullets strong')?.textContent).toBe('React')
     expect(text).toContain('Atino Booking Web App')
     expect(text).toContain('Node.js · React · TypeScript')
     expect(text).toContain('Moscow State University (MGSU)')
+    expect(text).toContain('Master of Science (M.Sc.) in Technical Economics (Major in Project Management), 2018 – 2020 · Graduated with Honors')
     expect(text).toContain('IBM Professional Data Engineer – In progress')
+    expect(container.querySelector('a[href="https://coursera.org/share/3771af72e4ca6be3cd3a10aedbc024ac"]')?.textContent).toBe(
+      'Google Data Analytics',
+    )
     expect(text).toContain('Russian: Professional Working Proficiency')
+    expect(text).not.toMatch(/mongo/i)
     expect(container.querySelectorAll('.cv-entry')).toHaveLength(en.experience.length + en.projects.length)
   })
 
-  it('builds each project tech line from badge alt text: deduped, without "Tests"', () => {
-    const { container } = render(<CvDocument content={en} />)
-    const tech = (slug: string) => container.querySelector(`[data-project="${slug}"] .cv-tech`)?.textContent ?? ''
-    const booking = tech('atino-booking')
-    expect(booking).toContain('Supabase')
-    expect(booking).not.toContain('Database')
-    expect(booking).not.toContain('Tests')
-    const parts = booking.split(' · ')
-    expect(new Set(parts.map((p) => p.toLowerCase())).size).toBe(parts.length)
+  it('leaves out empty optional sections and shows optional fields when set', () => {
+    const cv: CvModel = {
+      ...en,
+      projects: [],
+      certifications: [],
+      languages: [],
+      contact: { ...en.contact, location: 'Hanoi, Vietnam', website: 'https://example.com/' },
+    }
+    const { container } = render(<CvDocument cv={cv} />)
+    const headings = [...container.querySelectorAll('h2')].map((h) => h.textContent)
+    expect(headings).toEqual(['Summary', 'Skills', 'Experience', 'Education'])
+    expect(container.querySelector('.cv-contact')?.textContent).toContain('Hanoi, Vietnam')
+    expect(container.querySelector('a[href="https://example.com/"]')?.textContent).toBe('example.com')
   })
 
-  it('drops a trailing colon from the project line', () => {
-    const { container } = render(<CvDocument content={en} />)
-    const line = container.querySelector('[data-project="data-analyst-portfolio"] .cv-line')?.textContent ?? ''
-    expect(line).toBe('A curated collection of business analytics, modeling, and automation implementations')
-  })
-
-  it('renders the VI README in Vietnamese', () => {
-    const { container } = render(<CvDocument content={vi} />)
+  it('renders the VI YAML in Vietnamese', () => {
+    const { container } = render(<CvDocument cv={vi} />)
     expect(container.textContent).toContain('Võ Anh Duy')
     expect(screen.getByRole('heading', { level: 2, name: 'Kinh nghiệm' })).toBeTruthy()
+    expect(container.textContent).toContain('Công ty TNHH Thời trang Atino')
   })
 })

@@ -1,0 +1,176 @@
+# =====================================================================================================================
+#  CV của Võ Anh Duy (tiếng Việt). Bản tiếng Anh là cv.en.yaml trong cùng thư mục.
+#  Vietnamese CV of Vo Anh Duy. The English CV is cv.en.yaml in this folder (web/public/cv/).
+# =====================================================================================================================
+#
+#  HOW TO EDIT (same rules as cv.en.yaml)
+#  - Change the text after the "field:" names; keep the field names, the indentation (2 spaces) and the "- " list dashes.
+#  - Edit BOTH files the same way: they must have the same structure (same number of skills categories and items,
+#    jobs, bullets per job, projects, schools / degrees, certifications, languages, and the same contact fields).
+#    Email, phone, web addresses, project tech lists and certificate links must be identical in both files.
+#    If they drift apart the website build fails and lists every difference.
+#  - Text in "double quotes" is safest. Quotes are REQUIRED when a text starts with * [ { & ! % @ or `, contains ": "
+#    or " #", or is only a number (e.g. a year: "2024"). Inside double quotes write \" for a quote character.
+#  - Inside summary, bullets and project descriptions you may use: **bold**, *italic*, [link text](https://...).
+#  - Optional fields are marked "optional": delete the line to leave it out. Unknown field names are reported as errors.
+#  - The section headings (Tóm tắt, Kỹ năng, Kinh nghiệm, ...) come from the website template, not from this file.
+#
+#  HOW TO SEE IT / EXPORT THE PDFs
+#  - Preview: cd web; npm run dev, then open http://localhost:3010/vi/cv. After saving, reload the page.
+#  - PDFs: in PowerShell run   web\export_cv.ps1   -> "CV_Vo Anh Duy_EN.pdf" + "CV_Vo Anh Duy_VN.pdf" in the repo root.
+#  - Then commit + push this file, cv.en.yaml and the two PDFs, and deploy (web\deploy_vercel.ps1).
+#  - This file lives in web/public/cv/, so the deployed site also serves it at /cv/cv.en.yaml and /cv/cv.vi.yaml.
+# =====================================================================================================================
+
+name: "Võ Anh Duy"
+title: "Chuyên viên Dữ liệu & Lập trình Kỹ thuật"
+
+contact:
+  phone: "+84 978 987 889"
+  email: "voanhduy1710@gmail.com"
+  # location: "Hà Nội, Việt Nam"                   # optional
+  # website: "https://voanhduy1710.vercel.app"    # optional (https:// address)
+  github: "https://github.com/voanhduy1710"       # optional (https:// address)
+  linkedin: "https://www.linkedin.com/in/voanhduy1710"   # optional (https:// address)
+
+summary:
+  - "Chuyên viên Phân tích Dữ liệu và Lập trình Kỹ thuật với hơn 5 năm kinh nghiệm thực chiến trong các lĩnh vực phân tích dữ liệu, Business Intelligence (BI), phát triển ứng dụng web full-stack và xây dựng các luồng dữ liệu ETL tự động."
+  - "Nền tảng vững chắc trong việc thiết kế và triển khai các hệ sinh thái dữ liệu toàn diện (end-to-end): từ tổng hợp, xử lý hàng trăm triệu bản ghi dữ liệu vận hành quy mô lớn, thiết kế mô hình kho dữ liệu star-schema phục vụ báo cáo quản trị, đến lập trình các nền tảng ứng dụng sản xuất (production) và hệ thống tự động hóa luồng công việc."
+
+skills:
+  - category: "Phát triển Full-Stack"
+    items:
+      - "TypeScript"
+      - "JavaScript"
+      - "React"
+      - "Vite"
+      - "Next.js"
+      - "Tailwind CSS"
+      - "TanStack Query / Table"
+      - "FastAPI (Python)"
+      - "Node.js"
+      - "Express"
+      - "NestJS"
+      - "REST APIs"
+      - "Webhooks"
+      - "Supabase (PostgreSQL, Auth)"
+  - category: "Kỹ thuật Dữ liệu & Tự động hóa"
+    items:
+      - "Python (Pandas, Polars, DuckDB, Dagster, Selenium, PySpark)"
+      - "FastAPI (Event-Driven Ingestion)"
+      - "REST APIs"
+      - "Google Apps Script"
+      - "Thu thập dữ liệu Web"
+      - "Headless Automation"
+  - category: "Điện toán đám mây & DevOps"
+    items:
+      - "Google Cloud Run"
+      - "Google Cloud Storage (GCS)"
+      - "Docker"
+      - "Git"
+      - "GitHub Actions"
+      - "Vercel"
+      - "Railway"
+      - "Cloudflare"
+  - category: "Phân tích Dữ liệu & BI"
+    items:
+      - "SQL (OLTP: PostgreSQL, MySQL; OLAP: DuckDB, Google BigQuery)"
+      - "Power BI (DAX, Star Schema Modeling, Power Query)"
+      - "Microsoft Excel (Hàm nâng cao, Pivot Tables, Power Pivot)"
+      - "Google Sheets"
+
+experience:
+  - company: "Công ty TNHH Thời trang Atino"
+    role: "Chuyên viên Full-Stack & Dữ liệu"
+    period: "2024 – Hiện tại"
+    location: "Hà Nội, Việt Nam"
+    bullets:
+      - "Phát triển ứng dụng web tài chính full-stack (**React**, **TypeScript**, **FastAPI**, **Supabase**) tích hợp **dashboard P&L** tương tác, đối soát phê duyệt và **Lark webhook** thời gian thực giúp phát hiện chênh lệch chi tiền và trùng lặp đề nghị thanh toán."
+      - "Xây dựng luồng tự động hóa báo cáo dòng tiền và P&L (**Python**, **BigQuery**), tự động gửi bản tin tài chính hàng ngày qua **Lark Suite** cho Ban Giám đốc (BOD) và Quản lý, cắt giảm **99%** thời gian tổng hợp thủ công."
+      - "Thiết kế hệ thống ETL bán lẻ tự động bằng **Python** (**Polars**/**Pandas**), **Dagster Cloud** và **BigQuery**, đồng bộ và đối soát **hơn 10 triệu records/tháng** từ **Nhanh.vn ERP**, **Shopee**, **TikTok Shop**, **Facebook**, **Palexy** và **Lark Suite** (**Approval**, **Lark Base**) với độ ổn định **99.8%**."
+      - "Xây dựng mô hình star-schema và **Power BI dashboard** tự động cập nhật hàng ngày cho chuỗi **hơn 50 cửa hàng**, theo dõi chỉ số **P&L**, biên lợi nhuận gộp và vòng quay hàng tồn kho."
+  - company: "Công ty Cổ phần VWS"
+    role: "Chuyên viên Phân tích Dữ liệu Kỹ thuật | Phòng Công nghệ Thông tin"
+    period: "2021 – 2024"
+    location: "Hà Nội, Việt Nam"
+    bullets:
+      - "Xử lý, kiểm định và chuẩn hóa chất lượng dữ liệu cho hơn **100.000.000+ records** bằng **Jupyter notebook** (**Deepnote**) và **SQL**, giảm tỷ lệ sai lệch dữ liệu từ **20% xuống dưới 2%** và đảm bảo tính toàn vẹn hệ thống."
+      - "Phát triển các luồng tự động hóa và script tích hợp bằng **Python**, **Google Apps Script** và **VBA**, loại bỏ các tác vụ thủ công và nâng cao độ chính xác dữ liệu từ **80% lên 95%**."
+      - "Xây dựng các công cụ nội bộ bằng **Python** và chuẩn hóa quy trình tính toán, giúp **tăng 35% năng suất** làm việc của phòng ban."
+  - company: "Mosvodokanal"
+    role: "Chuyên viên Phân tích Vận hành | Phòng Kế hoạch và Phân tích"
+    period: "2018 – 2021"
+    location: "Mát-xcơ-va, Nga"
+    bullets:
+      - "Tổng hợp và phân tích hơn **1 tỷ records vận hành** từ **15+ khu vực dịch vụ** bằng các truy vấn **SQL** và **MySQL** tối ưu."
+      - "Xây dựng hệ thống pipeline báo cáo và KPI dashboard cho ban điều hành bằng **SQL** và **Excel**, rút ngắn **40%** thời gian lập báo cáo và hỗ trợ ra quyết định phân bổ nguồn lực."
+
+projects:
+  - name: "Web Đặt lịch Hẹn trả hàng Atino"
+    # link: "https://giacong.atino.vn/"   # optional (https:// address, printed after the name)
+    description: "Nền tảng logistics điều phối đặt lịch giao hàng và tiếp nhận hàng hóa kho vận quy mô doanh nghiệp, kết nối nhà cung cấp bên ngoài, người duyệt kho và thủ kho tại cổng theo thời gian thực."
+    tech: ["Node.js", "React", "TypeScript", "Tailwind CSS", "Express", "Supabase", "Google Cloud"]
+  - name: "Nền tảng Đặt lịch Studio QandaStudy"
+    description: "Hệ thống full-stack quản lý và lập lịch tài nguyên, phòng thu."
+    tech: ["React", "NestJS", "TypeScript", "Tailwind CSS", "Supabase"]
+  - name: "Nền tảng Quản trị & Phê duyệt Tài chính Atino"
+    description: "Bảng điều khiển quản lý kế toán bán lẻ và hệ thống phê duyệt đa cấp độ của doanh nghiệp."
+    tech: ["React", "TypeScript", "Tailwind CSS", "Turborepo", "TanStack Query"]
+  - name: "Backend FastAPI Phê duyệt Atino"
+    description: "Hệ thống REST API bất đồng bộ, xử lý sự kiện webhook Lark Suite và công cụ đồng bộ dữ liệu phân tích sang BigQuery."
+    tech: ["Python", "FastAPI", "Supabase", "Google BigQuery", "Docker"]
+  - name: "Nền tảng Dữ liệu Tác nghiệp Atino"
+    description: "Nền tảng tích hợp dữ liệu bán lẻ tự động vận hành trên các pipeline Dagster Cloud, kho dữ liệu BigQuery và công cụ thu thập dữ liệu bằng trình duyệt headless Selenium."
+    tech: ["Python", "Dagster", "BigQuery", "Pandas", "Selenium", "Docker"]
+  - name: "Web Cờ Caro"
+    description: "Ứng dụng web cờ Caro nhiều người chơi theo thời gian thực, hỗ trợ ghép trận ngang hàng (P2P) qua kênh dữ liệu WebRTC."
+    tech: ["Node.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "WebRTC"]
+  - name: "Dự án Portfolio Phân tích Dữ liệu"
+    description: "Bộ sưu tập các dự án phân tích dữ liệu kinh doanh, mô hình hóa và tự động hóa."
+    tech: ["Power BI", "PostgreSQL", "Python", "Excel", "Google Apps Script"]
+
+education:
+  - school: "Đại học Quốc gia Moscow (MGSU)"
+    degrees:
+      - degree: "Thạc sĩ Kinh tế Kỹ thuật"
+        detail: "Chuyên ngành: Quản lý Dự án"
+        period: "2018 – 2020"
+        note: "Tốt nghiệp loại Xuất sắc"
+      - degree: "Cử nhân Kỹ thuật"
+        period: "2014 – 2018"
+        note: "Tốt nghiệp loại Xuất sắc"
+
+certifications:
+  - name: "Google Data Analytics"
+    link: "https://coursera.org/share/3771af72e4ca6be3cd3a10aedbc024ac"
+    status: "Đã hoàn thành"
+  - name: "Google Advanced Data Analytics"
+    link: "https://www.coursera.org/account/accomplishments/professional-cert/3B7JBC6SXM0R"
+    status: "Đã hoàn thành"
+  - name: "IBM Professional Data Analyst"
+    link: "https://coursera.org/verify/professional-cert/WO42JQXIXNWP"
+    status: "Đã hoàn thành"
+  - name: "Associate Data Analyst in SQL"
+    link: "https://www.datacamp.com/completed/statement-of-accomplishment/track/ba33fb966f3a47b4908cbcddd706216242b73a16"
+    status: "Đã hoàn thành"
+  - name: "Microsoft Power BI Data Analyst"
+    link: "https://coursera.org/verify/professional-cert/UYM8N7BTOF65"
+    status: "Đã hoàn thành"
+  - name: "Data Analyst Associate Certificate"
+    link: "https://www.datacamp.com/certificate/DAA0013101408680"
+    status: "Đã hoàn thành"
+  - name: "Data Analyst In Python"
+    link: "https://www.datacamp.com/completed/statement-of-accomplishment/track/947180b5544a48e6faf21236f128bbcb34b694f4"
+    status: "Đã hoàn thành"
+  - name: "IBM Professional Data Engineer"
+    status: "Trong tiến trình"
+
+languages:
+  - name: "Tiếng Việt"
+    level: "Bản ngữ"
+  - name: "Tiếng Anh"
+    level: "Năng lực làm việc chuyên nghiệp"
+  - name: "Tiếng Nga"
+    level: "Năng lực làm việc chuyên nghiệp"
+  - name: "Tiếng Hàn"
+    level: "Sơ cấp (Đang học)"

@@ -1,6 +1,8 @@
 # ==============================================================================
 # PowerShell CV PDF export script for the portfolio website
 # Prints /en/cv and /vi/cv from a local production server to the two CV PDFs.
+# The CV text comes from web\public\cv\cv.en.yaml + cv.vi.yaml (edit those, then run this script);
+# the build checks both files (and that they match) and stops naming the file, field and line of any problem.
 # ==============================================================================
 param(
     [string]$OutDir
@@ -50,7 +52,7 @@ try {
     Write-Host "   Output folder: $OutDir" -ForegroundColor Green
 
     # 2. Production build with content from the local profile repo
-    Write-Host "`n[2/5] Building the site (npm run build, content from $profileRepo)..." -ForegroundColor Yellow
+    Write-Host "`n[2/5] Building the site (npm run build, content from $profileRepo, CV from web\public\cv\cv.en.yaml + cv.vi.yaml)..." -ForegroundColor Yellow
     if (-not (Test-Path "node_modules")) {
         Write-Host "   Installing dependencies via npm install..." -ForegroundColor Blue
         npm install
@@ -63,7 +65,7 @@ try {
     $env:PROFILE_REPO_PATH = $profileRepo
     $buildOutput = npm run build 2>&1
     if ($LASTEXITCODE -ne 0) {
-        Write-Host "Build failed! Fix the errors before exporting:" -ForegroundColor Red
+        Write-Host "Build failed! Fix the errors before exporting (CV problems name public/cv/cv.*.yaml, the field and the line):" -ForegroundColor Red
         Write-Host ($buildOutput | Out-String) -ForegroundColor Red
         Exit 1
     }
@@ -128,6 +130,15 @@ try {
         $outputs += Get-Item -LiteralPath $pdfPath
     }
     Write-Host "   Both PDFs written." -ForegroundColor Green
+    # The build's sync copied the PDFs before they were re-exported: sync again so the local site's
+    # "Download PDF" serves the new files (CONTENT_SOURCE=local is still set from step 2).
+    $syncOutput = npm run sync 2>&1
+    if ($LASTEXITCODE -ne 0) {
+        Write-Host "   Warning: re-sync failed; run 'npm run sync' to serve the new PDFs locally:" -ForegroundColor Yellow
+        Write-Host ($syncOutput | Out-String) -ForegroundColor Yellow
+    } else {
+        Write-Host "   Synced the new PDFs into public/content." -ForegroundColor Green
+    }
 } finally {
     # 5. Always stop the server, even on error or Ctrl+C
     Write-Host "`n[5/5] Cleaning up..." -ForegroundColor Yellow
@@ -158,5 +169,5 @@ Write-Host "CV export completed!" -ForegroundColor Green
 foreach ($f in $outputs) {
     Write-Host ("   {0}  ({1:N0} KB)" -f $f.FullName, ($f.Length / 1KB)) -ForegroundColor Green
 }
-Write-Host "Review the PDFs, commit + push C:\voanhduy1710, then run deploy_vercel.ps1" -ForegroundColor Yellow
+Write-Host "Review the PDFs, commit + push C:\voanhduy1710 (web\public\cv\*.yaml + the two PDFs), then run deploy_vercel.ps1" -ForegroundColor Yellow
 Write-Host "============================================================" -ForegroundColor Cyan

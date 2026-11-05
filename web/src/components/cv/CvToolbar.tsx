@@ -8,7 +8,7 @@ const button =
 
 /**
  * Screen-only bar above the CV: download the PDF exported from this page by export_cv.ps1 (`CV_Vo Anh Duy_EN.pdf` /
- * `_VN.pdf`, linked from the README), or print this page. This page is the one CV source.
+ * `_VN.pdf`, linked from the README), or print this page. The page renders public/cv/cv.{en,vi}.yaml.
  */
 export function CvToolbar({ lang, cvHref }: { lang: Lang; cvHref: { en: string; vi: string } }) {
   const t = ui(lang)
