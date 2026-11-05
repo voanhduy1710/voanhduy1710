@@ -14,7 +14,6 @@ Z_refactoring_prompt.md
 Z_updating_prompt.md
 USER_FLOW_REVIEW.md
 walkthrough.md
-Task list.md
 CLAUDE.md
 
 # Logs
@@ -95,3 +94,7 @@ web/**/next-env.d.ts
 # local helper: project tree dump script and its output (never published)
 /web/project_structure.py
 /web/Project_structure.txt
+
+# python bytecode cache
+__pycache__/
+*.py[cod]
