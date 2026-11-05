@@ -71,6 +71,7 @@ export function ProjectReadme({
   afterTitle,
   dropLanguageLink = false,
   linkTarget,
+  imageUrl,
   label = 'README',
   className = 'mt-8',
 }: {
@@ -84,11 +85,13 @@ export function ProjectReadme({
   dropLanguageLink?: boolean
   /** Where repo-relative links go instead of GitHub (see RewriteContext.linkTarget). */
   linkTarget?: RewriteContext['linkTarget']
+  /** Where repo-relative images are served from instead of the synced copies (see RewriteContext.imageUrl). */
+  imageUrl?: RewriteContext['imageUrl']
   /** The section's accessible name (default `README`). */
   label?: string
   className?: string
 }) {
-  const tree = renderReadmeTree(markdown, { slug, source: readmeSource(repoUrl), images: new Set(images), dropLanguageLink, linkTarget })
+  const tree = renderReadmeTree(markdown, { slug, source: readmeSource(repoUrl), images: new Set(images), dropLanguageLink, linkTarget, imageUrl })
   demoteExtraH1s(tree as HastNode, { seen: false })
   const placed = afterTitle !== undefined && insertAfterFirstH1(tree as HastNode)
   const components = {

@@ -7,6 +7,7 @@ export type UiKey =
   | 'downloadCv'
   | 'live'
   | 'repository'
+  | 'viewOnGitHub'
   | 'language'
   | 'closeTab'
   | 'notFound'
@@ -106,6 +107,45 @@ export type UiKey =
   | 'formFallback'
   | 'formTitle'
   | 'formOrEmail'
+  | 'authLogin'
+  | 'authLogout'
+  | 'authChangePassword'
+  | 'authAccount'
+  | 'authDialogLogin'
+  | 'authDialogPassword'
+  | 'authUser'
+  | 'authUserPlaceholder'
+  | 'authPassword'
+  | 'authNewPassword'
+  | 'authConfirmPassword'
+  | 'authSubmitLogin'
+  | 'authSubmitPassword'
+  | 'authWorking'
+  | 'authCancel'
+  | 'authErrMissing'
+  | 'authErrInvalid'
+  | 'authErrRateLimit'
+  | 'authErrNetwork'
+  | 'authErrUnconfirmed'
+  | 'authErrGeneric'
+  | 'authErrShort'
+  | 'authErrMismatch'
+  | 'authErrSame'
+  | 'authErrWeak'
+  | 'authErrReauth'
+  | 'authPasswordChanged'
+  | 'authClose'
+  | 'cvColour'
+  | 'cvColourTitle'
+  | 'cvColourDefault'
+  | 'cvColourCustom'
+  | 'cvColourHex'
+  | 'cvColourReset'
+  | 'cvColourLowContrast'
+  | 'cvColourSaving'
+  | 'cvColourSaved'
+  | 'cvColourSaveError'
+  | 'cvColourNote'
 
 /** Every label is a string, except the title bar's menu row, which is a list of menu names. */
 export type UiStrings = Record<Exclude<UiKey, 'menuBar'>, string> & { menuBar: readonly string[] }
@@ -117,6 +157,7 @@ const STRINGS: Record<Lang, UiStrings> = {
     downloadCv: 'Download CV',
     live: 'Live',
     repository: 'Repository',
+    viewOnGitHub: 'View on GitHub',
     language: 'Language',
     closeTab: 'Close',
     notFound: 'File not found',
@@ -167,7 +208,7 @@ const STRINGS: Record<Lang, UiStrings> = {
     actRunDebug: 'Run and Debug – live projects',
     actExtensions: 'Extensions – tech stack',
     actGithub: 'GitHub',
-    actAccounts: 'Accounts – LinkedIn · Email · Download CV',
+    actAccounts: 'Accounts – LinkedIn · Email · Download CV · Log in',
     actSettings: 'Settings – EN / VI',
     searchPlaceholder: 'Filter by name',
     noResults: 'No matching files.',
@@ -217,6 +258,45 @@ const STRINGS: Record<Lang, UiStrings> = {
     formFallback: 'The contact form is not available right now. Email me directly:',
     formTitle: 'Send a message',
     formOrEmail: 'Or email me directly:',
+    authLogin: 'Log in',
+    authLogout: 'Log out',
+    authChangePassword: 'Change password',
+    authAccount: 'Signed in as',
+    authDialogLogin: 'Log in',
+    authDialogPassword: 'Change password',
+    authUser: 'Email or username',
+    authUserPlaceholder: 'voanhduy1710',
+    authPassword: 'Password',
+    authNewPassword: 'New password',
+    authConfirmPassword: 'Repeat new password',
+    authSubmitLogin: 'Log in',
+    authSubmitPassword: 'Change password',
+    authWorking: 'Please wait…',
+    authCancel: 'Cancel',
+    authErrMissing: 'Enter your email (or username) and password.',
+    authErrInvalid: 'Wrong username/email or password.',
+    authErrRateLimit: 'Too many attempts. Please wait a few minutes and try again.',
+    authErrNetwork: 'Could not reach the login server. Check your connection and try again.',
+    authErrUnconfirmed: 'This account is not confirmed yet.',
+    authErrGeneric: 'Something went wrong. Please try again.',
+    authErrShort: 'The new password must have at least 12 characters.',
+    authErrMismatch: 'The two passwords do not match.',
+    authErrSame: 'The new password must be different from the current one.',
+    authErrWeak: 'That password is too weak. Choose a longer, less common one.',
+    authErrReauth: 'Please log out, log in again and then change the password.',
+    authPasswordChanged: 'Password changed.',
+    authClose: 'Close',
+    cvColour: 'Colour',
+    cvColourTitle: 'CV accent colour',
+    cvColourDefault: 'default',
+    cvColourCustom: 'Custom colour',
+    cvColourHex: 'Hex colour',
+    cvColourReset: 'Reset to Pine (default)',
+    cvColourLowContrast: 'Low contrast on white ({ratio}:1, below 4.5:1): text in this colour may be hard to read.',
+    cvColourSaving: 'Saving…',
+    cvColourSaved: 'Saved to your account.',
+    cvColourSaveError: 'Applied here, but could not be saved to your account.',
+    cvColourNote: 'Only you see this colour; visitors see Pine. Print / Save as PDF uses it.',
   },
   vi: {
     explorer: 'Trình duyệt tệp',
@@ -224,6 +304,7 @@ const STRINGS: Record<Lang, UiStrings> = {
     downloadCv: 'Tải CV',
     live: 'Trực tuyến',
     repository: 'Mã nguồn',
+    viewOnGitHub: 'Xem trên GitHub',
     language: 'Ngôn ngữ',
     closeTab: 'Đóng',
     notFound: 'Không tìm thấy tệp',
@@ -274,7 +355,7 @@ const STRINGS: Record<Lang, UiStrings> = {
     actRunDebug: 'Chạy và gỡ lỗi – dự án trực tuyến',
     actExtensions: 'Tiện ích mở rộng – công nghệ',
     actGithub: 'GitHub',
-    actAccounts: 'Tài khoản – LinkedIn · Email · Tải CV',
+    actAccounts: 'Tài khoản – LinkedIn · Email · Tải CV · Đăng nhập',
     actSettings: 'Cài đặt – EN / VI',
     searchPlaceholder: 'Lọc theo tên',
     noResults: 'Không có tệp phù hợp.',
@@ -323,6 +404,45 @@ const STRINGS: Record<Lang, UiStrings> = {
     formFallback: 'Biểu mẫu liên hệ hiện không khả dụng. Hãy email trực tiếp cho tôi:',
     formTitle: 'Gửi tin nhắn',
     formOrEmail: 'Hoặc email trực tiếp cho tôi:',
+    authLogin: 'Đăng nhập',
+    authLogout: 'Đăng xuất',
+    authChangePassword: 'Đổi mật khẩu',
+    authAccount: 'Đã đăng nhập:',
+    authDialogLogin: 'Đăng nhập',
+    authDialogPassword: 'Đổi mật khẩu',
+    authUser: 'Email hoặc tên đăng nhập',
+    authUserPlaceholder: 'voanhduy1710',
+    authPassword: 'Mật khẩu',
+    authNewPassword: 'Mật khẩu mới',
+    authConfirmPassword: 'Nhập lại mật khẩu mới',
+    authSubmitLogin: 'Đăng nhập',
+    authSubmitPassword: 'Đổi mật khẩu',
+    authWorking: 'Vui lòng đợi…',
+    authCancel: 'Hủy',
+    authErrMissing: 'Nhập email (hoặc tên đăng nhập) và mật khẩu.',
+    authErrInvalid: 'Sai tên đăng nhập/email hoặc mật khẩu.',
+    authErrRateLimit: 'Thử quá nhiều lần. Vui lòng đợi vài phút rồi thử lại.',
+    authErrNetwork: 'Không kết nối được máy chủ đăng nhập. Kiểm tra mạng rồi thử lại.',
+    authErrUnconfirmed: 'Tài khoản này chưa được xác nhận.',
+    authErrGeneric: 'Đã có lỗi xảy ra. Vui lòng thử lại.',
+    authErrShort: 'Mật khẩu mới phải có ít nhất 12 ký tự.',
+    authErrMismatch: 'Hai mật khẩu không khớp.',
+    authErrSame: 'Mật khẩu mới phải khác mật khẩu hiện tại.',
+    authErrWeak: 'Mật khẩu quá yếu. Hãy chọn mật khẩu dài hơn, khó đoán hơn.',
+    authErrReauth: 'Vui lòng đăng xuất, đăng nhập lại rồi đổi mật khẩu.',
+    authPasswordChanged: 'Đã đổi mật khẩu.',
+    authClose: 'Đóng',
+    cvColour: 'Màu',
+    cvColourTitle: 'Màu nhấn của CV',
+    cvColourDefault: 'mặc định',
+    cvColourCustom: 'Màu tùy chọn',
+    cvColourHex: 'Mã màu hex',
+    cvColourReset: 'Về màu Pine (mặc định)',
+    cvColourLowContrast: 'Độ tương phản trên nền trắng thấp ({ratio}:1, dưới 4.5:1): chữ màu này có thể khó đọc.',
+    cvColourSaving: 'Đang lưu…',
+    cvColourSaved: 'Đã lưu vào tài khoản.',
+    cvColourSaveError: 'Đã áp dụng ở đây nhưng chưa lưu được vào tài khoản.',
+    cvColourNote: 'Chỉ bạn thấy màu này; khách xem thấy màu Pine. In / Lưu thành PDF sẽ dùng màu này.',
   },
 }
 

@@ -73,7 +73,7 @@ try {
     if ($whoami) { $whoami = $whoami.Trim() } else { $whoami = '(unknown)' }
     Write-Host "   Authenticated Vercel User: $whoami" -ForegroundColor Green
 
-    # Contact form + keep-alive + content-sync settings (Resend, Supabase, CRON_SECRET, GITHUB_TOKEN): copied from web\.env (or the profile-repo .env) to the project's production env, so the
+    # Contact form + keep-alive + content-sync + owner-login settings (Resend, Supabase, CRON_SECRET, GITHUB_TOKEN, NEXT_PUBLIC_SUPABASE_*): copied from web\.env (or the profile-repo .env) to the project's production env, so the
     # deployed /api/contact can send email. A value is never put on a command line and never printed: it is written
     # (UTF-8, no BOM, no newline) to a temp file that becomes the CLI's stdin, and the file is deleted right after.
     # (Piping a string from PowerShell 5.1 adds a CRLF, which the CLI strips, but can also add a UTF-8 BOM, which it
@@ -104,14 +104,23 @@ try {
     }
     # Optional: lets the content sync list the Certifications repo on Vercel without the 60 requests/hour limit.
     $hasGithub = [bool](Get-DotEnvValue 'GITHUB_TOKEN')
+    # Owner login + CV colour (browser Supabase client): the publishable URL/key are public (they end up in the client
+    # bundle; RLS guards the data) but follow the same never-on-argv path. Next inlines NEXT_PUBLIC_* at build time, so
+    # Vercel needs them before its build. Without them the site simply has no Log in item.
+    $hasPublicSupabase = [bool](Get-DotEnvValue 'NEXT_PUBLIC_SUPABASE_URL') -and [bool](Get-DotEnvValue 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY')
+    if (-not $hasPublicSupabase) {
+        Write-Host "   Note: NEXT_PUBLIC_SUPABASE_URL / NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY are not in web\.env: the deployed site will have no owner login (unless they are already set in the Vercel project)." -ForegroundColor Yellow
+    }
     if (-not $hasResend -and -not $hasSupabase) {
         Write-Host "   Warning: with neither key the deployed contact form will show the email fallback." -ForegroundColor Yellow
     }
-    if ($hasResend -or $hasSupabase -or $hasCron -or $hasGithub) {
+    if ($hasResend -or $hasSupabase -or $hasCron -or $hasGithub -or $hasPublicSupabase) {
         Write-Host "   Syncing contact form, keep-alive and content-sync settings to the Vercel production environment..." -ForegroundColor Blue
-        foreach ($name in @('RESEND_API_KEY', 'CONTACT_TO', 'CONTACT_FROM', 'SUPABASE_SECRET_KEY', 'SUPABASE_URL', 'CRON_SECRET', 'GITHUB_TOKEN')) {
+        foreach ($name in @('RESEND_API_KEY', 'CONTACT_TO', 'CONTACT_FROM', 'SUPABASE_SECRET_KEY', 'SUPABASE_URL', 'CRON_SECRET', 'GITHUB_TOKEN', 'NEXT_PUBLIC_SUPABASE_URL', 'NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY')) {
             $value = Get-DotEnvValue $name
             if (-not $value) { continue }
+            # Public values are plain env vars; everything else is --sensitive (write-only in the Vercel dashboard).
+            $sensitiveFlag = if ($name -like 'NEXT_PUBLIC_*') { '' } else { ' --sensitive' }
             $valueFile = [System.IO.Path]::GetTempFileName()
             $outFile = [System.IO.Path]::GetTempFileName()
             $errFile = [System.IO.Path]::GetTempFileName()
@@ -119,7 +128,7 @@ try {
             $errText = ''
             try {
                 [System.IO.File]::WriteAllBytes($valueFile, [System.Text.Encoding]::UTF8.GetBytes($value))
-                $proc = Start-Process -FilePath $vercel -ArgumentList "env add $name production --force --sensitive --yes --project voanhduy1710" `
+                $proc = Start-Process -FilePath $vercel -ArgumentList "env add $name production --force$sensitiveFlag --yes --project voanhduy1710" `
                     -RedirectStandardInput $valueFile -RedirectStandardOutput $outFile -RedirectStandardError $errFile -NoNewWindow -Wait -PassThru
                 $ok = $proc.ExitCode -eq 0
                 if (-not $ok) {

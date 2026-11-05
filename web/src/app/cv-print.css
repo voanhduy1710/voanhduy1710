@@ -1,199 +1,34 @@
 /*
- * The CV page (/{lang}/cv). On screen: a white A4 sheet inside the editor pane. On paper: A4 with 12mm margins,
- * shell and toolbar hidden (`print:hidden`). Sizes are in pt so the 120% root font size does not scale them.
- * Unlayered on purpose: these rules beat the Tailwind utilities that <Inline> puts on bold text and links.
+ * Website-only frame of the CV page (/{lang}/cv). The CV design itself is public/cv/cv.css (shared with the
+ * standalone CV_EN.html / CV_VN.html that export_cv.ps1 prints); this file only places the sheet in the site:
+ * horizontal scroll on narrow screens, the toolbar gap, the sheet shadow, and no frame at all when printing.
+ * RULE: the CV is exactly ONE A4 page (`npm run check:cv`, export_cv.ps1). The red dashed line on the sheet is the page end.
+ * ACCENT: `--cv-accent` (Pine by default, :root in cv.css); the signed-in owner's colour picker sets it on <html>
+ * (CvAccentGate / CvAccentControl), and printing uses whichever colour is on screen.
  */
 
-@page {
-  size: A4;
-  margin: 12mm;
+.cv-screen {
+  overflow-x: auto;
 }
 
 .cv-toolbar {
   margin-bottom: 1rem;
 }
 
-.cv {
-  --cv-serif: Cambria, Georgia, 'Times New Roman', serif;
-  --cv-sans: 'Segoe UI', Calibri, Arial, 'Helvetica Neue', sans-serif;
-  --cv-muted: #4a4a4a;
-  --cv-rule: #b8b8b8;
-
-  box-sizing: border-box;
-  max-width: 210mm;
-  margin: 0 auto;
-  padding: 14mm 12mm;
-  background: #ffffff;
-  color: #111111;
+.cv-screen .cv {
+  margin-bottom: 2.5rem;
   color-scheme: light;
   box-shadow: 0 4px 24px rgb(0 0 0 / 0.5);
-  font-family: var(--cv-sans);
-  font-size: 9.5pt;
-  line-height: 1.38;
-}
-
-.cv h1,
-.cv h2,
-.cv h3 {
-  margin: 0;
-  font-family: var(--cv-serif);
-  color: #000000;
-}
-
-.cv p,
-.cv ul {
-  margin: 0;
-}
-
-.cv ul {
-  padding: 0;
-  list-style: none;
-}
-
-.cv strong {
-  font-weight: 600;
-  color: inherit;
-}
-
-.cv a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.cv code {
-  background: none;
-  padding: 0;
-  color: inherit;
-}
-
-/* Header: name, title, one contact line. */
-.cv-header {
-  padding-bottom: 6pt;
-  border-bottom: 1.2pt solid #000000;
-}
-
-.cv h1 {
-  font-size: 21pt;
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: 0.01em;
-}
-
-.cv-title {
-  margin-top: 2pt;
-  font-family: var(--cv-serif);
-  font-size: 11.5pt;
-  font-style: italic;
-}
-
-.cv-contact {
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 4pt;
-  color: var(--cv-muted);
-  font-size: 9pt;
-}
-
-.cv-contact li + li::before {
-  content: '·';
-  padding: 0 6pt;
-}
-
-/* Sections. */
-.cv-section {
-  margin-top: 9pt;
-}
-
-.cv h2 {
-  margin-bottom: 4pt;
-  padding-bottom: 1.5pt;
-  border-bottom: 0.6pt solid var(--cv-rule);
-  font-size: 11pt;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  break-after: avoid;
-}
-
-.cv h3 {
-  font-size: 10.5pt;
-  font-weight: 700;
-}
-
-.cv-section > p + p {
-  margin-top: 3pt;
-}
-
-.cv-skills li + li {
-  margin-top: 1.5pt;
-}
-
-.cv-meta {
-  color: var(--cv-muted);
-  font-size: 8.5pt;
-}
-
-/* Experience and project entries never split across pages. */
-.cv-entry {
-  break-inside: avoid;
-}
-
-.cv-entry + .cv-entry {
-  margin-top: 6pt;
-}
-
-.cv-project + .cv-project {
-  margin-top: 4pt;
-}
-
-.cv-entry-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  column-gap: 8pt;
-}
-
-.cv-role {
-  font-style: italic;
-}
-
-.cv-bullets {
-  margin-top: 2pt;
-}
-
-.cv-bullets li {
-  position: relative;
-  padding-left: 10pt;
-}
-
-.cv-bullets li::before {
-  content: '•';
-  position: absolute;
-  left: 2pt;
-}
-
-.cv-bullets li + li {
-  margin-top: 1pt;
-}
-
-.cv-columns {
-  columns: 2;
-  column-gap: 16pt;
-}
-
-.cv-columns li {
-  break-inside: avoid;
 }
 
 @media print {
-  .cv-page {
+  .cv-screen {
     padding: 0;
+    overflow: visible;
   }
 
-  .cv {
-    max-width: none;
-    padding: 0;
+  .cv-screen .cv {
+    margin: 0;
     box-shadow: none;
   }
 }

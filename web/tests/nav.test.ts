@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import type { Inline } from '@/lib/content/types'
-import { buildNav, bulletTitle, compareFileNames, cvFileName, orderRootFiles, findNavPage, isFolderOpen, navPages, projectIcon, type NavProject } from '@/lib/nav'
+import { README_FILES } from '@/lib/content'
+import { PROFILE_README_FILES, buildNav, bulletTitle, compareFileNames, cvFileName, orderRootFiles, findNavPage, isFolderOpen, navPages, projectIcon, type NavProject } from '@/lib/nav'
 
 const FULL_STACK = 'Full-Stack Applications & Production Systems'
 const ANALYTICS = 'Data Analytics & Business Intelligence'
@@ -41,7 +42,22 @@ describe('buildNav', () => {
     expect(nav.home).toEqual({ id: 'home', label: 'About Me', href: '/en', icon: 'star', fileName: 'page.tsx' })
     expect(JSON.stringify(nav)).not.toContain('about_me')
     expect(nav.cv.href).toBe('/en/cv')
-    expect(nav.readme.href).toBe('https://github.com/voanhduy1710')
+    expect(nav.readme.href).toBe('/en/readme')
+  })
+
+  it('README is an in-site page (not a link), named after the file each language shows', () => {
+    const en = buildNav('en', projects)
+    const vi = buildNav('vi', projects)
+    expect(en.readme).toEqual({ id: 'readme', label: 'README.md', href: '/en/readme', icon: 'markdown', fileName: 'README.md' })
+    expect(vi.readme).toEqual({ id: 'readme', label: 'READMEVN.md', href: '/vi/readme', icon: 'markdown', fileName: 'READMEVN.md' })
+    // A tab like any other page: active highlighting via findNavPage, right after the CV in explorer order.
+    expect(findNavPage(vi, '/vi/readme')?.id).toBe('readme')
+    const ids = navPages(en).map((p) => p.id)
+    expect(ids[ids.indexOf('cv') + 1]).toBe('readme')
+  })
+
+  it('PROFILE_README_FILES matches the content loader README_FILES', () => {
+    expect(PROFILE_README_FILES).toEqual(README_FILES)
   })
 
   it('lists one project page per slug, labelled with its title, in the given order', () => {
@@ -116,8 +132,8 @@ describe('buildNav', () => {
   it('uses Vietnamese labels and /vi hrefs for vi, with the same language-neutral ids', () => {
     const en = navPages(buildNav('en', projects))
     const vi = navPages(buildNav('vi', projects))
-    // One home tab (shared by its sections), 3 projects, the CV, 5 config files.
-    expect(vi).toHaveLength(10)
+    // One home tab (shared by its sections), 3 projects, the CV, the README preview, 5 config files.
+    expect(vi).toHaveLength(11)
     for (const f of vi) expect(f.href.startsWith('/vi')).toBe(true)
     expect(vi.map((f) => f.id)).toEqual(en.map((f) => f.id))
     expect(vi[0].label).toBe('Giới thiệu')

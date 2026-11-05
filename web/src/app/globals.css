@@ -399,6 +399,11 @@ body {
     height: auto;
     border-radius: 4px;
   }
+  /* An image with a README `height` gets it back as an inline style (render.ts); `contain` stops a too-wide
+     fixed-height image from distorting when max-width narrows it. */
+  .markdown-body img[height] {
+    object-fit: contain;
+  }
   .markdown-body p > img:only-child {
     border: 1px solid var(--vsc-border);
   }

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vo Anh Duy – CV</title>
+<!--
+  ENGLISH CV of Vo Anh Duy. The Vietnamese CV is CV_VN.html; the design (colours, fonts, layout) is cv.css.
+
+  EDIT     Change the text between the tags. Keep the tags and class names. <b>…</b> = bold, <i>…</i> = italic,
+           <a href="https://…">…</a> = link, &amp; = "&". Edit CV_VN.html the same way: both files must keep the
+           same structure (jobs, bullets per job, projects, skills rows, degrees, languages, certifications) and the
+           same links. Check with:   cd web; npm run check:cv-html
+  PREVIEW  Double-click this file (or VS Code: right-click → "Open with Live Server" / "Go Live"), reload after saving.
+  EXPORT   PowerShell:  web\export_cv.ps1   → "CV_Vo Anh Duy_EN.pdf" + "CV_Vo Anh Duy_VN.pdf" in the repo root.
+  RULE     The CV must fit on exactly ONE A4 page. On screen a red dashed "A4 page end" line marks the end of the
+           page: nothing may go below it. export_cv.ps1 refuses to replace the PDFs if a page overflows.
+-->
+<link rel="stylesheet" href="cv.css">
+</head>
+<body class="cv-page">
+
+<main class="cv">
+  <header>
+    <div>
+      <h1>Vo Anh Duy</h1>
+      <p class="role">Data Specialist &amp; Technical Developer</p>
+    </div>
+    <div class="contact">
+      <p>Hanoi, Vietnam</p>
+      <p>(+84) 978 987 889</p>
+      <p class="links"><a href="mailto:voanhduy1710@gmail.com">Email</a><a href="https://voanhduy1710.vercel.app">Website</a><a href="https://github.com/voanhduy1710">GitHub</a><a href="https://www.linkedin.com/in/voanhduy1710">LinkedIn</a></p>
+    </div>
+  </header>
+
+  <section class="summary">
+    <h2>Summary</h2>
+    <p>Data Specialist and Technical Developer with <b>5+ years</b> across data analysis, business intelligence, full-stack web applications and automated ETL pipelines. Builds end-to-end data systems: from aggregating large-scale operational records and star-schema <b>Power BI</b> models to production web platforms and automations that cut manual reporting time by up to <b>99%</b>.</p>
+  </section>
+
+  <section class="experience">
+    <h2>Experience</h2>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Atino Fashion Co., Ltd. <span class="where">– Hanoi, Vietnam</span></h3>
+        <span class="when">2024 – Present</span>
+      </div>
+      <p class="title">Full-Stack &amp; Data Specialist</p>
+      <ul>
+        <li>Built a full-stack financial web app (<b>React</b>, <b>TypeScript</b>, <b>FastAPI</b>, <b>Supabase</b>) with interactive <b>P&amp;L dashboards</b>, approval checking and real-time <b>Lark webhooks</b> that flag disbursement discrepancies and duplicate payment requests.</li>
+        <li>Engineered automated cash-flow and P&amp;L reporting pipelines (<b>Python</b>, <b>BigQuery</b>) delivering daily financial digests to Management and the Board via <b>Lark Suite</b>, cutting manual reporting time by <b>99%</b>.</li>
+        <li>Built retail ETL pipelines (<b>Python</b> Polars/Pandas, <b>Dagster Cloud</b>, <b>BigQuery</b>) syncing <b>10M+ records/month</b> across Nhanh.vn ERP, Shopee, TikTok Shop, Facebook, Palexy and Lark Suite with <b>99.8%</b> reliability.</li>
+        <li>Built daily-refresh <b>Power BI</b> dashboards and star-schema models across <b>50+ stores</b>, tracking P&amp;L, gross margin and inventory turnover.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>VWS Joint Stock Company <span class="where">– Hanoi, Vietnam</span></h3>
+        <span class="when">2021 – 2024</span>
+      </div>
+      <p class="title">Technical Data Analyst | Information Technology Department</p>
+      <ul>
+        <li>Processed, audited and enforced data quality across <b>100M+ records</b> with <b>SQL</b> and Jupyter notebooks, reducing data discrepancy rates from <b>20% to under 2%</b>.</li>
+        <li>Engineered automation and integration scripts (<b>Python</b>, <b>Google Apps Script</b>, <b>VBA</b>), raising data accuracy from <b>80% to 95%</b>; internal Python utilities improved team productivity by <b>35%</b>.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Mosvodokanal <span class="where">– Moscow, Russia</span></h3>
+        <span class="when">2018 – 2021</span>
+      </div>
+      <p class="title">Operations Analyst | Planning and Analytics Department</p>
+      <ul>
+        <li>Aggregated and analyzed <b>1B+ operational records</b> across <b>15+ service zones</b> with optimized <b>SQL</b>/<b>MySQL</b> queries.</li>
+        <li>Built automated executive KPI dashboards and reporting pipelines in <b>SQL</b> and <b>Excel</b>, reducing turnaround time by <b>40%</b>.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="https://voanhduy1710.vercel.app/en/projects/atino-workspace">Atino Workspace Data Platform</a> – retail data integration: Dagster Cloud pipelines, BigQuery warehouse, headless Selenium extractors. <span class="tech">Python · Dagster · BigQuery · Selenium</span></li>
+      <li><a href="https://voanhduy1710.vercel.app/en/projects/atino-approval-web">Atino Financial &amp; Approval Platform</a> – retail accounting and multi-tier approval dashboard with an async FastAPI backend. <span class="tech">React · TypeScript · FastAPI · Supabase</span></li>
+      <li><a href="https://voanhduy1710.vercel.app/en/projects/atino-booking">Atino Booking Web App</a> – live production booking platform (giacong.atino.vn). <span class="tech">React · TypeScript · Node.js · Tailwind</span></li>
+      <li><a href="https://voanhduy1710.vercel.app/en/projects/data-analyst-portfolio">BI Portfolio</a> – interactive Power BI dashboards: Uber Trips, Supply Chain &amp; Sales, Lazada Sales; Excel Adidas sales; SQL case studies. <span class="tech">Power BI · DAX · SQL · Excel</span></li>
+    </ul>
+  </section>
+
+  <section class="skills">
+    <h2>Skills</h2>
+    <dl>
+      <dt>Data Analytics &amp; BI</dt>
+      <dd>SQL (PostgreSQL, MySQL, DuckDB, BigQuery), Power BI (DAX, Star Schema, Power Query), Excel (Advanced Formulas, Pivot Tables, Power Pivot), Google Sheets</dd>
+      <dt>Data Engineering</dt>
+      <dd>Python (Pandas, Polars, DuckDB, Dagster, Selenium, PySpark), REST APIs, Google Apps Script, web scraping, headless automation</dd>
+      <dt>Full-Stack Development</dt>
+      <dd>TypeScript, JavaScript, React, Next.js, Vite, Tailwind CSS, FastAPI, Node.js, NestJS, Supabase (PostgreSQL, Auth), webhooks</dd>
+      <dt>Cloud &amp; DevOps</dt>
+      <dd>Google Cloud Run, Cloud Storage, Docker, Git, GitHub Actions, Vercel, Railway, Cloudflare</dd>
+    </dl>
+  </section>
+
+  <div class="cols">
+    <div>
+      <section class="education">
+        <h2>Education</h2>
+        <div class="degree">
+          <h3>M.Sc. in Technical Economics <span class="meta">· 2018 – 2020</span></h3>
+          <p class="meta">Moscow State University (MGSU) · Major: Project Management · <i>Graduated with Honors</i></p>
+        </div>
+        <div class="degree">
+          <h3>B.Sc. in Technical Engineering <span class="meta">· 2014 – 2018</span></h3>
+          <p class="meta">Moscow State University (MGSU) · <i>Graduated with Honors</i></p>
+        </div>
+      </section>
+      <section class="languages">
+        <h2>Languages</h2>
+        <ul>
+          <li><b>Vietnamese</b> – Native</li>
+          <li><b>English, Russian</b> – Professional proficiency</li>
+          <li><b>Korean</b> – Learning</li>
+        </ul>
+      </section>
+    </div>
+    <section class="certifications">
+      <h2><a href="https://github.com/voanhduy1710/Certifications">Certifications</a></h2>
+      <ul>
+        <li><a href="https://coursera.org/share/3771af72e4ca6be3cd3a10aedbc024ac">Google Data Analytics</a></li>
+        <li><a href="https://www.coursera.org/account/accomplishments/professional-cert/3B7JBC6SXM0R">Google Advanced Data Analytics</a></li>
+        <li><a href="https://coursera.org/verify/professional-cert/WO42JQXIXNWP">IBM Professional Data Analyst</a></li>
+        <li><a href="https://coursera.org/verify/professional-cert/UYM8N7BTOF65">Microsoft Power BI Data Analyst</a></li>
+        <li><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/ba33fb966f3a47b4908cbcddd706216242b73a16">Associate Data Analyst in SQL</a> (DataCamp)</li>
+        <li><a href="https://www.datacamp.com/certificate/DAA0013101408680">Data Analyst Associate</a> (DataCamp)</li>
+        <li><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/947180b5544a48e6faf21236f128bbcb34b694f4">Data Analyst in Python</a> (DataCamp)</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>

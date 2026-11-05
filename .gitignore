@@ -98,3 +98,6 @@ web/**/next-env.d.ts
 # python bytecode cache
 __pycache__/
 *.py[cod]
+
+# Owner's temporary Supabase login (local only, delete after changing the password)
+/web/.owner-login.local.txt

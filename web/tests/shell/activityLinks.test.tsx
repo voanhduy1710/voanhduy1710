@@ -29,6 +29,7 @@ const labels = {
   language: 'Language',
   switchToEn: 'English',
   switchToVi: 'Tiếng Việt',
+  auth: { login: 'Log in', logout: 'Log out', changePassword: 'Change password', account: 'Signed in as' },
 }
 
 afterEach(cleanup)

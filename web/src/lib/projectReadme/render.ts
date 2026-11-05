@@ -7,7 +7,8 @@
  * schema: no scripts, styles, iframes, event handlers, `javascript:` URLs) -> rewrite (below) -> rehype-slug.
  *
  * Rewrite, so the page makes no third-party image request:
- *   - repo-relative images -> the synced copy (`/content/project-readmes/<slug>/<path>`), dropped if not synced;
+ *   - repo-relative images -> the synced copy (`/content/project-readmes/<slug>/<path>`), dropped if not synced (or
+ *     where `imageUrl` says: the profile README's `web/public/X` -> `/X`); all of them `loading="lazy"`;
  *   - shields.io badges -> `<badge-chip>` elements (rendered as native BadgeChips);
  *   - other absolute images -> a link to the image, labelled with its alt text (plain text inside a link);
  *   - `<picture><source>` variants -> dropped (the fallback `<img>` stays);
@@ -105,6 +106,12 @@ export type RewriteContext = {
    * The analytics project's pages pass it so no analysis sends visitors to GitHub.
    */
   linkTarget?: (path: string) => string | null | undefined
+  /**
+   * Served URL of a repo-relative image (`path`: the repo path it resolves to), in place of the synced copy: when
+   * given, `images` is not consulted and `undefined` drops the image. The profile README uses it for its
+   * `web/public/...` images, which the site serves itself (`/logos/...`).
+   */
+  imageUrl?: (path: string) => string | undefined
 }
 
 /** Tag of the placeholder element a shields.io badge becomes; the page renders it as a BadgeChip. */
@@ -151,9 +158,18 @@ function rewriteImage(img: Element, ctx: RewriteContext, insideLink: boolean): E
   if (!isRepoRelative(src)) return externalImageLink(src, alt, insideLink)
   const path = resolveRepoPath(ctx.source.dir, src)
   if (path === undefined) return []
-  const served = ctx.images.has(`${path}.webp`) ? `${path}.webp` : path
-  if (!ctx.images.has(served)) return []
-  img.properties.src = readmeImageUrl(ctx.slug, served)
+  let url: string | undefined
+  if (ctx.imageUrl) url = ctx.imageUrl(path)
+  else {
+    const served = ctx.images.has(`${path}.webp`) ? `${path}.webp` : path
+    url = ctx.images.has(served) ? readmeImageUrl(ctx.slug, served) : undefined
+  }
+  if (url === undefined) return []
+  img.properties.src = url
+  // GitHub honours `height="40"`; the site's base CSS (`img { height: auto }`) would not, so a plain pixel height
+  // becomes an inline style built here (never copied from the README, whose `style` the sanitiser drops).
+  const height = String(img.properties.height ?? '').trim()
+  if (/^\d{1,4}$/.test(height)) img.properties.style = `height:${height}px`
   img.properties.loading = 'lazy'
   img.properties.decoding = 'async'
   if (img.properties.alt === undefined) img.properties.alt = ''

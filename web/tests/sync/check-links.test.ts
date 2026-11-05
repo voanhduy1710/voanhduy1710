@@ -104,13 +104,15 @@ describe('buildRoutes', () => {
 })
 
 describe('missingRoutes', () => {
-  it('requires the five config-file views in both languages', () => {
+  it('requires the profile README preview and the five config-file views in both languages', () => {
     expect(REQUIRED_ROUTES).toEqual([
+      '/en/readme',
       '/en/files/gitignore',
       '/en/files/vercelignore',
       '/en/files/next.config.ts',
       '/en/files/package.json',
       '/en/files/tsconfig.json',
+      '/vi/readme',
       '/vi/files/gitignore',
       '/vi/files/vercelignore',
       '/vi/files/next.config.ts',

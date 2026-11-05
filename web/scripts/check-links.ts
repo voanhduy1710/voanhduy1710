@@ -6,7 +6,8 @@
  *   - a `/` path that is a prerendered route (or a fixed redirect source such as `/`);
  *   - a `/` path naming a file under `public/` with exactly that spelling (this includes the synced `/content/...`).
  * Anything else (e.g. a README-relative `CV_...pdf` that the browser would resolve to `/en/CV_...pdf`) is listed and
- * the command exits non-zero. It also fails if a required route (each language x each config-file view, and each
+ * the command exits non-zero. It also fails if a required route (each language x the profile README preview, each
+ * language x each config-file view, and each
  * language x each certificate the content sync downloaded a PDF for, and each language x each analysis page of the
  * analytics project's synced README) was not prerendered. The certificate pages'
  * `/content/certificates/<no>.pdf` links are ordinary public files.
@@ -22,6 +23,7 @@ import { certificateHref, CERTIFICATES_MANIFEST } from '../src/lib/certificates'
 import { LANGS } from '../src/lib/content/types'
 import { README_FILES } from '../src/lib/content/index'
 import { findSection } from '../src/lib/content/markers'
+import { profileReadmeHref } from '../src/lib/nav'
 import { parseProjects } from '../src/lib/content/parse/projects'
 import { splitGroups } from '../src/lib/projectGroups'
 import { analysisSlugs, splitAnalyses } from '../src/lib/projectReadme/analyses'
@@ -96,8 +98,11 @@ export function buildRoutes(nextDir: string): string[] {
   return [...Object.keys(prerender.routes), ...redirects]
 }
 
-/** Routes the build must prerender: the read-only view of every allow-listed config file, in every language. */
-export const REQUIRED_ROUTES = LANGS.flatMap((lang) => REPO_FILES.map((f) => repoFileHref(lang, f)))
+/**
+ * Routes the build must prerender: the profile README preview and the read-only view of every allow-listed config
+ * file, in every language.
+ */
+export const REQUIRED_ROUTES = LANGS.flatMap((lang) => [profileReadmeHref(lang), ...REPO_FILES.map((f) => repoFileHref(lang, f))])
 
 /** The certificate pages the build must prerender: each language x each synced certificate PDF. */
 export function certificateRoutes(numbers: Iterable<number>): string[] {
@@ -153,7 +158,7 @@ async function main(): Promise<void> {
     process.exit(1)
   }
   console.log(
-    `check-links: all links in ${pages} pages resolve; all ${REQUIRED_ROUTES.length} config-file routes and ` +
+    `check-links: all links in ${pages} pages resolve; all ${REQUIRED_ROUTES.length} README + config-file routes and ` +
       `${certs.length} certificate routes and ${analyses.length} analysis routes prerendered`,
   )
 }

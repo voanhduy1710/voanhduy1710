@@ -65,6 +65,7 @@ export function Shell({
               language: t.language,
               switchToEn: t.switchToEn,
               switchToVi: t.switchToVi,
+              auth: { login: t.authLogin, logout: t.authLogout, changePassword: t.authChangePassword, account: t.authAccount },
             }}
           />
           <Explorer

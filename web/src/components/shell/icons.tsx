@@ -214,6 +214,31 @@ export function DownloadIcon(props: IconProps) {
   )
 }
 
+export function SignInIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M14 4h4.5A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5H14M4 12h11M11 8l4 4-4 4" />
+    </svg>
+  )
+}
+
+export function SignOutIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <path d="M10 4H5.5A1.5 1.5 0 0 0 4 5.5v13A1.5 1.5 0 0 0 5.5 20H10M9 12h11M16 8l4 4-4 4" />
+    </svg>
+  )
+}
+
+export function KeyIcon(props: IconProps) {
+  return (
+    <svg {...base} {...props}>
+      <circle cx="8" cy="15" r="4" />
+      <path d="M11 12l8-8M16 7l2.5 2.5M14 9l2 2" />
+    </svg>
+  )
+}
+
 /* ---------------------------------------------------------------------------------------------
  * Explorer, tabs, editor actions
  * ------------------------------------------------------------------------------------------- */

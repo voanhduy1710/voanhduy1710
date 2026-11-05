@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useRef, useState, type ReactNode } from 'react'
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react'
 import type { Lang } from '@/lib/content/types'
+import { AccountAuthItems, AuthDialogHost, preloadAuthDialog, type AuthDialogKind, type AuthMenuLabels } from './AccountAuth'
 import {
   AccountIcon,
   DownloadIcon,
@@ -42,6 +43,8 @@ export type ActivityLabels = {
   language: string
   switchToEn: string
   switchToVi: string
+  /** Login items of the Accounts menu. */
+  auth: AuthMenuLabels
 }
 
 const itemClass =
@@ -60,11 +63,22 @@ function Tip({ text }: { text: string }) {
 }
 
 /** A small popup menu opened from an activity-bar button (Accounts, Settings). */
-function MenuButton({ label, icon, children }: { label: string; icon: ReactNode; children: (close: () => void) => ReactNode }) {
+function MenuButton({
+  label,
+  icon,
+  onOpen,
+  children,
+}: {
+  label: string
+  icon: ReactNode
+  onOpen?: () => void
+  children: (close: () => void) => ReactNode
+}) {
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
   useEffect(() => {
     if (!open) return
+    onOpen?.()
     const onPointer = (e: PointerEvent) => {
       if (!ref.current?.contains(e.target as Node)) setOpen(false)
     }
@@ -77,7 +91,7 @@ function MenuButton({ label, icon, children }: { label: string; icon: ReactNode;
       document.removeEventListener('pointerdown', onPointer)
       document.removeEventListener('keydown', onKey)
     }
-  }, [open])
+  }, [open, onOpen])
   return (
     <div ref={ref} className="relative">
       <button
@@ -110,10 +124,13 @@ const menuItem =
 /**
  * Left icon strip. Top: Explorer and Search (sidebar views), Source Control (GitHub profile, badge = project count),
  * Run and Debug (home page's projects section), Extensions (its skills section): both scroll when already on the
- * home page, then a GitHub link (the README's GitHub profile, like Source Control). Bottom: Accounts and Settings menus.
+ * home page, then a GitHub link (the README's GitHub profile, like Source Control). Bottom: Accounts and Settings menus;
+ * Accounts ends with the owner login (Log in, or the account + Change password + Log out; see AccountAuth).
  */
 export function ActivityBar({ lang, links, labels }: { lang: Lang; links: ActivityLinks; labels: ActivityLabels }) {
   const { desktopOpen, mobileOpen, view, showView } = useSidebar()
+  const [authDialog, setAuthDialog] = useState<AuthDialogKind | null>(null)
+  const closeAuthDialog = useCallback(() => setAuthDialog(null), [])
   const inView = useActiveSection()
   const shown = (v: typeof view) => view === v && (mobileOpen || desktopOpen)
   // The sidebar has separate desktop and mobile open states; the mark follows whichever applies.
@@ -193,7 +210,7 @@ export function ActivityBar({ lang, links, labels }: { lang: Lang; links: Activi
         </a>
       </div>
       <div className="flex flex-col">
-        <MenuButton label={labels.accounts} icon={<AccountIcon />}>
+        <MenuButton label={labels.accounts} icon={<AccountIcon />} onOpen={preloadAuthDialog}>
           {(close) => (
             <>
               {links.linkedin && (
@@ -212,6 +229,7 @@ export function ActivityBar({ lang, links, labels }: { lang: Lang; links: Activi
                 <DownloadIcon />
                 {links.cv.label}
               </a>
+              <AccountAuthItems labels={labels.auth} itemClass={menuItem} close={close} openDialog={setAuthDialog} />
             </>
           )}
         </MenuButton>
@@ -224,6 +242,7 @@ export function ActivityBar({ lang, links, labels }: { lang: Lang; links: Activi
           )}
         </MenuButton>
       </div>
+      <AuthDialogHost lang={lang} kind={authDialog} onClose={closeAuthDialog} />
     </nav>
   )
 }

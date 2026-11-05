@@ -24,6 +24,7 @@ export type NavIcon =
   | 'appsscript'
   | 'excel'
   | 'file'
+  | 'markdown'
   | RepoFileIcon
 
 /**
@@ -69,11 +70,20 @@ export type Nav = {
   cv: NavPage
   /** Config files at the bottom of the root folder, each a read-only code view. */
   files: NavPage[]
-  /** README.md opens the GitHub profile in a new browser tab; it is not a page. */
-  readme: { label: string; href: string }
+  /**
+   * The profile README as an in-site markdown preview (`/{lang}/readme`): `README.md` on /en, `READMEVN.md` on /vi
+   * (the row and tab are named after the file that language shows).
+   */
+  readme: NavPage
 }
 
 export const PROFILE_URL = 'https://github.com/voanhduy1710'
+
+/** The profile README file each language shows (the same names as the content loader's README_FILES). */
+export const PROFILE_README_FILES: Record<Lang, string> = { en: 'README.md', vi: 'READMEVN.md' }
+
+/** The in-site preview of the profile README. */
+export const profileReadmeHref = (lang: Lang) => `/${lang}/readme`
 
 /** Tech icons for project rows, most specific framework first (so NestJS beats React, FastAPI beats Python). */
 const TECH_PRIORITY: [NavIcon, RegExp][] = [
@@ -206,7 +216,13 @@ export function buildNav(
     ),
     cv: { id: 'cv', label: cvFile, href: `${root}/cv`, icon: 'pdf', fileName: cvFile },
     files: REPO_FILES.map((f) => ({ id: `file:${f.slug}`, label: f.name, href: repoFileHref(lang, f), icon: f.icon, fileName: f.name })),
-    readme: { label: 'README.md', href: PROFILE_URL },
+    readme: {
+      id: 'readme',
+      label: PROFILE_README_FILES[lang],
+      href: profileReadmeHref(lang),
+      icon: 'markdown',
+      fileName: PROFILE_README_FILES[lang],
+    },
   }
 }
 
@@ -229,7 +245,7 @@ export function compareFileNames(a: string, b: string): number {
 /** Every page that can be opened as a tab, in explorer order. */
 export function navPages(nav: Nav): NavPage[] {
   const certificates = nav.certifications.flatMap((c) => (c.page ? [c.page] : []))
-  return [nav.home, ...nav.projects, ...nav.analyses, ...certificates, nav.cv, ...nav.files]
+  return [nav.home, ...nav.projects, ...nav.analyses, ...certificates, nav.cv, nav.readme, ...nav.files]
 }
 
 /** The page whose href is the given pathname (trailing slash ignored). */

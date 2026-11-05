@@ -1,0 +1,200 @@
+/* =====================================================================================================================
+   CV design — shared by CV_EN.html and CV_VN.html (one A4 page each).
+   Change colours, fonts, sizes and spacing HERE; the text lives in the two HTML files.
+
+   Accent colour: ONE variable. Every accent tint (rules, soft fills, link underlines) is derived from it below,
+   so  --cv-accent: #0b5cad;  on :root, on <main class="cv"> or on any ancestor recolours the whole CV.
+   (The website's owner-only colour picker sets this variable.)
+
+   All selectors are scoped under .cv (the A4 sheet) and .cv-page (the <body> of the standalone files), so the
+   sheet can also be shown inside the website without restyling the rest of the page.
+   ===================================================================================================================== */
+
+:root {
+  --cv-accent: #1f4d3a; /* Pine */
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+/* ---------- the sheet ---------------------------------------------------------------------------------------------- */
+.cv {
+  /* derived from the accent: change --cv-accent, not these */
+  --cv-rule: color-mix(in srgb, var(--cv-accent) 24%, #fff);
+  --cv-soft: color-mix(in srgb, var(--cv-accent) 7%, #fff);
+  --cv-underline: color-mix(in srgb, var(--cv-accent) 45%, transparent);
+
+  --cv-ink: #1d2733;
+  --cv-ink-2: #2b3642;
+  --cv-muted: #5b6673;
+  --cv-faint: #9aa6b2;
+
+  box-sizing: border-box;
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 10mm 13mm 5mm;
+  background: #fff;
+  color: var(--cv-ink);
+  font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
+  font-size: 9.5pt;
+  line-height: 1.3;
+  text-align: left;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.cv *,
+.cv *::before,
+.cv *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.cv a { color: inherit; text-decoration: none; }
+.cv b,
+.cv strong { font-weight: 700; }
+.cv ul { list-style: none; }
+
+/* ---------- header ------------------------------------------------------------------------------------------------- */
+.cv > header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6mm;
+  align-items: end;
+  padding-bottom: 3.2mm;
+  border-bottom: 2.2pt solid var(--cv-accent);
+}
+.cv h1 {
+  font-family: Garamond, "EB Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: 27pt;
+  letter-spacing: 2.5pt;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.cv .role { margin-top: 1.6mm; font-size: 11.5pt; color: var(--cv-accent); font-weight: 700; letter-spacing: .3pt; }
+.cv .contact { text-align: right; font-size: 8.9pt; line-height: 1.45; color: var(--cv-ink); }
+.cv .contact .links { margin-top: .8mm; }
+.cv .contact a { color: var(--cv-accent); font-weight: 700; border-bottom: .6pt solid var(--cv-underline); }
+/* the dots between the contact links */
+.cv .contact a + a::before {
+  content: "·";
+  display: inline-block;
+  margin: 0 1.8mm;
+  color: var(--cv-faint);
+  font-weight: 400;
+  border-bottom: .6pt solid #fff; /* hides the link underline under the dot */
+}
+
+/* ---------- sections ----------------------------------------------------------------------------------------------- */
+.cv section { margin-top: 3mm; }
+.cv h2 {
+  display: flex;
+  align-items: center;
+  gap: 2.5mm;
+  margin-bottom: 1.5mm;
+  font-size: 9.4pt;
+  font-weight: 700;
+  letter-spacing: 1.6pt;
+  text-transform: uppercase;
+  color: var(--cv-accent);
+}
+.cv h2::after { content: ""; flex: 1; height: .8pt; background: var(--cv-rule); }
+.cv .summary p { color: var(--cv-ink-2); text-align: justify; }
+
+/* bullets: every <li> of a job or of the projects list */
+.cv .job li,
+.cv .projects li,
+.cv .certifications li {
+  position: relative;
+  padding-left: 3.6mm;
+}
+.cv .job li::before,
+.cv .projects li::before,
+.cv .certifications li::before {
+  content: "";
+  position: absolute;
+  left: .6mm;
+  top: 1.75mm;
+  width: 1.3mm;
+  height: 1.3mm;
+  border-radius: 50%;
+  background: var(--cv-accent);
+}
+.cv .job li + li,
+.cv .projects li + li { margin-top: .5mm; }
+
+/* ---------- experience --------------------------------------------------------------------------------------------- */
+.cv .job + .job { margin-top: 2.2mm; }
+.cv .job-head { display: grid; grid-template-columns: 1fr auto; align-items: baseline; }
+.cv .job h3 { font-weight: 700; font-size: 10.2pt; letter-spacing: .4pt; text-transform: uppercase; }
+.cv .where { color: var(--cv-muted); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 9.2pt; }
+.cv .when { font-weight: 700; font-size: 9.2pt; color: var(--cv-accent); white-space: nowrap; }
+.cv .title { font-style: italic; color: var(--cv-ink-2); margin-top: .2mm; }
+.cv .job ul { margin-top: .9mm; }
+.cv .job li { text-align: justify; }
+
+/* ---------- projects ----------------------------------------------------------------------------------------------- */
+.cv .projects a { color: var(--cv-accent); font-weight: 700; } /* project names: bold + accent, no underline */
+.cv .tech { color: var(--cv-muted); font-size: 8.8pt; }
+
+/* ---------- skills ------------------------------------------------------------------------------------------------- */
+.cv .skills dl { display: grid; grid-template-columns: 37mm 1fr; row-gap: 1mm; column-gap: 3mm; }
+.cv .skills dt { font-weight: 700; }
+.cv .skills dd { color: var(--cv-ink-2); }
+
+/* ---------- education, languages, certifications ------------------------------------------------------------------- */
+.cv .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 6mm; margin-top: 3mm; }
+.cv .cols section { margin-top: 0; }
+.cv .cols section + section { margin-top: 3mm; }
+.cv .degree + .degree { margin-top: 1.4mm; }
+.cv .degree h3 { font-size: inherit; font-weight: 700; }
+.cv .meta { color: var(--cv-muted); font-weight: 400; }
+.cv .languages ul { display: flex; flex-wrap: wrap; column-gap: 4mm; row-gap: .4mm; }
+.cv .certifications a { color: var(--cv-ink); }
+.cv .certifications a:hover,
+.cv .certifications h2 a:hover { color: var(--cv-accent); }
+.cv .certifications h2 a { color: inherit; }
+
+/* ---------- screen: grey desk, centred sheet, "A4 page end" guide -------------------------------------------------- */
+.cv-page {
+  margin: 0;
+  padding: 12mm 0 16mm;
+  background: #3a3f45;
+}
+.cv-page .cv { box-shadow: 0 6px 30px rgba(0, 0, 0, .35); }
+/* red dashed line where the A4 page ends; anything below it would print on a 2nd page */
+.cv::after {
+  content: "A4 page end";
+  position: absolute;
+  left: -2mm;
+  right: -2mm;
+  top: 297mm;
+  height: 0;
+  border-top: 1.2pt dashed #e5484d;
+  color: #e5484d;
+  font: 700 7.5pt/1 "Segoe UI", Arial, sans-serif;
+  letter-spacing: .5pt;
+  text-align: right;
+  text-transform: uppercase;
+  padding-top: 1mm;
+  pointer-events: none;
+}
+
+/* ---------- print: exactly one 210 x 297 mm sheet, no screen chrome ------------------------------------------------ */
+@media print {
+  html,
+  body,
+  .cv-page { margin: 0; padding: 0; background: #fff; }
+  .cv {
+    width: 210mm;
+    min-height: 0;
+    height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+  .cv::after { display: none; }
+}

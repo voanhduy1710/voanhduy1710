@@ -70,7 +70,7 @@ describe('splitAnalyses (the real Portfolio-projects README)', () => {
     expect(links.map((l) => l !== undefined)).toEqual([false, false, true, true, true, false, false])
     expect(links[2]).toMatch(/^https:\/\/app\.powerbi\.com\/view\?r=.*pageName=e26fe47c30d523a8e80b$/)
     // Lazada's "Interactive dashboard can be found [here](...)" is a short link to the Power BI report.
-    expect(links[4]).toBe('https://bit.ly/Lazada_sales_reports')
+    expect(links[4]).toBe('https://app.powerbi.com/view?r=eyJrIjoiOTk1OThhNGItYmE0OC00Y2ZjLWFjZDgtM2E3ZmU3NjZmOWM3IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D')
     expect(vi.sections.map((s) => powerBiUrl(s.body))).toEqual(links)
   })
 
@@ -170,5 +170,38 @@ describe('relative-link rewriting on the analysis pages', () => {
     expect(out).toContain('<td>cell</td>')
     expect(out).not.toContain('onclick')
     expect(out).not.toContain('<script')
+  })
+})
+
+describe('withoutDashboardParagraph', () => {
+  it('drops the paragraph with the dashboard sentence and keeps the rest', async () => {
+    const { withoutDashboardParagraph } = await import('@/lib/projectReadme/analyses')
+    const md = [
+      'Skills Used: SQL, Power BI',
+      '',
+      'Analyzing Uber trips in June 2024. Interactive dashboard can be found [here](https://app.powerbi.com/view?r=x).',
+      '',
+      '- A bullet',
+      '',
+      '```',
+      'Interactive dashboard can be found [here](https://example.com) inside code',
+      '```',
+    ].join('\n')
+    const out = withoutDashboardParagraph(md)
+    expect(out).not.toContain('Analyzing Uber trips')
+    expect(out).toContain('Skills Used: SQL, Power BI')
+    expect(out).toContain('- A bullet')
+    expect(out).toContain('inside code')
+  })
+
+  it('also drops the Vietnamese sentence with a trailing "Full details" link', async () => {
+    const { withoutDashboardParagraph } = await import('@/lib/projectReadme/analyses')
+    const md = 'Kỹ năng\n\nPhân tích Lazada. Xem dashboard tương tác [tại đây](https://bit.ly/x). Chi tiết đầy đủ: [README](a/README.md).\n\n- Ý'
+    expect(withoutDashboardParagraph(md)).toBe('Kỹ năng\n\n- Ý')
+  })
+
+  it('leaves a section without the sentence unchanged', async () => {
+    const { withoutDashboardParagraph } = await import('@/lib/projectReadme/analyses')
+    expect(withoutDashboardParagraph('Skills\n\n- a\n- b')).toBe('Skills\n\n- a\n- b')
   })
 })

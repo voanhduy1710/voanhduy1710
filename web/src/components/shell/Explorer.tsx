@@ -313,7 +313,7 @@ export function treeOf(nav: Nav, labels: ExplorerLabels): TreeNode[] {
   const pageNode = (page: NavPage, key = page.id, label = page.label, first = true): TreeNode => ({ kind: 'page', key, label, page, first })
   const rootFiles = orderRootFiles<TreeNode>(
     pageNode(nav.cv),
-    { kind: 'link', key: 'readme', label: nav.readme.label, href: nav.readme.href, icon: 'markdown' },
+    pageNode(nav.readme),
     nav.files.map((f) => ({ name: f.label, item: pageNode(f) })),
   )
   return [

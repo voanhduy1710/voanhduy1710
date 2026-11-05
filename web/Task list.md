@@ -1,5 +1,38 @@
 # Task list
 
+## 2026-11-05 — Vercel Git deploys
+- ✅ Turned off Vercel Git auto-deploys (`vercel git disconnect`): pushes no longer create (failing) deployments; deploy only with web\deploy_vercel.ps1. Cause of the failure emails: project Root Directory "." (repo root) instead of web/. To reconnect later: Vercel → Project voanhduy1710 → Settings → Git (and set Root Directory to web).
+
+## 2026-11-05 — CV as HTML
+- ✅ CV source = HTML: web/public/cv/cv.css (shared design, one `--cv-accent` variable) + CV_EN.html + CV_VN.html (from CV_mockup.html, Pine); YAML files, YAML loader/tests and the `yaml` dependency removed; `npm run check:cv-html` warns when EN/VN drift apart (--strict fails; project_tester runs it strict) (uncommitted)
+- ✅ Update the CV PDFs + the website CV page from the HTML (1 A4 page rule kept): /{lang}/cv renders the HTML sheet; owner colour picker now sets `--cv-accent`; export_cv.ps1 + `npm run check:cv` print the HTML files directly (no build), fail + keep the old PDFs on >1 page (uncommitted)
+- ✅ Remove the mockup file (CV_mockup.html)
+- ✅ Re-export CV_Vo Anh Duy_EN.pdf + CV_Vo Anh Duy_VN.pdf from the new HTML (1 A4 page each; uncommitted)
+- ⚠️ Owner to confirm 3 facts (README version used for now): VWS/Viwase title + dates, Mosvodokanal dates (+ 1B+ vs 500k+ records), LinkedIn URL
+
+## 2026-11-05 — CV colours + account login
+- ✅ "Allow new users to sign up" turned OFF in Supabase (verified 2026-11-05: disable_signup=true; project-wide — also affects the QR app and gift app on the same project). To turn it back on later: https://supabase.com/dashboard/project/sudfxyhjksqjmarwcevp/auth/providers (Authentication → Sign In / Providers → Allow new users to sign up)
+- ✅ CV mockup colour: Pine (#1f4d3a); "Selected Projects" → "Projects"
+- ✅ Account menu (activity bar): add Log in — Supabase Auth, one account voanhduy1710 with a one-time password (owner changes it himself); no registering, login only (Opus) — account created; temp password in web/.owner-login.local.txt (gitignored: change it via menu → Change password, then delete the file); no sign-up UI; sign-ups disabled server-side (re-checked 2026-11-05 after the build: disable_signup=true); uncommitted
+- ✅ Logged-in feature: CV section → pick the CV colour from the CV_colors.html choices (+ blue tones) or a free colour picker, to match a company's colour (Opus) — /{lang}/cv "Colour" button when logged in: 26 presets (+ Blues), picker + hex field, low-contrast warning, saved per account (cv_preferences, RLS) → Print / Save as PDF uses it; public CV accent is now Pine; committed PDFs not re-exported; uncommitted
+
+## 2026-11-05 — CV mockup
+- ✅ Mockup of my CV as an HTML file in the root folder, but better → C:/voanhduy1710/CV_mockup.html (1 A4 page; newest facts from README; review notes on screen; uncommitted)
+
+## 2026-11-05 — README in the explorer
+- ✅ README row in the explorer UI should open README.md (/en) / READMEVN.md (/vi) inside the site, not the GitHub profile (new page /{lang}/readme: markdown preview in an editor tab, row + tab labelled README.md / READMEVN.md, "View on GitHub ↗" at the top; uncommitted)
+
+## 2026-11-05 — Lazada Power BI link
+- ✅ Portfolio-projects: Lazada dashboard link bit.ly → direct app.powerbi.com link (565c4c5: README.md, READMEVN.md, 5. Lazada Sales Report/README.md); website re-synced, button uses it (uncommitted)
+
+## 2026-11-05 — Remove dashboard sentences
+- ✅ Uber Trips, Supply Chain & Sales, Lazada: removed the "Analyzing … Interactive dashboard can be found here (Full details …)" paragraph from the web UI (EN + VI); the button already links the dashboard; README on GitHub unchanged
+
+## 2026-11-05 — Commit + CV fix
+- ✅ Commit and push (a19c589 CV YAML, 181f776 BI split + Lazada + icons; pushed, not redeployed)
+- ✅ Pull back my old CV (CV_Vo Anh Duy_EN.pdf / CV_Vo Anh Duy_VN.pdf restored from git = the original 2025 CV, 1 page each) (cv.en/vi.yaml now hold the June 2025 CV word for word, and the template copies its layout. Exceptions: the current LinkedIn URL is used, MongoDB is back as on the old CV, and the page is now A4 instead of Letter. PDFs re-exported; uncommitted)
+- ✅ Add rule: CV => only 1 A4 page (`npm run check:cv` prints both languages with Chrome and fails if either is longer than 1 page; it also runs in project_tester Part 2. export_cv.ps1 refuses to replace the PDFs on overflow. The on-screen sheet marks where the A4 page ends)
+
 ## 2026-11-05 — Website domain links
 - ✅ Replace voanhduy1710.dev with voanhduy1710.vercel.app in all public repos (commits: Certifications 7764fb4, Other-private-repo-previews 4426d9a, Portfolio-projects e2b19ba; others had no match)
 
@@ -38,7 +71,7 @@ Hint: when the domain is bought, also add it as a Vercel project domain + DNS re
 ## 2026-11-05 — BI projects
 - ✅ Separate the BI projects: one page per analysis (6 pages × EN/VI at /{lang}/projects/data-analyst-portfolio/<analysis>, own explorer rows + tabs; overview page now lists them as cards; uncommitted)
 - ✅ Add "Interactive dashboard can be found here" link for the Power BI ones that have it (found in the repo) (Uber Trips + Supply Chain: README link works, plus a yellow "Open interactive dashboard ↗" button)
-- ✅ Update the README instead of hyperlinking to GitHub; read from README.md / READMEVN.md (repo-relative links unlinked; SQL questions + Apps Script shown in-page; only a "Repository ↗" link remains)
+- ⚠️ Update the README instead of hyperlinking to GitHub; read from README.md / READMEVN.md — MISREAD: owner meant the explorer README row (open README.md / READMEVN.md in the site instead of linking to GitHub); redone under "2026-11-05 — README in the explorer". What was built here instead: (repo-relative links unlinked; SQL questions + Apps Script shown in-page; only a "Repository ↗" link remains)
 - ✅ Change the SQL interview questions and the Apps Script rows to another logo (database icon + Apps Script fan icon, chosen from each section's skills line; Excel/others can get a rule later)
 
 ## 2026-11-05 — Ship

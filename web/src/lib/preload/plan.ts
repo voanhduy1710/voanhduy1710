@@ -35,7 +35,8 @@ function slugOf(page: NavPage): string | undefined {
  * 2. `src/My works`: every project page plus the first image its README shows, right after tier 1, 2 at a time.
  * 3. `src/BI projects`: the BI project overview page(s) (the analytics projects: every project page outside My works),
  *    then every page a BI row opens (one per analysis), each with its first image, at idle.
- * 4. The rest, at idle, one at a time: the CV, the certificate pages, the config-file pages, then the certificate
+ * 4. The rest, at idle, one at a time: the CV, the certificate pages, the profile README preview (a root file, so
+ *    with the rest; it is a light page), the config-file pages, then the certificate
  *    PDFs themselves (largest last).
  * `cover(key)`: served URL of the first image a project's README (`<slug>`) or an analysis section
  * (`<slug>/<analysis>`) shows, if any.
@@ -63,6 +64,7 @@ export function buildPreloadPlan(nav: Nav, cover: (slug: string) => string | und
       tasks: unique([
         route(nav.cv),
         ...certPages.map(route),
+        route(nav.readme),
         ...nav.files.map(route),
         ...nav.certifications.filter((c) => c.page).map((c): PreloadTask => ({ kind: 'document', url: certificatePdfUrl(c.no) })),
       ]),

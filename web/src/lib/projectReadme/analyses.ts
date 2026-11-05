@@ -167,6 +167,25 @@ const DASHBOARD_SENTENCE = /(?:interactive\s+dashboard|dashboard\s+tương\s+tá
  * The section's interactive (Power BI) dashboard: the first `https://app.powerbi.com/...` link, else the link of its
  * "Interactive dashboard ... [here](url)" sentence; undefined if neither. Only links the sanitised page keeps count.
  */
+/**
+ * The section text without the paragraph that holds the "Interactive dashboard ... [here](url)" sentence: the page
+ * shows that link as its "Open interactive dashboard" button, so the sentence (and anything else in its paragraph,
+ * e.g. a "Full details: ..." link) is not repeated in the body. Paragraphs are blank-line separated blocks; fenced
+ * code is never touched. Unchanged when there is no such sentence.
+ */
+export function withoutDashboardParagraph(markdown: string): string {
+  const blocks: string[][] = [[]]
+  let fence: string | undefined
+  for (const line of markdown.split(/\r?\n/)) {
+    const marker = /^\s*(`{3,}|~{3,})/.exec(line)?.[1]
+    if (marker && (!fence || marker.startsWith(fence))) fence = fence ? undefined : marker
+    if (!fence && !marker && line.trim() === '') blocks.push([])
+    else blocks[blocks.length - 1].push(line)
+  }
+  const kept = blocks.filter((b) => b.length > 0 && !(DASHBOARD_SENTENCE.test(b.join('\n')) && !/^\s*(`{3,}|~{3,})/.test(b[0])))
+  return kept.map((b) => b.join('\n')).join('\n\n')
+}
+
 export function powerBiUrl(markdown: string): string | undefined {
   const hrefs = linkHrefs(markdown)
   const direct = hrefs.find((h) => POWER_BI.test(h))

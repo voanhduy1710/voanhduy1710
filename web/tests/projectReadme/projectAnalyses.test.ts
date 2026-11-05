@@ -64,7 +64,7 @@ describe('loadProjectAnalyses', () => {
     for (const lang of ['en', 'vi'] as const) {
       const lazada = loadProjectAnalyses(SLUG, lang)!.analyses[4]
       expect([lazada.number, lazada.slug, lazada.title, lazada.icon]).toEqual(['5', 'lazada-sales-report', 'Lazada Sales Report', 'powerbi'])
-      expect(lazada.powerBiUrl).toBe('https://bit.ly/Lazada_sales_reports')
+      expect(lazada.powerBiUrl).toBe('https://app.powerbi.com/view?r=eyJrIjoiOTk1OThhNGItYmE0OC00Y2ZjLWFjZDgtM2E3ZmU3NjZmOWM3IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D')
       expect(lazada.cover).toBe(
         '/content/project-readmes/data-analyst-portfolio/5.%20Lazada%20Sales%20Report/5.%20Lazada%20Sales%20Dashboard.png.webp',
       )

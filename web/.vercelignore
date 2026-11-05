@@ -38,3 +38,6 @@ yarn-error.log*
 project_structure.py
 project_tester.py
 Project_structure.txt
+
+# Owner's temporary login (local only)
+.owner-login.local.txt

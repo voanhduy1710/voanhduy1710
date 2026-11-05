@@ -54,3 +54,21 @@ describe('BI analysis rows', () => {
     expect(foldersHolding(tree, undefined).size).toBe(0)
   })
 })
+
+describe('README row', () => {
+  const rootFiles = (lang: 'en' | 'vi') => treeOf(buildNav(lang, []), labels).filter((n) => n.kind !== 'folder')
+
+  it('is a page row (an editor tab), right after the CV, named after the language file', () => {
+    for (const [lang, label] of [['en', 'README.md'], ['vi', 'READMEVN.md']] as const) {
+      const files = rootFiles(lang)
+      const row = files[1]
+      expect(row.kind).toBe('page')
+      if (row.kind !== 'page') return
+      expect(row.label).toBe(label)
+      expect(row.page.href).toBe(`/${lang}/readme`)
+      expect(row.page.icon).toBe('markdown')
+      expect(files[0].key).toBe('cv')
+      expect(files.some((n) => n.kind === 'link')).toBe(false)
+    }
+  })
+})

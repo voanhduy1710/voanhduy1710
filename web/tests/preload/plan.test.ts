@@ -40,10 +40,12 @@ describe('buildPreloadPlan', () => {
     expect(urls(3)).toEqual(['route /en/projects/data-analyst-portfolio', 'image /content/project-readmes/data-analyst-portfolio/d.webp'])
   })
 
-  it('tier 4: CV, certificate pages (only those with a PDF), config files, then the PDFs', () => {
+  it('tier 4: CV, certificate pages (only those with a PDF), README preview, config files, then the PDFs', () => {
     const rest = urls(4)
     expect(rest[0]).toBe('route /en/cv')
     expect(rest.slice(1, 3)).toEqual(['route /en/certifications/1', 'route /en/certifications/3'])
+    // The profile README preview: a root file, after the certificates, before the config files.
+    expect(rest[3]).toBe('route /en/readme')
     expect(rest.filter((u) => u.startsWith('route /en/files/')).length).toBe(nav.files.length)
     expect(rest.slice(-2)).toEqual(['document /content/certificates/1.pdf', 'document /content/certificates/3.pdf'])
   })

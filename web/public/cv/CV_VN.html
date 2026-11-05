@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Võ Anh Duy – CV</title>
+<!--
+  CV TIẾNG VIỆT của Võ Anh Duy (Vietnamese CV). The English CV is CV_EN.html; the design (colours, fonts, layout) is cv.css.
+
+  EDIT     Change the text between the tags. Keep the tags and class names. <b>…</b> = bold, <i>…</i> = italic,
+           <a href="https://…">…</a> = link, &amp; = "&". Edit CV_EN.html the same way: both files must keep the
+           same structure (jobs, bullets per job, projects, skills rows, degrees, languages, certifications) and the
+           same links (website pages may differ only in /en/ vs /vi/). Check with:   cd web; npm run check:cv-html
+  PREVIEW  Double-click this file (or VS Code: right-click → "Open with Live Server" / "Go Live"), reload after saving.
+  EXPORT   PowerShell:  web\export_cv.ps1   → "CV_Vo Anh Duy_EN.pdf" + "CV_Vo Anh Duy_VN.pdf" in the repo root.
+  RULE     CV chỉ được 1 trang A4 (exactly ONE A4 page). On screen a red dashed "A4 page end" line marks the end of
+           the page: nothing may go below it. export_cv.ps1 refuses to replace the PDFs if a page overflows.
+-->
+<link rel="stylesheet" href="cv.css">
+</head>
+<body class="cv-page">
+
+<main class="cv">
+  <header>
+    <div>
+      <h1>Võ Anh Duy</h1>
+      <p class="role">Chuyên viên Dữ liệu &amp; Lập trình Kỹ thuật</p>
+    </div>
+    <div class="contact">
+      <p>Hà Nội, Việt Nam</p>
+      <p>(+84) 978 987 889</p>
+      <p class="links"><a href="mailto:voanhduy1710@gmail.com">Email</a><a href="https://voanhduy1710.vercel.app">Trang web</a><a href="https://github.com/voanhduy1710">GitHub</a><a href="https://www.linkedin.com/in/voanhduy1710">LinkedIn</a></p>
+    </div>
+  </header>
+
+  <section class="summary">
+    <h2>Giới thiệu</h2>
+    <p>Chuyên viên Dữ liệu và Lập trình Kỹ thuật với <b>hơn 5 năm</b> kinh nghiệm về phân tích dữ liệu, Business Intelligence (BI), ứng dụng web full-stack và luồng ETL tự động. Xây dựng hệ thống dữ liệu end-to-end: từ tổng hợp dữ liệu vận hành quy mô lớn, mô hình star-schema <b>Power BI</b> đến nền tảng web production và tự động hóa giúp cắt giảm tới <b>99%</b> thời gian lập báo cáo thủ công.</p>
+  </section>
+
+  <section class="experience">
+    <h2>Kinh nghiệm làm việc</h2>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Công ty TNHH Thời trang Atino <span class="where">– Hà Nội, Việt Nam</span></h3>
+        <span class="when">2024 – Hiện tại</span>
+      </div>
+      <p class="title">Chuyên viên Full-Stack &amp; Dữ liệu</p>
+      <ul>
+        <li>Phát triển ứng dụng web tài chính full-stack (<b>React</b>, <b>TypeScript</b>, <b>FastAPI</b>, <b>Supabase</b>) tích hợp <b>dashboard P&amp;L</b> tương tác, đối soát phê duyệt và <b>Lark webhook</b> thời gian thực giúp phát hiện chênh lệch chi tiền và trùng lặp đề nghị thanh toán.</li>
+        <li>Xây dựng luồng tự động hóa báo cáo dòng tiền và P&amp;L (<b>Python</b>, <b>BigQuery</b>), gửi bản tin tài chính hàng ngày cho Ban Giám đốc và Quản lý qua <b>Lark Suite</b>, cắt giảm <b>99%</b> thời gian tổng hợp thủ công.</li>
+        <li>Thiết kế hệ thống ETL bán lẻ (<b>Python</b> Polars/Pandas, <b>Dagster Cloud</b>, <b>BigQuery</b>) đồng bộ <b>hơn 10 triệu records/tháng</b> từ Nhanh.vn ERP, Shopee, TikTok Shop, Facebook, Palexy và Lark Suite với độ ổn định <b>99.8%</b>.</li>
+        <li>Xây dựng mô hình star-schema và <b>Power BI dashboard</b> cập nhật hàng ngày cho <b>hơn 50 cửa hàng</b>, theo dõi P&amp;L, biên lợi nhuận gộp và vòng quay hàng tồn kho.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Công ty Cổ phần VWS <span class="where">– Hà Nội, Việt Nam</span></h3>
+        <span class="when">2021 – 2024</span>
+      </div>
+      <p class="title">Chuyên viên Phân tích Dữ liệu Kỹ thuật | Phòng Công nghệ Thông tin</p>
+      <ul>
+        <li>Xử lý, kiểm định và chuẩn hóa chất lượng dữ liệu cho <b>hơn 100 triệu records</b> bằng <b>SQL</b> và Jupyter notebook, giảm tỷ lệ sai lệch dữ liệu từ <b>20% xuống dưới 2%</b>.</li>
+        <li>Phát triển các script tự động hóa và tích hợp (<b>Python</b>, <b>Google Apps Script</b>, <b>VBA</b>), nâng độ chính xác dữ liệu từ <b>80% lên 95%</b>; các công cụ nội bộ bằng Python giúp tăng <b>35%</b> năng suất của phòng ban.</li>
+      </ul>
+    </article>
+
+    <article class="job">
+      <div class="job-head">
+        <h3>Mosvodokanal <span class="where">– Mát-xcơ-va, Nga</span></h3>
+        <span class="when">2018 – 2021</span>
+      </div>
+      <p class="title">Chuyên viên Phân tích Vận hành | Phòng Kế hoạch và Phân tích</p>
+      <ul>
+        <li>Tổng hợp và phân tích <b>hơn 1 tỷ records vận hành</b> từ <b>15+ khu vực dịch vụ</b> bằng các truy vấn <b>SQL</b>/<b>MySQL</b> tối ưu.</li>
+        <li>Xây dựng KPI dashboard và pipeline báo cáo tự động cho ban điều hành bằng <b>SQL</b> và <b>Excel</b>, rút ngắn <b>40%</b> thời gian lập báo cáo.</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="projects">
+    <h2>Dự án</h2>
+    <ul>
+      <li><a href="https://voanhduy1710.vercel.app/vi/projects/atino-workspace">Nền tảng Dữ liệu Tác nghiệp Atino</a> – tích hợp dữ liệu bán lẻ: pipeline Dagster Cloud, kho dữ liệu BigQuery, thu thập dữ liệu bằng headless Selenium. <span class="tech">Python · Dagster · BigQuery · Selenium</span></li>
+      <li><a href="https://voanhduy1710.vercel.app/vi/projects/atino-approval-web">Nền tảng Quản trị &amp; Phê duyệt Tài chính Atino</a> – dashboard kế toán bán lẻ và phê duyệt đa cấp với backend FastAPI bất đồng bộ. <span class="tech">React · TypeScript · FastAPI · Supabase</span></li>
+      <li><a href="https://voanhduy1710.vercel.app/vi/projects/atino-booking">Web Đặt lịch Hẹn trả hàng Atino</a> – nền tảng đặt lịch đang vận hành thực tế (giacong.atino.vn). <span class="tech">React · TypeScript · Node.js · Tailwind</span></li>
+      <li><a href="https://voanhduy1710.vercel.app/vi/projects/data-analyst-portfolio">Portfolio BI</a> – dashboard Power BI tương tác: Uber Trips, Supply Chain &amp; Sales, Lazada Sales; phân tích doanh số Adidas trên Excel; case study SQL. <span class="tech">Power BI · DAX · SQL · Excel</span></li>
+    </ul>
+  </section>
+
+  <section class="skills">
+    <h2>Kỹ năng</h2>
+    <dl>
+      <dt>Phân tích Dữ liệu &amp; BI</dt>
+      <dd>SQL (PostgreSQL, MySQL, DuckDB, BigQuery), Power BI (DAX, Star Schema, Power Query), Excel (Hàm nâng cao, Pivot Tables, Power Pivot), Google Sheets</dd>
+      <dt>Kỹ thuật Dữ liệu</dt>
+      <dd>Python (Pandas, Polars, DuckDB, Dagster, Selenium, PySpark), REST APIs, Google Apps Script, thu thập dữ liệu web, headless automation</dd>
+      <dt>Phát triển Full-Stack</dt>
+      <dd>TypeScript, JavaScript, React, Next.js, Vite, Tailwind CSS, FastAPI, Node.js, NestJS, Supabase (PostgreSQL, Auth), webhooks</dd>
+      <dt>Đám mây &amp; DevOps</dt>
+      <dd>Google Cloud Run, Cloud Storage, Docker, Git, GitHub Actions, Vercel, Railway, Cloudflare</dd>
+    </dl>
+  </section>
+
+  <div class="cols">
+    <div>
+      <section class="education">
+        <h2>Học vấn</h2>
+        <div class="degree">
+          <h3>Thạc sĩ Kinh tế Kỹ thuật <span class="meta">· 2018 – 2020</span></h3>
+          <p class="meta">Đại học Quốc gia Moscow (MGSU) · Chuyên ngành: Quản lý Dự án · <i>Tốt nghiệp loại Xuất sắc</i></p>
+        </div>
+        <div class="degree">
+          <h3>Cử nhân Kỹ thuật <span class="meta">· 2014 – 2018</span></h3>
+          <p class="meta">Đại học Quốc gia Moscow (MGSU) · <i>Tốt nghiệp loại Xuất sắc</i></p>
+        </div>
+      </section>
+      <section class="languages">
+        <h2>Ngôn ngữ</h2>
+        <ul>
+          <li><b>Tiếng Việt</b> – Bản ngữ</li>
+          <li><b>Tiếng Anh, tiếng Nga</b> – Thành thạo</li>
+          <li><b>Tiếng Hàn</b> – Đang học</li>
+        </ul>
+      </section>
+    </div>
+    <section class="certifications">
+      <h2><a href="https://github.com/voanhduy1710/Certifications">Chứng chỉ</a></h2>
+      <ul>
+        <li><a href="https://coursera.org/share/3771af72e4ca6be3cd3a10aedbc024ac">Google Data Analytics</a></li>
+        <li><a href="https://www.coursera.org/account/accomplishments/professional-cert/3B7JBC6SXM0R">Google Advanced Data Analytics</a></li>
+        <li><a href="https://coursera.org/verify/professional-cert/WO42JQXIXNWP">IBM Professional Data Analyst</a></li>
+        <li><a href="https://coursera.org/verify/professional-cert/UYM8N7BTOF65">Microsoft Power BI Data Analyst</a></li>
+        <li><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/ba33fb966f3a47b4908cbcddd706216242b73a16">Associate Data Analyst in SQL</a> (DataCamp)</li>
+        <li><a href="https://www.datacamp.com/certificate/DAA0013101408680">Data Analyst Associate</a> (DataCamp)</li>
+        <li><a href="https://www.datacamp.com/completed/statement-of-accomplishment/track/947180b5544a48e6faf21236f128bbcb34b694f4">Data Analyst in Python</a> (DataCamp)</li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+</body>
+</html>

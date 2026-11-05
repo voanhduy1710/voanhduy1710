@@ -5,7 +5,9 @@ project_tester.py
 Pre-deploy check for the portfolio website (web/). One command runs:
 
   1. Suites      typecheck, lint, unit tests (vitest)
-  2. Build       production build (`next build`), then the link check of the prerendered pages
+  2. Build       production build (`next build`), then the link check of the prerendered pages and the
+                 one-A4-page CV check (check:cv: prints public/cv/CV_EN.html + CV_VN.html with headless Chrome)
+                 and the EN/VN CV drift check (check:cv-html)
   3. Site        every page reachable from /en and /vi (crawled), the images/PDFs they use, redirects, 404s,
                  the API routes' refusals (no email is ever sent, nothing is saved)
   4. Speed       first-load time of each page, and the page-switch cost: the RSC payload a click on an explorer row
@@ -206,6 +208,10 @@ def run_build(skip_build: bool) -> Section:
     else:
         run_step(sec, "next build", [n, "exec", "--", "next", "build"], {"CONTENT_SOURCE": "local"})
     run_step(sec, "link check of prerendered pages (check:links)", [n, "run", "check:links"])
+    # The one-A4-page CV rule: prints public/cv/CV_EN.html + CV_VN.html (the CV source, no server needed) with headless
+    # Chrome and fails if either PDF has more than one page. Then the two files must match in structure and links.
+    run_step(sec, "CV is one A4 page per language (check:cv)", [n, "run", "check:cv"])
+    run_step(sec, "CV_EN.html and CV_VN.html match (check:cv-html --strict)", [n, "run", "check:cv-html", "--", "--strict"])
     sec.finish()
     return sec
 

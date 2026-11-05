@@ -10,6 +10,7 @@ import {
   sectionSummary,
   shiftHeadings,
   splitAnalyses,
+  withoutDashboardParagraph,
   type LinkedFileKind,
 } from './projectReadme/analyses'
 import { readmeSource, type ReadmeSource } from './projectReadme/source'
@@ -89,7 +90,8 @@ export function loadProjectAnalyses(slug: string, lang: 'en' | 'vi'): ProjectAna
       number,
       slug: analysisSlug,
       title: section.title,
-      body: shiftHeadings(section.body, -2),
+      // The dashboard sentence becomes the page's button, so its paragraph is not shown again in the body.
+      body: shiftHeadings(dashboard ? withoutDashboardParagraph(section.body) : section.body, -2),
       summary: sectionSummary(section.body),
       icon: analysisIcon(sectionSummary(enSplit.sections.find((s) => s.number === number)!.body)),
       ...(dashboard && { powerBiUrl: dashboard }),

@@ -119,7 +119,7 @@ Phân tích chuỗi cung ứng và bán hàng của một công ty cung cấp h�
 
 Kỹ năng sử dụng: Excel, Power BI, DAX, Data Modeling, E-commerce Analytics
 
-Phân tích hiệu quả bán hàng, hoạt động khách hàng và xu hướng sản phẩm trên Lazada năm 2023. Xem dashboard tương tác [tại đây](https://bit.ly/Lazada_sales_reports). Chi tiết đầy đủ: [5. Lazada Sales Report/README.md](5.%20Lazada%20Sales%20Report/README.md).
+Phân tích hiệu quả bán hàng, hoạt động khách hàng và xu hướng sản phẩm trên Lazada năm 2023. Xem dashboard tương tác [tại đây](https://app.powerbi.com/view?r=eyJrIjoiOTk1OThhNGItYmE0OC00Y2ZjLWFjZDgtM2E3ZmU3NjZmOWM3IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D). Chi tiết đầy đủ: [5. Lazada Sales Report/README.md](5.%20Lazada%20Sales%20Report/README.md).
 
 &nbsp;&nbsp;&nbsp;&nbsp;• Xây dựng báo cáo Power BI 4 trang (Overview, Product Analysis, Details, Key Findings) trên dữ liệu bán hàng cấp đơn hàng, có bộ lọc Tháng-Năm, Bang và Thành phố.  
 &nbsp;&nbsp;&nbsp;&nbsp;• Theo dõi doanh số, số lượng bán, giao hàng thành công và tỷ lệ trả hàng kèm so sánh MoM, cùng phân bổ theo danh mục, size, đơn vị fulfilment và hình thức vận chuyển.  

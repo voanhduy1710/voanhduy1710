@@ -117,7 +117,7 @@ Analyzing Supply chain and Sales of a Consumer good Supply Company from June 201
 
 Skills Used: Excel, Power BI, DAX, Data Modeling, E-commerce Analytics
 
-Analyzing 2023 Lazada sales performance, customer activity and product trends. Interactive dashboard can be found [here](https://bit.ly/Lazada_sales_reports). Full details: [5. Lazada Sales Report/README.md](5.%20Lazada%20Sales%20Report/README.md).
+Analyzing 2023 Lazada sales performance, customer activity and product trends. Interactive dashboard can be found [here](https://app.powerbi.com/view?r=eyJrIjoiOTk1OThhNGItYmE0OC00Y2ZjLWFjZDgtM2E3ZmU3NjZmOWM3IiwidCI6Ijg5NjQxZWIwLWU1ZmMtNDRlYi05MWRiLTc4ZDI5YmFkMTc3OCIsImMiOjEwfQ%3D%3D). Full details: [5. Lazada Sales Report/README.md](5.%20Lazada%20Sales%20Report/README.md).
 
 &nbsp;&nbsp;&nbsp;&nbsp;• Built a 4-page Power BI report (Overview, Product Analysis, Details, Key Findings) on order-level sales data, with Month-Year, State and City filters.  
 &nbsp;&nbsp;&nbsp;&nbsp;• Tracked sales value, items sold, delivery success and return rate with MoM comparison, plus category, size, fulfilment and shipping-mode breakdowns.  
