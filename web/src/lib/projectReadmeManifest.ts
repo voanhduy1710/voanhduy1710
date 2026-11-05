@@ -22,9 +22,11 @@ export function parseProjectReadmeManifest(text: string): ProjectReadmeManifest 
         typeof (e as ProjectReadmeEntry)?.repoUrl === 'string' &&
         Array.isArray((e as ProjectReadmeEntry).images) &&
         (e as ProjectReadmeEntry).images.every((i) => typeof i === 'string') &&
-        ['undefined', 'boolean'].includes(typeof (e as ProjectReadmeEntry).vi),
+        ['undefined', 'boolean'].includes(typeof (e as ProjectReadmeEntry).vi) &&
+        ((e as ProjectReadmeEntry).files === undefined ||
+          (Array.isArray((e as ProjectReadmeEntry).files) && (e as ProjectReadmeEntry).files!.every((f) => typeof f === 'string'))),
     )
-  if (!ok) throw new Error(`content/${PROJECT_READMES_MANIFEST} must map project slugs to { repoUrl, images, vi? }`)
+  if (!ok) throw new Error(`content/${PROJECT_READMES_MANIFEST} must map project slugs to { repoUrl, images, vi?, files? }`)
   return value as ProjectReadmeManifest
 }
 
@@ -72,4 +74,15 @@ export function readmeCoverUrl(slug: string): string | undefined {
   const manifest = loadProjectReadmeManifest()
   const first = Object.hasOwn(manifest, slug) ? manifest[slug].images[0] : undefined
   return first === undefined ? undefined : readmeImageUrl(slug, first)
+}
+
+/**
+ * Text of a repo file the sync saved for a project (one of its manifest `files`), or undefined if it was not synced.
+ * Only listed paths are read, so a README link can never make the site read another file.
+ */
+export function loadProjectReadmeFile(slug: string, path: string): string | undefined {
+  const manifest = loadProjectReadmeManifest()
+  const entry = Object.hasOwn(manifest, slug) ? manifest[slug] : undefined
+  if (!entry?.files?.includes(path)) return undefined
+  return readSynced(contentPath(PROJECT_READMES_DIR, slug, ...path.split('/')))
 }

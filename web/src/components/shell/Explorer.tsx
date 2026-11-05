@@ -282,6 +282,21 @@ export type TreeNode =
 
 const matches = (text: string, q: string) => text.toLowerCase().includes(q)
 
+/** Keys of the folders that hold (at any depth) a row of the page `pageId`: they are revealed (opened) by default. */
+export function foldersHolding(nodes: TreeNode[], pageId: string | undefined): Set<string> {
+  const out = new Set<string>()
+  if (pageId === undefined) return out
+  const visit = (n: TreeNode): boolean => {
+    if (n.kind === 'page') return n.page.id === pageId
+    if (n.kind !== 'folder') return false
+    const holds = n.children.map(visit).some(Boolean)
+    if (holds) out.add(n.key)
+    return holds
+  }
+  nodes.forEach(visit)
+  return out
+}
+
 /** The nodes left by the filter `q` (empty: everything). */
 function filterTree(nodes: TreeNode[], q: string): TreeNode[] {
   if (!q) return nodes
@@ -350,7 +365,8 @@ export function treeOf(nav: Nav, labels: ExplorerLabels): TreeNode[] {
 
 /**
  * The `voanhduy1710` tree. On the home page the row of the section in view is the selected row; on any other page,
- * its page row (for a BI project, the analysis row last clicked, else its first one).
+ * its page row (when several rows open one page, the row last clicked, else its first one). A collapsed folder that
+ * holds the page being shown starts open.
  */
 function Tree({ lang, nav, labels }: { lang: Lang; nav: Nav; labels: ExplorerLabels }) {
   const pathname = usePathname()
@@ -364,13 +380,15 @@ function Tree({ lang, nav, labels }: { lang: Lang; nav: Nav; labels: ExplorerLab
   const selectedSection = onHome ? (inView ?? 'about') : undefined
   const q = view === 'search' ? query.trim().toLowerCase() : ''
   const filtering = q !== ''
-  const nodes = filterTree(treeOf(nav, labels), q)
+  const tree = treeOf(nav, labels)
+  const nodes = filterTree(tree, q)
+  const revealed = foldersHolding(tree, current?.id)
 
   if (filtering && nodes.length === 0) {
     return <p className="px-5 py-1.5 text-(length:--ui-text-sm) text-vsc-muted">{labels.noResults}</p>
   }
 
-  const isOpen = (key: string) => filtering || isFolderOpen(key, toggled)
+  const isOpen = (key: string) => filtering || isFolderOpen(key, toggled, revealed.has(key))
   const isSelected = (n: Extract<TreeNode, { kind: 'page' }>) =>
     n.page.id === current?.id && (clicked?.pageId === n.page.id ? clicked.key === n.key : n.first)
 
@@ -384,7 +402,7 @@ function Tree({ lang, nav, labels }: { lang: Lang; nav: Nav; labels: ExplorerLab
               folder={n.folder}
               depth={depth}
               open={isOpen(n.key)}
-              onToggle={() => setToggled((c) => ({ ...c, [n.key]: !isFolderOpen(n.key, c) }))}
+              onToggle={() => setToggled((c) => ({ ...c, [n.key]: !isFolderOpen(n.key, c, revealed.has(n.key)) }))}
             />
             {isOpen(n.key) && n.children.map((child) => render(child, depth + 1))}
           </Fragment>

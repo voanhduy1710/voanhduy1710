@@ -11,6 +11,8 @@ import { assetUrl } from '@/lib/content/assets'
 import { LANGS } from '@/lib/content/types'
 import { isLang, languageAlternates } from '@/lib/i18n/paths'
 import { ui } from '@/lib/i18n/ui'
+import { AnalysisCards } from '@/components/AnalysisCards'
+import { analyticsSlugs, loadProjectAnalyses } from '@/lib/projectAnalyses'
 import { loadProjectReadme } from '@/lib/projectReadmeManifest'
 
 /**
@@ -33,7 +35,7 @@ function findProject(lang: string, slug: string) {
   if (!isLang(lang)) return undefined
   const content = loadContent(lang)
   const project = content.projects.find((p) => p.slug === slug)
-  return project && { lang, project, name: content.header.name }
+  return project && { lang, project, name: content.header.name, analytics: analyticsSlugs(content.projects).has(slug) }
 }
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/projects/[slug]'>): Promise<Metadata> {
@@ -50,6 +52,10 @@ export default async function ProjectPage({ params }: PageProps<'/[lang]/project
   if (!found) notFound()
   const { lang, project } = found
   const t = ui(lang)
+  // The analytics project: its README's analyses each have their own page; here they are cards between the README's
+  // intro and its closing sections (Tools & Programs, Contact). No README link leads to GitHub.
+  const split = found.analytics ? loadProjectAnalyses(project.slug, lang) : undefined
+  const noRepoLinks = () => null
   // Projects (My works and BI) show their own repo's full README (synced at build time; on /vi its READMEVN.md when
   // the repo has one, else the English README with a note) in place of the profile README's short summary. Its
   // screenshots replace the gallery, unless it shows none.
@@ -113,7 +119,38 @@ export default async function ProjectPage({ params }: PageProps<'/[lang]/project
         </div>
       )}
 
-      {readme && (
+      {readme && split && (
+        <>
+          <ProjectReadme
+            slug={project.slug}
+            repoUrl={readme.repoUrl}
+            markdown={`${split.intro}
+
+## ${split.heading}
+
+${split.lead}`}
+            images={readme.images}
+            note={readme.lang === lang ? undefined : t.readmeEnglishOnly || undefined}
+            dropLanguageLink={readme.lang === 'vi'}
+            afterTitle={readmeH1 ? afterTitle : undefined}
+            linkTarget={noRepoLinks}
+          />
+          <AnalysisCards lang={lang} project={project.slug} analyses={split.analyses} />
+          {split.rest && (
+            <ProjectReadme
+              slug={project.slug}
+              repoUrl={readme.repoUrl}
+              markdown={split.rest}
+              images={readme.images}
+              label={/^#+\s+(.+)$/m.exec(split.rest)?.[1] ?? 'README'}
+              className="mt-10"
+              linkTarget={noRepoLinks}
+            />
+          )}
+        </>
+      )}
+
+      {readme && !split && (
         <ProjectReadme
           slug={project.slug}
           repoUrl={readme.repoUrl}

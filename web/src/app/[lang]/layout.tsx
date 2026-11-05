@@ -9,6 +9,7 @@ import { LANGS } from '@/lib/content/types'
 import { isLang, SITE_URL } from '@/lib/i18n/paths'
 import { buildNav } from '@/lib/nav'
 import { buildPreloadPlan } from '@/lib/preload/plan'
+import { withAnalyses } from '@/lib/projectAnalyses'
 import { readmeCoverUrl } from '@/lib/projectReadmeManifest'
 import '../globals.css'
 
@@ -34,8 +35,11 @@ export default async function LangLayout({ children, params }: LayoutProps<'/[la
   const { lang } = await params
   if (!isLang(lang)) notFound()
   const content = loadContent(lang)
-  const nav = buildNav(lang, content.projects, content.certifications, loadCertificateNumbers(), content.cvHref[lang])
-  const preload = buildPreloadPlan(nav, readmeCoverUrl)
+  // The analytics project's analyses (from its own README) become the BI rows, each with its own page.
+  const projects = withAnalyses(lang, content.projects)
+  const nav = buildNav(lang, projects, content.certifications, loadCertificateNumbers(), content.cvHref[lang])
+  const covers = new Map<string, string>(projects.flatMap((p) => (p.analyses ?? []).flatMap((a) => (a.cover ? [[`${p.slug}/${a.slug}`, a.cover] as const] : []))))
+  const preload = buildPreloadPlan(nav, (key) => covers.get(key) ?? (key.includes('/') ? undefined : readmeCoverUrl(key)))
   return (
     // suppressHydrationWarning: the explorer-width boot script (SidebarWidthBoot) may set a style on <html> before hydration.
     <html lang={lang} className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>

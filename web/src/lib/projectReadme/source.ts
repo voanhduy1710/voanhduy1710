@@ -96,9 +96,11 @@ export const PROJECT_READMES_MANIFEST = 'project-readmes.json'
 
 /**
  * `vi`: the repo also has a Vietnamese `READMEVN.md` next to the README (synced as `<slug>.vi.md`); it uses the same
- * images, so `images` covers both.
+ * images, so `images` covers both. `files`: repo paths of the allow-listed text files the analytics project's
+ * analyses link to (e.g. `6. SQL_questions.md`), synced to `content/<PROJECT_READMES_DIR>/<slug>/<repo path>` and
+ * shown on the analysis page instead of a link to GitHub.
  */
-export type ProjectReadmeEntry = { repoUrl: string; images: string[]; vi?: boolean }
+export type ProjectReadmeEntry = { repoUrl: string; images: string[]; vi?: boolean; files?: string[] }
 export type ProjectReadmeManifest = Record<string, ProjectReadmeEntry>
 
 /** Where a downloaded README image is served from. */

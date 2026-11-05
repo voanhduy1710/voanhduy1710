@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { treeOf, type ExplorerLabels, type TreeNode } from '@/components/shell/Explorer'
+import { foldersHolding, treeOf, type ExplorerLabels, type TreeNode } from '@/components/shell/Explorer'
 import { buildNav } from '@/lib/nav'
 
 const labels = new Proxy({}, { get: (_t, k) => String(k) }) as ExplorerLabels
@@ -18,5 +18,39 @@ describe('explorer row keys', () => {
     expect(keys).toContain('cert:7')
     expect(keys).toContain('cert-text:8')
     expect(keys).toContain('cert-link:1')
+  })
+})
+
+describe('BI analysis rows', () => {
+  const projects = [
+    { slug: 'caro', title: 'Caro', group: 'Full-Stack', badges: [] },
+    {
+      slug: 'da',
+      title: 'DA',
+      group: 'Analytics',
+      badges: [],
+      analyses: [
+        { slug: 'uber-trips', title: 'Uber Trips' },
+        { slug: 'sql', title: 'SQL' },
+      ],
+    },
+  ]
+  const tree = treeOf(buildNav('en', projects), labels)
+  const bi = (tree.find((n) => n.key === 'src') as Extract<TreeNode, { kind: 'folder' }>).children.find((n) => n.key === 'bi') as Extract<
+    TreeNode,
+    { kind: 'folder' }
+  >
+
+  it('each row is its own page (first row of its page, so it is highlighted when that page is shown)', () => {
+    expect(bi.children.map((n) => (n.kind === 'page' ? [n.label, n.page.href, n.first] : n.kind))).toEqual([
+      ['Uber Trips', '/en/projects/da/uber-trips', true],
+      ['SQL', '/en/projects/da/sql', true],
+    ])
+  })
+
+  it('the folders holding the page shown are revealed: src and BI projects for an analysis, none for the overview', () => {
+    expect([...foldersHolding(tree, 'analysis:da/sql')].sort()).toEqual(['bi', 'src'])
+    expect(foldersHolding(tree, 'project:da').size).toBe(0)
+    expect(foldersHolding(tree, undefined).size).toBe(0)
   })
 })

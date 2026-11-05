@@ -21,7 +21,7 @@ const TOKEN_CLASS: Record<TokenKind, string> = {
 
 /**
  * A read-only, VS Code-like view of one file: breadcrumb (`root › name`), line-number gutter and light syntax colour.
- * Server-rendered; no client JavaScript.
+ * Server-rendered; no client JavaScript. `embedded`: a framed block inside a page (no own <h1>, not sticky).
  */
 export function CodeView({
   root,
@@ -29,27 +29,29 @@ export function CodeView({
   icon,
   syntax,
   text,
+  embedded = false,
 }: {
   root: string
   name: string
   icon: NavIcon
   syntax: RepoFileSyntax
   text: string
+  embedded?: boolean
 }) {
   const lines = tokenize(text, syntax)
   return (
-    <div className="min-h-full bg-vsc-editor">
+    <div className={embedded ? 'overflow-hidden rounded border border-vsc-border bg-vsc-editor' : 'min-h-full bg-vsc-editor'}>
       <nav
         aria-label="Breadcrumb"
-        className="sticky top-0 z-10 flex h-(--ui-row) items-center gap-[0.2rem] bg-vsc-editor px-[0.94rem] font-ui text-(length:--ui-text-sm) text-[#a9a9a9] select-none"
+        className={`${embedded ? 'border-b border-vsc-border' : 'sticky top-0 z-10'} flex h-(--ui-row) items-center gap-[0.2rem] bg-vsc-editor px-[0.94rem] font-ui text-(length:--ui-text-sm) text-[#a9a9a9] select-none`}
       >
         <span>{root}</span>
         <ChevronIcon aria-hidden className="size-(--ui-icon) text-vsc-muted" />
         <PageIcon icon={icon} />
         <span className="text-vsc-text">{name}</span>
       </nav>
-      <h1 className="sr-only">{name}</h1>
-      <pre className="overflow-x-auto pb-10 font-mono text-[0.729rem] leading-[1.6] text-[#cccccc]">
+      {!embedded && <h1 className="sr-only">{name}</h1>}
+      <pre className={`${embedded ? 'overflow-x-auto py-2' : 'overflow-x-auto pb-10'} font-mono text-[0.729rem] leading-[1.6] text-[#cccccc]`}>
         <code className="block min-w-max">
           {lines.map((line, i) => (
             <span key={i} className="flex">

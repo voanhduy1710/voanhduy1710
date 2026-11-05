@@ -7,7 +7,8 @@
  *   - a `/` path naming a file under `public/` with exactly that spelling (this includes the synced `/content/...`).
  * Anything else (e.g. a README-relative `CV_...pdf` that the browser would resolve to `/en/CV_...pdf`) is listed and
  * the command exits non-zero. It also fails if a required route (each language x each config-file view, and each
- * language x each certificate the content sync downloaded a PDF for) was not prerendered. The certificate pages'
+ * language x each certificate the content sync downloaded a PDF for, and each language x each analysis page of the
+ * analytics project's synced README) was not prerendered. The certificate pages'
  * `/content/certificates/<no>.pdf` links are ordinary public files.
  *
  * CLI: `npm run check:links` after `npm run build`, from `web/`.
@@ -19,6 +20,13 @@ import { decodeEntities } from '../src/lib/content/mdast'
 import { parseCertificateManifest } from '../src/lib/certificateManifest'
 import { certificateHref, CERTIFICATES_MANIFEST } from '../src/lib/certificates'
 import { LANGS } from '../src/lib/content/types'
+import { README_FILES } from '../src/lib/content/index'
+import { findSection } from '../src/lib/content/markers'
+import { parseProjects } from '../src/lib/content/parse/projects'
+import { splitGroups } from '../src/lib/projectGroups'
+import { analysisSlugs, splitAnalyses } from '../src/lib/projectReadme/analyses'
+import { PROJECT_READMES_DIR, PROJECT_READMES_MANIFEST, readmeFileName } from '../src/lib/projectReadme/source'
+import { parseProjectReadmeManifest } from '../src/lib/projectReadmeManifest'
 import { REPO_FILES, repoFileHref } from '../src/lib/repoFiles'
 import { existsExact } from './sync-content'
 
@@ -97,6 +105,23 @@ export function certificateRoutes(numbers: Iterable<number>): string[] {
   return LANGS.flatMap((lang) => nos.map((no) => certificateHref(lang, no)))
 }
 
+/**
+ * The analysis pages the build must prerender: each language x each numbered analysis of every analytics project's
+ * synced README (`/{lang}/projects/<slug>/<analysis>`). `readmeEn`: the profile README (which projects are analytics);
+ * `projectReadme(slug)`: that project's synced English README, if any.
+ */
+export function analysisRoutes(readmeEn: string, readmeFile: string, projectReadme: (slug: string) => string | undefined): string[] {
+  const section = findSection(readmeEn, 'projects')
+  if (section === undefined) return []
+  const analytics = splitGroups(parseProjects(section, readmeFile)).analytics
+  return analytics.flatMap((p) => {
+    const md = projectReadme(p.slug)
+    const sections = md === undefined ? [] : (splitAnalyses(md)?.sections ?? [])
+    const slugs = [...analysisSlugs(sections).values()]
+    return LANGS.flatMap((lang) => slugs.map((a) => `/${lang}/projects/${p.slug}/${a}`))
+  })
+}
+
 /** The required routes that are not among the build's routes. */
 export function missingRoutes(routes: Iterable<string>, required: readonly string[] = REQUIRED_ROUTES): string[] {
   const have = new Set(routes)
@@ -111,7 +136,11 @@ async function main(): Promise<void> {
   const pages = htmlFiles(appDir).length
   const routes = buildRoutes(nextDir)
   const certs = certificateRoutes(parseCertificateManifest(readFileSync(join(root, 'content', CERTIFICATES_MANIFEST), 'utf8')))
-  const missing = missingRoutes(routes, [...REQUIRED_ROUTES, ...certs])
+  const manifest = parseProjectReadmeManifest(readFileSync(join(root, 'content', PROJECT_READMES_MANIFEST), 'utf8'))
+  const analyses = analysisRoutes(readFileSync(join(root, 'content', README_FILES.en), 'utf8'), README_FILES.en, (slug) =>
+    Object.hasOwn(manifest, slug) ? readFileSync(join(root, 'content', PROJECT_READMES_DIR, readmeFileName(slug, 'en')), 'utf8') : undefined,
+  )
+  const missing = missingRoutes(routes, [...REQUIRED_ROUTES, ...certs, ...analyses])
   if (missing.length > 0) {
     console.error(`check-links: ${missing.length} required route(s) not prerendered:`)
     for (const r of missing) console.error(`  ${r}`)
@@ -125,7 +154,7 @@ async function main(): Promise<void> {
   }
   console.log(
     `check-links: all links in ${pages} pages resolve; all ${REQUIRED_ROUTES.length} config-file routes and ` +
-      `${certs.length} certificate routes prerendered`,
+      `${certs.length} certificate routes and ${analyses.length} analysis routes prerendered`,
   )
 }
 

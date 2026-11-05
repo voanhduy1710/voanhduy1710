@@ -291,6 +291,11 @@ body {
   .markdown-body :is(h1, h2, h3, h4, h5, h6) a {
     color: inherit;
   }
+  /* A repo link the page unlinked (no GitHub links on the analysis pages): plain text, not a fake link. */
+  .markdown-body a:not([href]) {
+    color: inherit;
+    text-decoration: none;
+  }
   .markdown-body strong {
     color: var(--vsc-heading);
     font-weight: 600;

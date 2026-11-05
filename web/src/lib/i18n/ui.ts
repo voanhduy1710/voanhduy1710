@@ -28,6 +28,10 @@ export type UiKey =
   | 'previousImage'
   | 'nextImage'
   | 'backToProjects'
+  | 'openDashboard'
+  | 'dashboardBadge'
+  | 'previousAnalysis'
+  | 'nextAnalysis'
   | 'outline'
   | 'timeline'
   | 'outlineEmpty'
@@ -134,6 +138,10 @@ const STRINGS: Record<Lang, UiStrings> = {
     previousImage: 'Previous screenshot',
     nextImage: 'Next screenshot',
     backToProjects: 'All projects',
+    openDashboard: 'Open interactive dashboard',
+    dashboardBadge: 'Interactive dashboard',
+    previousAnalysis: 'Previous',
+    nextAnalysis: 'Next',
     outline: 'Outline',
     timeline: 'Timeline',
     outlineEmpty: 'The active editor cannot provide outline information.',
@@ -237,6 +245,10 @@ const STRINGS: Record<Lang, UiStrings> = {
     previousImage: 'Ảnh trước',
     nextImage: 'Ảnh sau',
     backToProjects: 'Tất cả dự án',
+    openDashboard: 'Mở dashboard tương tác',
+    dashboardBadge: 'Dashboard tương tác',
+    previousAnalysis: 'Trước',
+    nextAnalysis: 'Tiếp',
     outline: 'Dàn ý',
     timeline: 'Dòng thời gian',
     outlineEmpty: 'Trình soạn thảo hiện tại không có thông tin dàn ý.',

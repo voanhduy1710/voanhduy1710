@@ -6,7 +6,8 @@
  * `<outDir>/public/content/certificates/<no>.pdf`, their numbers -> `<outDir>/content/certificates.json`.
  * Every project's own README (from each project's repo, in both modes; see sync-project-readmes.ts) ->
  * `<outDir>/content/project-readmes/<slug>.md`, their repo-relative images ->
- * `<outDir>/public/content/project-readmes/<slug>/<repo path>`, both listed in `<outDir>/content/project-readmes.json`.
+ * `<outDir>/public/content/project-readmes/<slug>/<repo path>`, both listed in `<outDir>/content/project-readmes.json`;
+ * the repo files an analytics project's analyses link to -> `<outDir>/content/project-readmes/<slug>/<repo path>`.
  * Assets under `web/public/` (logos, previews) are already part of the site, so they are only checked
  * to exist (local: in the profile repo; github: in `<outDir>/public/`), never copied.
  * Reads the local profile repo or GitHub raw. Everything is checked and staged first; the live dirs are
@@ -290,11 +291,18 @@ async function stageAndSwap(opts: SyncOptions, d: Staged): Promise<void> {
 async function stageProjectReadmes(stage: string, projects: ProjectReadme[]): Promise<void> {
   const manifest: ProjectReadmeManifest = {}
   for (const p of projects) {
-    manifest[p.slug] = { repoUrl: p.repoUrl, images: p.images.map((i) => i.path), ...(p.markdownVi && { vi: true }) }
+    manifest[p.slug] = {
+      repoUrl: p.repoUrl,
+      images: p.images.map((i) => i.path),
+      ...(p.markdownVi && { vi: true }),
+      ...(p.files.length > 0 && { files: p.files.map((f) => f.path) }),
+    }
     await writeStaged(join(stage, 'content', PROJECT_READMES_DIR), readmeFileName(p.slug, 'en'), p.markdown)
     if (p.markdownVi) await writeStaged(join(stage, 'content', PROJECT_READMES_DIR), readmeFileName(p.slug, 'vi'), p.markdownVi)
     const imageRoot = join(stage, 'public-content', PROJECT_READMES_DIR, p.slug)
     await Promise.all(p.images.map((i) => writeStaged(imageRoot, i.path, i.data)))
+    // Linked text files (analytics projects) are read by the server, so they live under content/, not public/.
+    await Promise.all(p.files.map((f) => writeStaged(join(stage, 'content', PROJECT_READMES_DIR, p.slug), f.path, f.data)))
   }
   await writeStaged(join(stage, 'content'), PROJECT_READMES_MANIFEST, Buffer.from(`${JSON.stringify(manifest, null, 2)}\n`))
 }

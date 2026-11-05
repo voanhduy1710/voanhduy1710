@@ -11,7 +11,8 @@
  *   - shields.io badges -> `<badge-chip>` elements (rendered as native BadgeChips);
  *   - other absolute images -> a link to the image, labelled with its alt text (plain text inside a link);
  *   - `<picture><source>` variants -> dropped (the fallback `<img>` stays);
- *   - repo-relative links -> the file on GitHub (`/blob/<ref>/<path>`); absolute links open in a new tab;
+ *   - repo-relative links -> the file on GitHub (`/blob/<ref>/<path>`), or where `linkTarget` says (an in-page
+ *     anchor, or no link); absolute links open in a new tab;
  *     in-page `#anchors` stay (headings get GitHub-style ids, via github-slugger: `#3-cấu-hình-biến-môi-trường`);
  *   - with `dropLanguageLink` (READMEVN.md on /vi): the `> 🇬🇧 English version: [README.md](README.md)` blockquote
  *     is dropped, as the site has its own EN/VI switch.
@@ -98,6 +99,12 @@ export type RewriteContext = {
   images: ReadonlySet<string>
   /** Drop the README's language-switch blockquote (a one-line quote linking to the other README.md / READMEVN.md). */
   dropLanguageLink?: boolean
+  /**
+   * Where a repo-relative link goes (`path`: the repo path it resolves to): a URL on this site (e.g. `#file-...`, the
+   * file shown in-page), `null` for no link at all (plain text), or `undefined` for the default (the file on GitHub).
+   * The analytics project's pages pass it so no analysis sends visitors to GitHub.
+   */
+  linkTarget?: (path: string) => string | null | undefined
 }
 
 /** Tag of the placeholder element a shields.io badge becomes; the page renders it as a BadgeChip. */
@@ -169,6 +176,15 @@ function rewriteLink(a: Element, ctx: RewriteContext): void {
     const path = resolveRepoPath(ctx.source.dir, href)
     if (path === undefined) {
       delete a.properties.href
+      return
+    }
+    const local = ctx.linkTarget?.(path)
+    if (local === null) {
+      delete a.properties.href
+      return
+    }
+    if (local !== undefined) {
+      a.properties.href = local
       return
     }
     const hash = /#.*$/.exec(href)?.[0] ?? ''

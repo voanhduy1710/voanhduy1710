@@ -55,3 +55,24 @@ describe('buildPreloadPlan', () => {
     expect(vi[1].tasks.every((t) => t.kind === 'route' && t.url.startsWith('/vi/projects/'))).toBe(true)
   })
 })
+
+describe('buildPreloadPlan with BI analyses', () => {
+  const analyses = [
+    { slug: 'uber-trips', title: 'Uber Trips' },
+    { slug: 'sql', title: 'SQL' },
+  ]
+  const nav = buildNav('en', projects.map((p) => (p.group === ANALYTICS ? { ...p, analyses } : p)))
+  const cover = (key: string) =>
+    ({ 'data-analyst-portfolio': '/c/overview.webp', 'data-analyst-portfolio/uber-trips': '/c/uber.webp' })[key]
+  const tier3 = buildPreloadPlan(nav, cover).find((t) => t.id === 3)!
+
+  it('tier 3: the overview page, then each analysis page, then their first images (asked by <slug>/<analysis>)', () => {
+    expect(tier3.tasks.map((t) => `${t.kind} ${t.url}`)).toEqual([
+      'route /en/projects/data-analyst-portfolio',
+      'route /en/projects/data-analyst-portfolio/uber-trips',
+      'route /en/projects/data-analyst-portfolio/sql',
+      'image /c/overview.webp',
+      'image /c/uber.webp',
+    ])
+  })
+})

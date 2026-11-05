@@ -14,9 +14,16 @@
  *     warning (the build never fails for this). The image budget counts the converted size.
  *   - shields.io badges and other absolute images are never downloaded: the page renders badges as native chips and
  *     other images as links (no third-party image request at runtime).
+ *   - Analytics projects only (the README's second group; see projectGroups.ts): the repo files their analyses link to
+ *     (`[6. SQL_questions.md](6.%20SQL_questions.md)`) are downloaded too, so the analysis page shows them in-page
+ *     instead of linking to GitHub. Only links inside an analysis section (see projectReadme/analyses.ts), inside the
+ *     repo, to an allow-listed text type (`.md`, `.gs`, `.js`, `.ts`, `.sql`, `.py`; never a README), at most
+ *     MAX_LINKED_FILES files of LINKED_FILE_MAX_BYTES each. One that cannot be fetched is skipped with a warning.
  */
 import { findSection } from '../src/lib/content/markers'
 import { parseProjects } from '../src/lib/content/parse/projects'
+import { splitGroups } from '../src/lib/projectGroups'
+import { linkedFiles, splitAnalyses } from '../src/lib/projectReadme/analyses'
 import { relativeImagePaths } from '../src/lib/projectReadme/render'
 import { rawSources, readmeSource, readmeViPath, type ReadmeSource } from '../src/lib/projectReadme/source'
 import { attempt, firstWorking } from './sync-certificates'
@@ -26,6 +33,10 @@ const HEADERS = { 'User-Agent': 'voanhduy1710-portfolio-sync' }
 const IMAGE_EXT = /\.(png|jpe?g|gif|webp|avif)$/i
 /** Max bytes of README images per project; images past it are skipped with a warning. */
 export const IMAGE_BUDGET = 5 * 1024 * 1024
+
+/** Linked repo files (analytics projects): at most this many per project, each at most this big. */
+export const MAX_LINKED_FILES = 20
+export const LINKED_FILE_MAX_BYTES = 512 * 1024
 
 /** Raster formats re-encoded as WebP. GIF is kept (animation); WebP/AVIF are already compact. */
 const CONVERT_EXT = /\.(png|jpe?g)$/i
@@ -46,6 +57,17 @@ export type ProjectReadme = {
   markdownVi?: Buffer
   /** Downloaded images, keyed by the path they are served under (a converted `x.png` is `x.png.webp`). */
   images: { path: string; data: Buffer }[]
+  /** Analytics projects: the allow-listed repo files their analyses link to (repo path, bytes). */
+  files: { path: string; data: Buffer }[]
+}
+
+/** Repo paths of the allow-listed files the analysis sections of these READMEs link to, in order, deduped. */
+export function analysisFilePaths(markdowns: readonly string[], src: ReadmeSource): string[] {
+  const out: string[] = []
+  for (const md of markdowns) {
+    for (const s of splitAnalyses(md)?.sections ?? []) for (const p of linkedFiles(s.body, src)) if (!out.includes(p)) out.push(p)
+  }
+  return out
 }
 
 /** A README text (`path` in the repo): GitHub raw, then jsDelivr; an empty body counts as a failed source. */
@@ -101,11 +123,36 @@ async function downloadImage(fetchImpl: typeof fetch, src: ReadmeSource, path: s
   return failures.join(', ')
 }
 
+/** The analytics project's linked files (see the header), each skipped with a warning when it cannot be used. */
+async function downloadLinkedFiles(
+  fetchImpl: typeof fetch,
+  slug: string,
+  src: ReadmeSource,
+  markdowns: string[],
+  warn: (message: string) => void,
+): Promise<ProjectReadme['files']> {
+  const paths = analysisFilePaths(markdowns, src)
+  for (const p of paths.slice(MAX_LINKED_FILES)) warn(`Warning: project ${slug}: skipped linked file ${p}: more than ${MAX_LINKED_FILES} files`)
+  const wanted = paths.slice(0, MAX_LINKED_FILES)
+  const fetched = await Promise.all(wanted.map((p) => downloadImage(fetchImpl, src, p)))
+  const files: ProjectReadme['files'] = []
+  wanted.forEach((path, i) => {
+    const data = fetched[i]
+    if (typeof data === 'string') return warn(`Warning: project ${slug}: skipped linked file ${path}: cannot fetch it (${data})`)
+    if (data.length > LINKED_FILE_MAX_BYTES) {
+      return warn(`Warning: project ${slug}: skipped linked file ${path}: larger than ${LINKED_FILE_MAX_BYTES / 1024} KB`)
+    }
+    files.push({ path, data })
+  })
+  return files
+}
+
 async function fetchOne(
   fetchImpl: typeof fetch,
   project: { slug: string; repoUrl: string },
   warn: (message: string) => void,
   convert: ImageConverter,
+  analytics = false,
 ): Promise<ProjectReadme> {
   let src: ReadmeSource
   try {
@@ -154,7 +201,9 @@ async function fetchOne(
     used += img.data.length
     images.push(img)
   })
-  return { slug: project.slug, repoUrl: project.repoUrl, markdown, ...(markdownVi && { markdownVi }), images }
+  const texts = [markdown, ...(markdownVi ? [markdownVi] : [])].map((m) => m.toString('utf8'))
+  const files = analytics ? await downloadLinkedFiles(fetchImpl, project.slug, src, texts, warn) : []
+  return { slug: project.slug, repoUrl: project.repoUrl, markdown, ...(markdownVi && { markdownVi }), images, files }
 }
 
 /**
@@ -170,5 +219,7 @@ export async function fetchProjectReadmes(
 ): Promise<ProjectReadme[]> {
   const section = findSection(readme, 'projects')
   if (section === undefined) return []
-  return Promise.all(parseProjects(section, readmeFile).map((p) => fetchOne(fetchImpl, p, warn, convert)))
+  const projects = parseProjects(section, readmeFile)
+  const analytics = new Set(splitGroups(projects).analytics.map((p) => p.slug))
+  return Promise.all(projects.map((p) => fetchOne(fetchImpl, p, warn, convert, analytics.has(p.slug))))
 }

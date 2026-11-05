@@ -437,6 +437,41 @@ const glyphs: Record<NavIcon | 'person' | 'markdown' | 'certificate', ReactNode>
       <rect x="11" y="2" width="3" height="12" fill="#f2c811" />
     </>
   ),
+  sql: (
+    <>
+      <path d="M2.5 3.8v8.4c0 1.2 2.5 2.1 5.5 2.1s5.5-.9 5.5-2.1V3.8z" fill="#1e88c9" />
+      <path d="M2.5 7.6c0 1.2 2.5 2.1 5.5 2.1s5.5-.9 5.5-2.1M2.5 10.9c0 1.2 2.5 2.1 5.5 2.1s5.5-.9 5.5-2.1" fill="none" stroke="#bfe6ff" strokeWidth={0.9} />
+      <ellipse cx="8" cy="3.8" rx="5.5" ry="2.1" fill="#4fc3f7" />
+    </>
+  ),
+  excel: (
+    <>
+      <rect x="4.5" y="1.5" width="10" height="13" rx="1" fill="#21a366" />
+      <path d="M9.5 1.5h4a1 1 0 0 1 1 1V8h-5zM9.5 8h5v5.5a1 1 0 0 1-1 1h-4z" fill="#33c481" />
+      <rect x="1.5" y="4" width="8" height="8" rx="1" fill="#107c41" />
+      <path d="M3.4 5.9h1.5l.9 1.5.9-1.5h1.5L6.6 8l1.6 2.1H6.7l-.9-1.5-.9 1.5H3.4L5 8z" fill="#fff" />
+    </>
+  ),
+  appsscript: (
+    <>
+      <g fill="#ea4335" transform="rotate(-90 10.5 13)">
+        <rect x="8.9" y="3" width="3.2" height="10.5" rx="1.6" />
+        <circle cx="10.5" cy="4.9" r="0.8" fill="#fff" />
+      </g>
+      <g fill="#fbbc04" transform="rotate(-55 10.5 13)">
+        <rect x="8.9" y="3" width="3.2" height="10.5" rx="1.6" />
+        <circle cx="10.5" cy="4.9" r="0.8" fill="#fff" />
+      </g>
+      <g fill="#34a853" transform="rotate(-20 10.5 13)">
+        <rect x="8.9" y="3" width="3.2" height="10.5" rx="1.6" />
+        <circle cx="10.5" cy="4.9" r="0.8" fill="#fff" />
+      </g>
+      <g fill="#4285f4" transform="rotate(15 10.5 13)">
+        <rect x="8.9" y="3" width="3.2" height="10.5" rx="1.6" />
+        <circle cx="10.5" cy="4.9" r="0.8" fill="#fff" />
+      </g>
+    </>
+  ),
   file: <path d="M3.5 1.5h6l3 3v10h-9z M9.5 1.5v3h3" fill="none" stroke="#9aa0b8" strokeWidth={1.1} />,
   // Config files of the root folder.
   git: (

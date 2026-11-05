@@ -229,3 +229,51 @@ describe('isFolderOpen', () => {
     expect(isFolderOpen('works', { works: false })).toBe(false)
   })
 })
+
+describe('BI analyses (the analytics project README split into its sections)', () => {
+  const analyses = [
+    { slug: 'atino-sales-dashboard', title: 'Atino Sales Dashboard' },
+    { slug: 'uber-trips', title: 'Uber Trips' },
+    { slug: 'sql-interview-questions', title: 'SQL interview questions' },
+  ]
+  const withAnalyses = projects.map((p) => (p.group === ANALYTICS ? { ...p, analyses } : p))
+
+  it('one BI row per analysis, each opening its own page (own id, href, tab label and icon)', () => {
+    const nav = buildNav('en', withAnalyses)
+    expect(nav.bi.map((r) => [r.key, r.label, r.page.id, r.page.href, r.page.icon])).toEqual([
+      ['analysis:data-analyst-portfolio/atino-sales-dashboard', 'Atino Sales Dashboard', 'analysis:data-analyst-portfolio/atino-sales-dashboard', '/en/projects/data-analyst-portfolio/atino-sales-dashboard', 'powerbi'],
+      ['analysis:data-analyst-portfolio/uber-trips', 'Uber Trips', 'analysis:data-analyst-portfolio/uber-trips', '/en/projects/data-analyst-portfolio/uber-trips', 'powerbi'],
+      ['analysis:data-analyst-portfolio/sql-interview-questions', 'SQL interview questions', 'analysis:data-analyst-portfolio/sql-interview-questions', '/en/projects/data-analyst-portfolio/sql-interview-questions', 'powerbi'],
+    ])
+    expect(new Set(nav.bi.map((r) => r.page.id)).size).toBe(3)
+    expect(nav.analyses).toEqual(nav.bi.map((r) => r.page))
+  })
+
+  it('analysis pages are tabs: findNavPage finds them, ids are unique and language-neutral', () => {
+    const en = buildNav('en', withAnalyses)
+    const vi = buildNav('vi', withAnalyses)
+    expect(findNavPage(en, '/en/projects/data-analyst-portfolio/uber-trips/')?.id).toBe('analysis:data-analyst-portfolio/uber-trips')
+    // The overview page stays a page of its own (the home Projects card links there).
+    expect(findNavPage(en, '/en/projects/data-analyst-portfolio')?.id).toBe('project:data-analyst-portfolio')
+    const ids = navPages(en).map((p) => p.id)
+    expect(new Set(ids).size).toBe(ids.length)
+    expect(navPages(vi).map((p) => p.id)).toEqual(ids)
+    expect(vi.bi[1].page.href).toBe('/vi/projects/data-analyst-portfolio/uber-trips')
+    // Source Control counts projects, not analyses.
+    expect(en.projects).toHaveLength(3)
+  })
+
+  it('without synced analyses the old rows stay (titled bullets opening the project page)', () => {
+    expect(buildNav('en', projects).analyses).toEqual([])
+    expect(new Set(buildNav('en', projects).bi.map((r) => r.page.id))).toEqual(new Set(['project:data-analyst-portfolio']))
+  })
+})
+
+describe('isFolderOpen with a revealed folder', () => {
+  it('a collapsed-by-default folder opens when it holds the page shown; the user toggle still wins', () => {
+    expect(isFolderOpen('bi', {})).toBe(false)
+    expect(isFolderOpen('bi', {}, true)).toBe(true)
+    expect(isFolderOpen('bi', { bi: false }, true)).toBe(false)
+    expect(isFolderOpen('works', {}, false)).toBe(true)
+  })
+})

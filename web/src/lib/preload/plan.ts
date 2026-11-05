@@ -23,17 +23,22 @@ export type PreloadTier = {
 const route = (page: NavPage): PreloadTask => ({ kind: 'route', url: page.href })
 const unique = (tasks: PreloadTask[]) => [...new Map(tasks.map((t) => [`${t.kind} ${t.url}`, t])).values()]
 
-/** The page's slug, for a project page id (`project:<slug>`). */
-const slugOf = (page: NavPage) => (page.id.startsWith('project:') ? page.id.slice('project:'.length) : undefined)
+/** The key `cover` is asked with: `<slug>` for a project page (`project:<slug>`), `<slug>/<analysis>` for an analysis. */
+function slugOf(page: NavPage): string | undefined {
+  for (const prefix of ['project:', 'analysis:']) if (page.id.startsWith(prefix)) return page.id.slice(prefix.length)
+  return undefined
+}
 
 /**
  * The preload tiers, derived from the explorer model (no hard-coded pages):
  * 1. `public/`: the home page (About Me, Work Experience, Skills, Projects, Contact Me are its sections).
  * 2. `src/My works`: every project page plus the first image its README shows, right after tier 1, 2 at a time.
- * 3. `src/BI projects`: the BI project page(s) and their first image, at idle.
+ * 3. `src/BI projects`: the BI project overview page(s) (the analytics projects: every project page outside My works),
+ *    then every page a BI row opens (one per analysis), each with its first image, at idle.
  * 4. The rest, at idle, one at a time: the CV, the certificate pages, the config-file pages, then the certificate
  *    PDFs themselves (largest last).
- * `cover(slug)`: served URL of the first image a project's README shows, if any.
+ * `cover(key)`: served URL of the first image a project's README (`<slug>`) or an analysis section
+ * (`<slug>/<analysis>`) shows, if any.
  */
 export function buildPreloadPlan(nav: Nav, cover: (slug: string) => string | undefined = () => undefined): PreloadTier[] {
   const withCover = (pages: NavPage[]): PreloadTask[] =>
@@ -42,7 +47,9 @@ export function buildPreloadPlan(nav: Nav, cover: (slug: string) => string | und
       const img = slug === undefined ? undefined : cover(slug)
       return img ? [route(p), { kind: 'image', url: img }] : [route(p)]
     })
-  const biPages = [...new Map(nav.bi.map((r) => [r.page.id, r.page])).values()]
+  const works = new Set(nav.works.map((p) => p.id))
+  const overviews = nav.projects.filter((p) => !works.has(p.id))
+  const biPages = [...new Map([...overviews, ...nav.bi.map((r) => r.page)].map((p) => [p.id, p])).values()]
   const certPages = nav.certifications.flatMap((c) => (c.page ? [c.page] : []))
   // Routes first (a click on any of them is instant), then the images, so the pages arrive before their pictures.
   const routesThenImages = (tasks: PreloadTask[]) => [...tasks.filter((t) => t.kind === 'route'), ...tasks.filter((t) => t.kind !== 'route')]

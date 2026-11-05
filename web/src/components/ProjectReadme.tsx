@@ -2,7 +2,7 @@ import { toJsxRuntime, type Components } from 'hast-util-to-jsx-runtime'
 import type { ComponentProps, ReactNode } from 'react'
 import { Fragment, jsx, jsxs } from 'react/jsx-runtime'
 import { BadgeChip } from '@/components/BadgeChip'
-import { BADGE_TAG, badgeFromProps, renderReadmeTree } from '@/lib/projectReadme/render'
+import { BADGE_TAG, badgeFromProps, renderReadmeTree, type RewriteContext } from '@/lib/projectReadme/render'
 import { readmeSource } from '@/lib/projectReadme/source'
 
 /** Task-list checkboxes are read-only (React would warn about a `checked` input without onChange). */
@@ -70,6 +70,9 @@ export function ProjectReadme({
   note,
   afterTitle,
   dropLanguageLink = false,
+  linkTarget,
+  label = 'README',
+  className = 'mt-8',
 }: {
   slug: string
   repoUrl: string
@@ -79,8 +82,13 @@ export function ProjectReadme({
   afterTitle?: ReactNode
   /** READMEVN.md on /vi: drop its `> 🇬🇧 English version: [README.md](README.md)` line (the site has its own switch). */
   dropLanguageLink?: boolean
+  /** Where repo-relative links go instead of GitHub (see RewriteContext.linkTarget). */
+  linkTarget?: RewriteContext['linkTarget']
+  /** The section's accessible name (default `README`). */
+  label?: string
+  className?: string
 }) {
-  const tree = renderReadmeTree(markdown, { slug, source: readmeSource(repoUrl), images: new Set(images), dropLanguageLink })
+  const tree = renderReadmeTree(markdown, { slug, source: readmeSource(repoUrl), images: new Set(images), dropLanguageLink, linkTarget })
   demoteExtraH1s(tree as HastNode, { seen: false })
   const placed = afterTitle !== undefined && insertAfterFirstH1(tree as HastNode)
   const components = {
@@ -88,7 +96,7 @@ export function ProjectReadme({
     [AFTER_TITLE_TAG]: () => <div className="mb-6">{afterTitle}</div>,
   } as unknown as Partial<Components>
   return (
-    <section aria-label="README" className="mt-8">
+    <section aria-label={label} className={className}>
       {note && <p className="mb-3 text-xs text-vsc-muted italic">{note}</p>}
       {afterTitle !== undefined && !placed && <div className="mb-6">{afterTitle}</div>}
       <div className="markdown-body">{toJsxRuntime(tree, { Fragment, jsx, jsxs, components })}</div>

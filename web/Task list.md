@@ -1,5 +1,49 @@
 # Task list
 
+## 2026-11-05 — Website domain links
+- ✅ Replace voanhduy1710.dev with voanhduy1710.vercel.app in all public repos (commits: Certifications 7764fb4, Other-private-repo-previews 4426d9a, Portfolio-projects e2b19ba; others had no match)
+
+### Where the website link lives (find & replace these when the domain is bought)
+| Repo | File | Line | Link now | Note |
+|---|---|---|---|---|
+| voanhduy1710 | README.md | 6, 235 | vercel.app | content (header link + Contact Website) |
+| voanhduy1710 | READMEVN.md | 6, 235 | vercel.app | content (header link + Contact Website) |
+| Portfolio-projects | README.md | 150 | vercel.app | content |
+| Portfolio-projects | READMEVN.md | 152 | vercel.app | content |
+| Certifications | README.md | 55 | vercel.app | content |
+| Other-private-repo-previews | README.md | 93 | vercel.app | content |
+| voanhduy1710 | web/src/lib/i18n/paths.ts | 15 | vercel.app | code: SITE_URL constant, change on domain purchase |
+| voanhduy1710 | web/src/lib/content/index.ts | 51 | vercel.app + .dev | code: WEBSITE_HOSTS accepts both hosts; add the new domain, keep both |
+| voanhduy1710 | web/deploy_vercel.ps1 | 234 | vercel.app | code: final message URL |
+| voanhduy1710 | web/project_tester.py | 19, 53 | vercel.app | code: LIVE_URL for --live run |
+| voanhduy1710 | web/tests/content/load.test.ts | 60, 66, 68, 72, 76-77 | vercel.app + .dev | tests: .dev lines are intentional (second host); keep both / switch when domain bought |
+| voanhduy1710 | web/tests/content/parse-simple.test.ts | 52, 166 | vercel.app | tests |
+| voanhduy1710 | web/tests/cv/cv-document.test.tsx | 32 | vercel.app | tests |
+| voanhduy1710 | web/tests/fixtures/README.md | 6, 234 | vercel.app | test fixture (copy of README) |
+| voanhduy1710 | web/tests/fixtures/READMEVN.md | 6, 234 | vercel.app | test fixture (copy of READMEVN) |
+| voanhduy1710 | web/tests/proxy.test.ts | 9, 11, 17, 18 | vercel.app | tests (proxy redirects) |
+| voanhduy1710 | web/tests/shell/activityLinks.test.tsx | 13 | vercel.app | tests |
+
+Hint: when the domain is bought, also add it as a Vercel project domain + DNS records, then update SITE_URL (paths.ts), WEBSITE_HOSTS (content/index.ts), LIVE_URL / deploy script URL, and the README links above.
+
+## 2026-11-05 — Lazada Sales Report
+- ✅ Excel – Adidas Sales: Excel icon instead of Power BI (rule: Excel without Power BI)
+- ✅ Update the web with the new "5. Lazada Sales Report" and the renamed files in Portfolio-projects (3d8dfeb) (7 analyses; /{lang}/projects/data-analyst-portfolio/lazada-sales-report; Power BI icon + dashboard button via its bit.ly link; SQL/Apps Script read 6./7. files; old slugs unchanged; uncommitted)
+
+## 2026-11-05 — CV file
+- ✅ CV as its own file, separate from the README (goes through HR): YAML (web/public/cv/cv.en.yaml + cv.vi.yaml — owner: move into web/public) + one template (strict validation + EN/VI parity check fail the build; also served at /cv/cv.*.yaml; uncommitted)
+- ✅ Downloadable as PDF; synced to CV_Vo Anh Duy_EN.pdf / CV_Vo Anh Duy_VN.pdf in the repo (web\export_cv.ps1 regenerated both: 2 A4 pages each, selectable text, no MongoDB)
+- ✅ Viewed in the web UI (explorer CV row) (/{lang}/cv renders the YAML; row, tab and Download PDF unchanged)
+
+## 2026-11-05 — BI projects
+- ✅ Separate the BI projects: one page per analysis (6 pages × EN/VI at /{lang}/projects/data-analyst-portfolio/<analysis>, own explorer rows + tabs; overview page now lists them as cards; uncommitted)
+- ✅ Add "Interactive dashboard can be found here" link for the Power BI ones that have it (found in the repo) (Uber Trips + Supply Chain: README link works, plus a yellow "Open interactive dashboard ↗" button)
+- ✅ Update the README instead of hyperlinking to GitHub; read from README.md / READMEVN.md (repo-relative links unlinked; SQL questions + Apps Script shown in-page; only a "Repository ↗" link remains)
+- ✅ Change the SQL interview questions and the Apps Script rows to another logo (database icon + Apps Script fan icon, chosen from each section's skills line; Excel/others can get a rule later)
+
+## 2026-11-05 — Ship
+- ✅ Commit + push + redeploy to Vercel (f65b16d fix, 7bed0dc tester; live tester run 99/99)
+
 ## 2026-11-05 — Tester run
 - ✅ Update CLAUDE.md with the new task list place (web/Task list.md)
 - ✅ Run the project tester and check for bottlenecks (local + live all pass; main bottleneck: BI dashboard screenshots 626/433/212 KB)
