@@ -3,7 +3,7 @@
 <h1 align="center">Võ Anh Duy</h1>
 <h3 align="center">Chuyên viên Dữ liệu & Lập trình Kỹ thuật</h3>  
 
-[Trang web](https://voanhduy1710.vercel.app) | [GitHub](https://github.com/voanhduy1710) | [LinkedIn](https://www.linkedin.com/in/voanhduy1710) | [Email](mailto:voanhduy1710@gmail.com) | [CV Tiếng Anh (PDF)](CV_Vo%20Anh%20Duy_EN.pdf) | [CV Tiếng Việt (PDF)](CV_Vo%20Anh%20Duy_VN.pdf)
+[Trang web](https://voanhduy1710.vercel.app) | [GitHub](https://github.com/voanhduy1710) | [LinkedIn](https://www.linkedin.com/in/duy-v-983894369/) | [Email](mailto:voanhduy1710@gmail.com) | [CV Tiếng Anh (PDF)](CV_Vo%20Anh%20Duy_EN.pdf) | [CV Tiếng Việt (PDF)](CV_Vo%20Anh%20Duy_VN.pdf)
 
 <!-- site: status = Sẵn sàng nhận việc -->
 <!-- site: roles = Chuyên viên Dữ liệu Full-Stack | Chuyên viên Phân tích Dữ liệu | Lập trình Web App nội bộ | Tự động hóa BI & Báo cáo -->

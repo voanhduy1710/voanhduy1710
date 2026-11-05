@@ -8,7 +8,7 @@ afterEach(cleanup)
 
 const links = [
   { label: 'GitHub', href: 'https://github.com/voanhduy1710' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/voanhduy1710' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/duy-v-983894369/' },
   { label: 'Email', href: 'mailto:voanhduy1710@gmail.com' },
   { label: 'CV_EN (PDF)', href: '/content/CV_Vo%20Anh%20Duy_EN.pdf' },
   { label: 'CV_VN (PDF)', href: '/content/CV_Vo%20Anh%20Duy_VN.pdf' },

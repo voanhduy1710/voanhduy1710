@@ -3,7 +3,7 @@
 <h1 align="center">Vo Anh Duy</h1>
 <h3 align="center">Data Specialist & Technical Developer</h3>  
 
-[Website](https://voanhduy1710.vercel.app) | [GitHub](https://github.com/voanhduy1710) | [LinkedIn](https://www.linkedin.com/in/voanhduy1710) | [Email](mailto:voanhduy1710@gmail.com) | [CV_EN (PDF)](CV_Vo%20Anh%20Duy_EN.pdf) | [CV_VN (PDF)](CV_Vo%20Anh%20Duy_VN.pdf)
+[Website](https://voanhduy1710.vercel.app) | [GitHub](https://github.com/voanhduy1710) | [LinkedIn](https://www.linkedin.com/in/duy-v-983894369/) | [Email](mailto:voanhduy1710@gmail.com) | [CV_EN (PDF)](CV_Vo%20Anh%20Duy_EN.pdf) | [CV_VN (PDF)](CV_Vo%20Anh%20Duy_VN.pdf)
 
 <!-- site: status = Open to work -->
 <!-- site: roles = Full-Stack Data Specialist | Data Analyst | Internal Web App Developer | BI & Reporting Automation -->

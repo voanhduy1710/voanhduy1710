@@ -1,5 +1,11 @@
 # Task list
 
+## 2026-11-05 — LinkedIn link
+- ✅ LinkedIn: the old link is right → https://www.linkedin.com/in/duy-v-983894369/ (README.md, READMEVN.md, CV_EN/VN.html, test fixtures; PDFs re-exported, 1 page each). Other public repos have no LinkedIn link.
+
+## 2026-11-05 — Final ship
+- ✅ Commit (0c07570) + push + deploy with deploy_vercel.ps1 (content 0c07570); live tester: site 73/73, speed 58/58, 125/125 files
+
 ## 2026-11-05 — Vercel Git deploys
 - ✅ Turned off Vercel Git auto-deploys (`vercel git disconnect`): pushes no longer create (failing) deployments; deploy only with web\deploy_vercel.ps1. Cause of the failure emails: project Root Directory "." (repo root) instead of web/. To reconnect later: Vercel → Project voanhduy1710 → Settings → Git (and set Root Directory to web).
 
