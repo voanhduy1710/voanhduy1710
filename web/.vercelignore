@@ -36,4 +36,5 @@ yarn-error.log*
 
 # local dev helpers (not part of the site)
 project_structure.py
+project_tester.py
 Project_structure.txt

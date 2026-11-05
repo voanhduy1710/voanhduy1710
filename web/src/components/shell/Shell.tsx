@@ -9,7 +9,6 @@ import { Explorer } from './Explorer'
 import { PreloadScheduler } from './PreloadScheduler'
 import { ReadingPositionRestore } from './ReadingPositionRestore'
 import { SidebarProvider } from './SidebarState'
-import { SIDEBAR_WIDTH_BOOT } from './sidebarWidth'
 import { StatusBar } from './StatusBar'
 import { Tabs } from './Tabs'
 import { TileBackground } from './TileBackground'
@@ -35,8 +34,6 @@ export function Shell({
   const t = ui(lang)
   return (
     <SidebarProvider>
-      {/* Applies the stored explorer width before the first paint (no jump after hydration). */}
-      <script dangerouslySetInnerHTML={{ __html: SIDEBAR_WIDTH_BOOT }} />
       <div className="flex h-dvh flex-col overflow-hidden print:block print:h-auto print:overflow-visible">
         <TitleBar
           name={header.name}

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import { SidebarWidthBoot } from '@/components/shell/SidebarWidthBoot'
 import { Shell } from '@/components/shell/Shell'
 import { loadCertificateNumbers } from '@/lib/certificateManifest'
 import { loadContent } from '@/lib/content'
@@ -36,9 +37,10 @@ export default async function LangLayout({ children, params }: LayoutProps<'/[la
   const nav = buildNav(lang, content.projects, content.certifications, loadCertificateNumbers(), content.cvHref[lang])
   const preload = buildPreloadPlan(nav, readmeCoverUrl)
   return (
-    // suppressHydrationWarning: the explorer-width script (Shell) may set a style on <html> before hydration.
+    // suppressHydrationWarning: the explorer-width boot script (SidebarWidthBoot) may set a style on <html> before hydration.
     <html lang={lang} className={`${geistSans.variable} ${geistMono.variable} antialiased`} suppressHydrationWarning>
       <body className="font-sans">
+        <SidebarWidthBoot />
         <Shell lang={lang} nav={nav} header={content.header} cvHref={content.cvHref[lang]} preload={preload}>
           {children}
         </Shell>

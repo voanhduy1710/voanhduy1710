@@ -31,10 +31,13 @@ export function SkillsSection({
               <Image
                 src={assetUrl(tech.logo)}
                 alt=""
-                width={48}
-                height={34}
+                // Logos vary in aspect ratio and CSS sets the shown size, so the intrinsic size is set larger than any
+                // rendered size (Next warns when only one dimension matches its attribute); `sizes` keeps the 48/96 px files.
+                width={96}
+                height={96}
+                sizes="48px"
                 loading="lazy"
-                className="h-7 w-auto max-w-10 shrink-0 object-contain"
+                className="h-7 w-10 shrink-0 object-contain object-left"
               />
               {tech.name}
             </li>

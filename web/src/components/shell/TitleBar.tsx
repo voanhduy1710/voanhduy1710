@@ -34,7 +34,7 @@ export function TitleBar({ name, labels }: { name: string; labels: TitleBarLabel
   return (
     <header className="grid h-(--ui-titlebar) shrink-0 grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)] items-center border-b border-vsc-border bg-vsc-titlebar font-ui select-none print:hidden">
       <div className="flex min-w-0 items-center gap-[0.1rem] pl-[0.42rem]">
-        <Image src="/vscode_icon.webp" alt="" width={20} height={20} unoptimized className="mr-[0.42rem] size-[1.04rem] shrink-0" />
+        <Image src="/vscode_icon.webp" alt="" width={20} height={20} unoptimized loading="eager" className="mr-[0.42rem] size-[1.04rem] shrink-0" />
         <span aria-hidden className="flex items-center gap-[0.1rem] max-md:hidden">
           {labels.menuBar.map((item) => (
             <span

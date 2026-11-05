@@ -26,6 +26,15 @@ export function keyedSidebarWidth(key: string, width: number, viewport: number):
   return undefined
 }
 
+/** Same as SIDEBAR_WIDTH_BOOT, for when the <html> element is replaced by a client navigation (no script runs then). */
+export function applyStoredSidebarWidth() {
+  try {
+    const w = localStorage.getItem(SIDEBAR_WIDTH_KEY)
+    const root = document.documentElement.style
+    if (w && /^\d{2,4}$/.test(w) && !root.getPropertyValue(SIDEBAR_WIDTH_VAR)) root.setProperty(SIDEBAR_WIDTH_VAR, `${w}px`)
+  } catch {}
+}
+
 /**
  * Inline script run before the first paint: applies the stored width so the explorer does not jump after hydration.
  * Kept tiny and self-contained (it is a string, not bundled code).
