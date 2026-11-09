@@ -1,5 +1,8 @@
 # Task list
 
+## 2026-11-09 — Next buttons on My works
+- ✅ Project pages (My works, e.g. /en/projects/atino-booking): add Previous / Next project links like the BI analysis pages
+
 ## 2026-11-05 — Cleanup
 - ✅ Deleted the local backup/pre-cleanup branch (last copy of DEPLOY_SCRIPTS.md and the old UI commits); only main remains
 

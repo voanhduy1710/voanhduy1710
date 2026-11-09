@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { BadgeChip } from '@/components/BadgeChip'
 import { ImageGallery } from '@/components/ImageGallery'
@@ -14,6 +15,7 @@ import { ui } from '@/lib/i18n/ui'
 import { AnalysisCards } from '@/components/AnalysisCards'
 import { analyticsSlugs, loadProjectAnalyses } from '@/lib/projectAnalyses'
 import { loadProjectReadme } from '@/lib/projectReadmeManifest'
+import { splitGroups } from '@/lib/projectGroups'
 
 /**
  * Every `{ lang, slug }` pair (both languages x every project). Next passes the parent `[lang]` params when it
@@ -35,7 +37,12 @@ function findProject(lang: string, slug: string) {
   if (!isLang(lang)) return undefined
   const content = loadContent(lang)
   const project = content.projects.find((p) => p.slug === slug)
-  return project && { lang, project, name: content.header.name, analytics: analyticsSlugs(content.projects).has(slug) }
+  if (!project) return undefined
+  const analytics = analyticsSlugs(content.projects).has(slug)
+  // Previous / next project of "My works" (same order as the explorer); the analytics project has its analyses instead.
+  const works = analytics ? [] : splitGroups(content.projects).works
+  const at = works.findIndex((p) => p.slug === slug)
+  return { lang, project, name: content.header.name, analytics, prev: works[at - 1], next: works[at + 1] }
 }
 
 export async function generateMetadata({ params }: PageProps<'/[lang]/projects/[slug]'>): Promise<Metadata> {
@@ -50,7 +57,7 @@ export default async function ProjectPage({ params }: PageProps<'/[lang]/project
   const { lang: rawLang, slug } = await params
   const found = findProject(rawLang, slug)
   if (!found) notFound()
-  const { lang, project } = found
+  const { lang, project, prev, next } = found
   const t = ui(lang)
   // The analytics project: its README's analyses each have their own page; here they are cards between the README's
   // intro and its closing sections (Tools & Programs, Contact). No README link leads to GitHub.
@@ -169,6 +176,23 @@ ${split.lead}`}
             labels={{ open: t.openImage, close: t.closeImage, previous: t.previousImage, next: t.nextImage }}
           />
         </PageSection>
+      )}
+
+      {(prev || next) && (
+        <nav aria-label={project.group || project.title} className="mt-12 flex flex-wrap justify-between gap-4 border-t border-vsc-border pt-5 text-sm">
+          {prev ? (
+            <Link href={`/${lang}/projects/${prev.slug}`} className="text-vsc-link hover:underline">
+              ← {t.previousAnalysis}: {prev.title}
+            </Link>
+          ) : (
+            <span />
+          )}
+          {next && (
+            <Link href={`/${lang}/projects/${next.slug}`} className="text-vsc-link hover:underline">
+              {t.nextAnalysis}: {next.title} →
+            </Link>
+          )}
+        </nav>
       )}
     </article>
   )
