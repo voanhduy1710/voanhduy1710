@@ -1,7 +1,8 @@
 # Task list
 
 ## 2026-11-18 — CV: Tech stack + Part-time work
-- ✅ Website home page: add Part-time work (README `part-time` section → shown under Work Experience, EN + VI; parser + tests; uncommitted)
+- ✅ Kill local dev server → commit + push (bd33834) → deploy to Vercel (content bd33834); live /en, /vi, /en/cv, /vi/cv checked
+- ✅ Website home page: add Part-time work (README `part-time` section → shown under Work Experience, EN + VI; parser + tests)
 - ✅ CV: rename section "Skills" → "Tech stack" (EN + VN)
 - ✅ CV: add section "Part-time work" — 2018 Familia (RU), 2017 Billa (RU), 2016 Bach Hoa Xanh (VN), 2015 Vinmart (VN); Sales Assistant; EN + VN; PDFs re-exported (1 A4 page each); uncommitted
 - ✅ CV: remove "Google Data Analytics" certificate (EN + VN CV only; README untouched) → 6 certs, 3 even rows
