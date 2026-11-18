@@ -30,7 +30,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
   const { lang } = await params
   if (!isLang(lang)) notFound()
   const t = ui(lang)
-  const { header, summary, techStack, skills, projects, experience, contact, cvHref } = loadContent(lang)
+  const { header, summary, techStack, skills, projects, experience, partTime, contact, cvHref } = loadContent(lang)
   const github = header.links.find((l) => /^https?:\/\/(www\.)?github\.com\//i.test(l.href))
 
   return (
@@ -104,7 +104,7 @@ export default async function HomePage({ params }: PageProps<'/[lang]'>) {
       </section>
 
       <div className="mx-auto max-w-5xl px-5 pb-24 sm:px-10">
-        <ExperienceSection title={t.pageExperience} experience={experience} />
+        <ExperienceSection title={t.pageExperience} experience={experience} partTime={partTime} />
         <SkillsSection labels={{ title: t.pageSkills, techStack: t.techStack, skillsMatrix: t.skillsMatrix, no: t.skillsNo, category: t.skillsCategory, tools: t.skillsTools }} techStack={techStack} skills={skills} />
         <ProjectsSection title={t.pageProjects} lang={lang} projects={projects} />
         <ContactSection

@@ -7,6 +7,7 @@ export const SECTION_IDS = [
   'tech-stack',
   'skills',
   'experience',
+  'part-time',
   'projects',
   'languages',
   'education',
@@ -46,6 +47,9 @@ export type ContactItem = { label: string; value: Inline[] }
 
 /** `no` is the README table's № column (also the number its PDF in the Certifications repo starts with). */
 export type Certification = { no: number; name: string; href?: string; status: string }
+
+/** README `part-time` section: `## Title`, `**Role**`, then a Year | Place | Location table (newest first). */
+export type PartTimeData = { title: string; role: string; jobs: { year: string; place: string; location: string }[] }
 
 export type ExperienceEntry = { company: string; role: string; period: string; location: string; bullets: Inline[][] }
 

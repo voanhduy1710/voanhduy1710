@@ -7,7 +7,7 @@
 import { readFileSync } from "node:fs";
 
 const SECTION_IDS = [
-  "header", "summary", "tech-stack", "skills", "experience", "projects",
+  "header", "summary", "tech-stack", "skills", "experience", "part-time", "projects",
   "languages", "education", "contact", "certifications", "previews",
 ];
 const PROJECT_SLUGS = [

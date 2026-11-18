@@ -41,7 +41,7 @@
   color: var(--cv-ink);
   font-family: Calibri, Carlito, "Segoe UI", Arial, sans-serif;
   font-size: 9.5pt;
-  line-height: 1.3;
+  line-height: 1.26;
   text-align: left;
   -webkit-print-color-adjust: exact;
   print-color-adjust: exact;
@@ -64,7 +64,7 @@
   grid-template-columns: 1fr auto;
   gap: 6mm;
   align-items: end;
-  padding-bottom: 3.2mm;
+  padding-bottom: 2.6mm;
   border-bottom: 2.2pt solid var(--cv-accent);
 }
 .cv h1 {
@@ -90,12 +90,12 @@
 }
 
 /* ---------- sections ----------------------------------------------------------------------------------------------- */
-.cv section { margin-top: 3mm; }
+.cv section { margin-top: 2.5mm; }
 .cv h2 {
   display: flex;
   align-items: center;
   gap: 2.5mm;
-  margin-bottom: 1.5mm;
+  margin-bottom: 1.2mm;
   font-size: 9.4pt;
   font-weight: 700;
   letter-spacing: 1.6pt;
@@ -125,10 +125,10 @@
   background: var(--cv-accent);
 }
 .cv .job li + li,
-.cv .projects li + li { margin-top: .5mm; }
+.cv .projects li + li { margin-top: .3mm; }
 
 /* ---------- experience --------------------------------------------------------------------------------------------- */
-.cv .job + .job { margin-top: 2.2mm; }
+.cv .job + .job { margin-top: 1.8mm; }
 .cv .job-head { display: grid; grid-template-columns: 1fr auto; align-items: baseline; }
 .cv .job h3 { font-weight: 700; font-size: 10.2pt; letter-spacing: .4pt; text-transform: uppercase; }
 .cv .where { color: var(--cv-muted); font-weight: 400; text-transform: none; letter-spacing: 0; font-size: 9.2pt; }
@@ -147,17 +147,30 @@
 .cv .skills dd { color: var(--cv-ink-2); }
 
 /* ---------- education, languages, certifications ------------------------------------------------------------------- */
-.cv .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 6mm; margin-top: 3mm; }
+.cv .cols { display: grid; grid-template-columns: 1.15fr 1fr; gap: 6mm; margin-top: 2.5mm; }
 .cv .cols section { margin-top: 0; }
 .cv .cols section + section { margin-top: 3mm; }
 .cv .degree + .degree { margin-top: 1.4mm; }
 .cv .degree h3 { font-size: inherit; font-weight: 700; }
+.cv .degree i { white-space: nowrap; } /* "Graduated with Honors" never splits across lines */
 .cv .meta { color: var(--cv-muted); font-weight: 400; }
 .cv .languages ul { display: flex; flex-wrap: wrap; column-gap: 4mm; row-gap: .4mm; }
 .cv .certifications a { color: var(--cv-ink); }
 .cv .certifications a:hover,
 .cv .certifications h2 a:hover { color: var(--cv-accent); }
 .cv .certifications h2 a { color: inherit; }
+/* row 1: part-time work | education;  row 2: languages | certifications (1 : 2, certificates in two columns) */
+.cv .cols-pt { grid-template-columns: 1fr 2fr; } /* same split as .cols-lc so Education lines up with Certifications */
+.cv .cols-pt section + section,
+.cv .cols-lc section + section { margin-top: 0; } /* side by side, not stacked */
+.cv .cols-lc { grid-template-columns: 1fr 2fr; }
+.cv .cols-lc .languages ul { flex-direction: column; }
+.cv .cols-lc .certifications ul { display: grid; grid-template-columns: 1fr 1fr; column-gap: 4mm; row-gap: .3mm; font-size: 8.9pt; }
+.cv .cols-lc .languages li + li { margin-top: .3mm; }
+.cv .parttime li { display: grid; grid-template-columns: 9mm 1fr; }
+.cv .parttime .title { margin: 0 0 .6mm; }
+.cv .parttime li + li { margin-top: .3mm; }
+.cv .parttime .yr { font-weight: 700; color: var(--cv-accent); }
 
 /* ---------- screen: grey desk, centred sheet, "A4 page end" guide -------------------------------------------------- */
 .cv-page {

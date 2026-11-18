@@ -1,5 +1,15 @@
 # Task list
 
+## 2026-11-18 — CV: Tech stack + Part-time work
+- ✅ Website home page: add Part-time work (README `part-time` section → shown under Work Experience, EN + VI; parser + tests; uncommitted)
+- ✅ CV: rename section "Skills" → "Tech stack" (EN + VN)
+- ✅ CV: add section "Part-time work" — 2018 Familia (RU), 2017 Billa (RU), 2016 Bach Hoa Xanh (VN), 2015 Vinmart (VN); Sales Assistant; EN + VN; PDFs re-exported (1 A4 page each); uncommitted
+- ✅ CV: remove "Google Data Analytics" certificate (EN + VN CV only; README untouched) → 6 certs, 3 even rows
+- ✅ CV layout: Part-time work | Education side by side; Languages | Certifications below (1 : 2); spacing tightened to fit
+- ✅ CV: drop "– while at university"; Education column lined up with Certifications (both rows 1 : 2); PDFs re-exported
+- ✅ CV: more bottom space — line height 1.3→1.26, smaller gaps between jobs / projects / header; PDFs re-exported
+- ✅ README + READMEVN: add "Part-time work" (same 4 stores) after Experience — now inside a `part-time` site marker; Google Data Analytics cert kept in README
+
 ## 2026-11-09 — Next buttons on My works
 - ✅ Project pages (My works, e.g. /en/projects/atino-booking): add Previous / Next project links like the BI analysis pages
 

@@ -9,6 +9,7 @@ import { parseContact } from '@/lib/content/parse/contact'
 import { parseEducation } from '@/lib/content/parse/education'
 import { parseHeader } from '@/lib/content/parse/header'
 import { parseLanguages } from '@/lib/content/parse/languages'
+import { parsePartTime } from '@/lib/content/parse/partTime'
 import { parseSkills } from '@/lib/content/parse/skills'
 import { parseSummary } from '@/lib/content/parse/summary'
 import { parseTechStack } from '@/lib/content/parse/techStack'
@@ -112,6 +113,29 @@ describe('parseSkills', () => {
 
   it('throws naming the section when the table is absent', () => {
     expect(() => parseSkills('## Skills\nno table', 'README.md')).toThrow(/\[README\.md\].*skills/)
+  })
+})
+
+describe('parsePartTime', () => {
+  it('reads the title, the role and the Year | Place | Location rows in README order', () => {
+    expect(parsePartTime(en['part-time'], 'README.md')).toEqual({
+      title: 'Part-time Work',
+      role: 'Sales Assistant',
+      jobs: [
+        { year: '2018', place: 'Familia', location: 'Russia' },
+        { year: '2015', place: 'Vinmart', location: 'Vietnam' },
+      ],
+    })
+    const v = parsePartTime(vi['part-time'], 'READMEVN.md')
+    expect(v.title).toBe('Việc làm bán thời gian')
+    expect(v.role).toBe('Nhân viên bán hàng')
+    expect(v.jobs[1]).toEqual({ year: '2015', place: 'Vinmart', location: 'Việt Nam' })
+  })
+
+  it('throws naming the section when the role or the table is missing', () => {
+    const noRole = '## Part-time Work\n\n| Year | Store | Location |\n|-|-|-|\n| 2015 | Vinmart | Vietnam |'
+    expect(() => parsePartTime(noRole, 'README.md')).toThrow(/\[README\.md\].*part-time.*Role/)
+    expect(() => parsePartTime('## Part-time Work\n\n**Sales Assistant**', 'README.md')).toThrow(/\[README\.md\].*part-time.*table/)
   })
 })
 

@@ -86,6 +86,18 @@ Nền tảng vững chắc trong việc thiết kế và triển khai các hệ 
 
 <!-- /section -->
 
+<!-- section: part-time -->
+## Việc làm bán thời gian
+
+**Nhân viên bán hàng**
+
+| Năm | Cửa hàng | Địa điểm |
+|-----|----------|----------|
+| 2018 | Familia | Nga |
+| 2015 | Vinmart | Việt Nam |
+<!-- /section -->
+
+
 ---
 
 <!-- section: projects -->

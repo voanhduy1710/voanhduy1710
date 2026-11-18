@@ -86,6 +86,18 @@ Proven background in architecting end-to-end data systems: from aggregating larg
 
 <!-- /section -->
 
+<!-- section: part-time -->
+## Part-time Work
+
+**Sales Assistant**
+
+| Year | Store | Location |
+|------|-------|----------|
+| 2018 | Familia | Russia |
+| 2015 | Vinmart | Vietnam |
+<!-- /section -->
+
+
 
 
 <!-- section: projects -->

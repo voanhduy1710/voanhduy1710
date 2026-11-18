@@ -48,7 +48,8 @@ describe('CvDocument (renders the HTML CV)', () => {
       'Summary',
       'Experience',
       'Projects',
-      'Skills',
+      'Tech stack',
+      'Part-time Work',
       'Education',
       'Languages',
       'Certifications',
@@ -60,7 +61,7 @@ describe('CvDocument (renders the HTML CV)', () => {
     expect([...container.querySelectorAll('.contact a')].map((a) => a.textContent)).toEqual(['Email', 'Website', 'GitHub', 'LinkedIn'])
     expect(container.querySelector('a[href="mailto:voanhduy1710@gmail.com"]')).toBeTruthy()
     expect(container.querySelectorAll('.projects a[href^="https://voanhduy1710.vercel.app/en/projects/"]')).toHaveLength(4)
-    expect(container.querySelectorAll('.certifications li a')).toHaveLength(7)
+    expect(container.querySelectorAll('.certifications li a')).toHaveLength(6)
   })
 
   it('renders the Vietnamese CV with Vietnamese headings and /vi/ project pages', () => {

@@ -9,6 +9,7 @@ import { parseCertifications } from './parse/certifications'
 import { parseContact } from './parse/contact'
 import { parseEducation } from './parse/education'
 import { parseExperience } from './parse/experience'
+import { parsePartTime } from './parse/partTime'
 import { parseHeader } from './parse/header'
 import { parseLanguages } from './parse/languages'
 import { parsePreviews } from './parse/previews'
@@ -25,6 +26,7 @@ import type {
   Inline,
   Lang,
   LanguageItem,
+  PartTimeData,
   PreviewSet,
   Project,
   SkillRow,
@@ -38,6 +40,7 @@ export type SiteContent = {
   techStack: TechItem[]
   skills: SkillRow[]
   experience: ExperienceEntry[]
+  partTime: PartTimeData
   projects: (Project & { images: PreviewSet['images'] })[]
   languages: LanguageItem[]
   education: EducationData
@@ -95,6 +98,7 @@ export function parseReadme(markdown: string, lang: Lang, file: string): SiteCon
     techStack: parseTechStack(s['tech-stack'], file),
     skills: parseSkills(s.skills, file),
     experience: parseExperience(s.experience, file),
+    partTime: parsePartTime(s['part-time'], file),
     projects: projects.map((p) => ({ ...p, images: imagesOf.get(p.slug) ?? [] })),
     languages: parseLanguages(s.languages, file),
     education: parseEducation(s.education, file),
@@ -117,6 +121,7 @@ function countsOf(c: SiteContent): [string, number][] {
   return [
     ['experience entries', c.experience.length],
     ...c.experience.map((e, i): [string, number] => [`experience #${i + 1} bullets`, e.bullets.length]),
+    ['part-time jobs', c.partTime.jobs.length],
     ['certifications', c.certifications.length],
     ['languages', c.languages.length],
     ['skills rows', c.skills.length],

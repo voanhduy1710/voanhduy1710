@@ -2,8 +2,16 @@ import { Inline } from '@/components/Inline'
 import type { SiteContent } from '@/lib/content'
 import { HomeSection } from './HomeSection'
 
-/** Experience as a vertical timeline, newest first (README order). */
-export function ExperienceSection({ title, experience }: { title: string; experience: SiteContent['experience'] }) {
+/** Experience as a vertical timeline, newest first (README order), then the part-time jobs as a compact list. */
+export function ExperienceSection({
+  title,
+  experience,
+  partTime,
+}: {
+  title: string
+  experience: SiteContent['experience']
+  partTime: SiteContent['partTime']
+}) {
   return (
     <HomeSection id="experience" title={title}>
       <ol className="mt-10 ml-2 max-w-4xl border-l border-vsc-border">
@@ -32,6 +40,21 @@ export function ExperienceSection({ title, experience }: { title: string; experi
           </li>
         ))}
       </ol>
+      <div className="mt-12 ml-2 max-w-4xl">
+        <h3 className="text-xl font-semibold text-vsc-heading">{partTime.title}</h3>
+        <p className="mt-1 text-base text-[#4fc1ff]">{partTime.role}</p>
+        <ul className="mt-3 grid gap-x-10 gap-y-1.5 text-base sm:grid-cols-2">
+          {partTime.jobs.map((j) => (
+            <li key={`${j.year}-${j.place}`} className="flex items-baseline gap-3">
+              <span className="w-10 shrink-0 font-mono text-xs text-vsc-muted">{j.year}</span>
+              <span>
+                <span className="text-vsc-heading">{j.place}</span>
+                <span className="text-vsc-muted"> · {j.location}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </HomeSection>
   )
 }
