@@ -117,23 +117,23 @@ describe('parseSkills', () => {
 })
 
 describe('parsePartTime', () => {
-  it('reads the title, the role and the Year | Place | Location rows in README order', () => {
+  it('reads the title, the role and the Year | Place | Type | Location rows in README order', () => {
     expect(parsePartTime(en['part-time'], 'README.md')).toEqual({
       title: 'Part-time Work',
       role: 'Sales Assistant',
       jobs: [
-        { year: '2018', place: 'Familia', location: 'Russia' },
-        { year: '2015', place: 'Vinmart', location: 'Vietnam' },
+        { year: '2018', place: 'Familia', type: 'Off-price retailer', location: 'Russia' },
+        { year: '2015', place: 'Vinmart', type: 'Mart', location: 'Vietnam' },
       ],
     })
     const v = parsePartTime(vi['part-time'], 'READMEVN.md')
     expect(v.title).toBe('Việc làm bán thời gian')
     expect(v.role).toBe('Nhân viên bán hàng')
-    expect(v.jobs[1]).toEqual({ year: '2015', place: 'Vinmart', location: 'Việt Nam' })
+    expect(v.jobs[1]).toEqual({ year: '2015', place: 'Vinmart', type: 'Siêu thị', location: 'Việt Nam' })
   })
 
   it('throws naming the section when the role or the table is missing', () => {
-    const noRole = '## Part-time Work\n\n| Year | Store | Location |\n|-|-|-|\n| 2015 | Vinmart | Vietnam |'
+    const noRole = '## Part-time Work\n\n| Year | Store | Type | Location |\n|-|-|-|-|\n| 2015 | Vinmart | Mart | Vietnam |'
     expect(() => parsePartTime(noRole, 'README.md')).toThrow(/\[README\.md\].*part-time.*Role/)
     expect(() => parsePartTime('## Part-time Work\n\n**Sales Assistant**', 'README.md')).toThrow(/\[README\.md\].*part-time.*table/)
   })

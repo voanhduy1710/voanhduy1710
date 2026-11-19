@@ -92,12 +92,12 @@ Nền tảng vững chắc trong việc thiết kế và triển khai các hệ 
 
 **Nhân viên bán hàng**
 
-| Năm | Cửa hàng | Địa điểm |
-|-----|----------|----------|
-| 2018 | Familia | Nga |
-| 2017 | Billa | Nga |
-| 2016 | Bách Hóa Xanh | Việt Nam |
-| 2015 | Vinmart | Việt Nam |
+| Năm | Cửa hàng | Loại hình | Địa điểm |
+|-----|----------|-----------|----------|
+| 2018 | Familia | Bán lẻ hàng giảm giá | Nga |
+| 2017 | Billa | Siêu thị | Nga |
+| 2016 | Bách Hóa Xanh | Siêu thị | Việt Nam |
+| 2015 | Vinmart | Siêu thị | Việt Nam |
 
 <!-- /section -->
 

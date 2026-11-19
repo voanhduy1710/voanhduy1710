@@ -1,5 +1,9 @@
 # Task list
 
+## 2026-11-19 — Part-time work: store type
+- ✅ Add store type everywhere (CV EN/VN, README EN/VN, website): Vinmart Mart, Bach Hoa Xanh Mart, Billa Mart, Familia Off-price retailer — README/READMEVN new "Type" column (VN: Siêu thị / Bán lẻ hàng giảm giá), CV EN+VN ("– Mart, Russia"), home page; PDFs re-exported (1 A4 page)
+- Commit + push + deploy to Vercel
+
 ## 2026-11-18 — CV: Tech stack + Part-time work
 - ✅ Kill local dev server → commit + push (bd33834) → deploy to Vercel (content bd33834); live /en, /vi, /en/cv, /vi/cv checked
 - ✅ Website home page: add Part-time work (README `part-time` section → shown under Work Experience, EN + VI; parser + tests)

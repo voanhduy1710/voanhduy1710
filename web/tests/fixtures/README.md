@@ -91,10 +91,10 @@ Proven background in architecting end-to-end data systems: from aggregating larg
 
 **Sales Assistant**
 
-| Year | Store | Location |
-|------|-------|----------|
-| 2018 | Familia | Russia |
-| 2015 | Vinmart | Vietnam |
+| Year | Store | Type | Location |
+|-|-|-|-|
+| 2018 | Familia | Off-price retailer | Russia |
+| 2015 | Vinmart | Mart | Vietnam |
 <!-- /section -->
 
 

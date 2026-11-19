@@ -92,12 +92,12 @@ Proven background in architecting end-to-end data systems: from aggregating larg
 
 **Sales Assistant**
 
-| Year | Store | Location |
-|------|-------|----------|
-| 2018 | Familia | Russia |
-| 2017 | Billa | Russia |
-| 2016 | Bach Hoa Xanh | Vietnam |
-| 2015 | Vinmart | Vietnam |
+| Year | Store | Type | Location |
+|------|-------|------|----------|
+| 2018 | Familia | Off-price retailer | Russia |
+| 2017 | Billa | Mart | Russia |
+| 2016 | Bach Hoa Xanh | Mart | Vietnam |
+| 2015 | Vinmart | Mart | Vietnam |
 
 <!-- /section -->
 

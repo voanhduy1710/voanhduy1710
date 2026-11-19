@@ -49,7 +49,10 @@ export function ExperienceSection({
               <span className="w-10 shrink-0 font-mono text-xs text-vsc-muted">{j.year}</span>
               <span>
                 <span className="text-vsc-heading">{j.place}</span>
-                <span className="text-vsc-muted"> · {j.location}</span>
+                <span className="text-vsc-muted">
+                  {' '}
+                  · {j.type} · {j.location}
+                </span>
               </span>
             </li>
           ))}

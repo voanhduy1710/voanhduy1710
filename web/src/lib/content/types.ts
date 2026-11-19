@@ -49,7 +49,7 @@ export type ContactItem = { label: string; value: Inline[] }
 export type Certification = { no: number; name: string; href?: string; status: string }
 
 /** README `part-time` section: `## Title`, `**Role**`, then a Year | Place | Location table (newest first). */
-export type PartTimeData = { title: string; role: string; jobs: { year: string; place: string; location: string }[] }
+export type PartTimeData = { title: string; role: string; jobs: { year: string; place: string; type: string; location: string }[] }
 
 export type ExperienceEntry = { company: string; role: string; period: string; location: string; bullets: Inline[][] }
 
